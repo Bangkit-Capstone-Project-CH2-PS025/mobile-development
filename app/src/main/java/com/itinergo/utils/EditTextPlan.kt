@@ -3,15 +3,17 @@ package com.itinergo.utils
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import com.itinergo.R
 
-class Button : AppCompatButton {
-
-    private lateinit var enabledBackground: Drawable
-    private lateinit var disabledBackground: Drawable
+class EditTextPlan : AppCompatEditText {
+    private lateinit var editTextBackground: Drawable
+    private lateinit var errorBackground: Drawable
+    private var isError = false
 
     constructor(context: Context) : super(context) {
         init()
@@ -31,12 +33,15 @@ class Button : AppCompatButton {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        background = if (isEnabled) enabledBackground else disabledBackground
+
+        background = editTextBackground
+        background = if (isError) errorBackground else editTextBackground
     }
 
     private fun init() {
-        enabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button) as Drawable
-        disabledBackground =
-            ContextCompat.getDrawable(context, R.drawable.bg_button_disable) as Drawable
+        editTextBackground = ContextCompat.getDrawable(context, R.drawable.bg_edit_text) as Drawable
+        errorBackground =
+            ContextCompat.getDrawable(context, R.drawable.bg_edit_text_error) as Drawable
+
     }
 }

@@ -10,7 +10,7 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import com.itinergo.R
 
-class EditText : AppCompatEditText {
+class EditTextAuth : AppCompatEditText {
     private lateinit var editTextBackground: Drawable
     private lateinit var errorBackground: Drawable
     private var isError = false
