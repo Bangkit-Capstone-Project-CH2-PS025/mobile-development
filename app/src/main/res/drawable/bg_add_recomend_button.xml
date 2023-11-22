@@ -1,7 +1,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape>
-            <solid android:color="@color/purple" />
+            <solid android:color="#E6E4EA" />
             <corners android:radius="40dp" />
             <padding android:left="4dp" android:right="4dp" />
         </shape>

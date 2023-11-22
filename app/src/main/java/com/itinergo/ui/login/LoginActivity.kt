@@ -1,11 +1,13 @@
 package com.itinergo.ui.login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import com.itinergo.R
 import com.itinergo.databinding.ActivityLoginBinding
+import com.itinergo.ui.home.HomeActivity
+import com.itinergo.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -43,6 +45,14 @@ class LoginActivity : AppCompatActivity() {
             }
 
         })
+        binding.btnLogin.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+        binding.tvToRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setButton() {

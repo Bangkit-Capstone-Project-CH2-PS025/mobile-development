@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/dialog_plan_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.PlanFragment">
+
+    <com.itinergo.utils.RecomendedButton
+        android:id="@+id/btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/alam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.itinergo.utils.RecomendedButton
+        android:id="@+id/btn2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pegunungan"
+        app:layout_constraintBottom_toBottomOf="@+id/btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn"
+        app:layout_constraintTop_toTopOf="@+id/btn" />
+
+    <com.itinergo.utils.RecomendedButton
+        android:id="@+id/btn3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/sejarah_budaya"
+        app:layout_constraintEnd_toEndOf="@+id/btn"
+        app:layout_constraintStart_toStartOf="@+id/btn"
+        app:layout_constraintTop_toBottomOf="@+id/btn" />
+
+    <com.itinergo.utils.RecomendedButton
+        android:id="@+id/btn4"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tempat_rekreasi"
+        app:layout_constraintBottom_toBottomOf="@+id/btn3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn3"
+        app:layout_constraintTop_toTopOf="@+id/btn3" />
+
+    <com.itinergo.utils.RecomendedButton
+        android:id="@+id/btn5"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/tempat_ibadah"
+        app:layout_constraintEnd_toEndOf="@+id/btn3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn3"
+        app:layout_constraintTop_toBottomOf="@+id/btn3" />
+
+    <com.itinergo.utils.RecomendedButton
+        android:id="@+id/btn6"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/desa_wisata"
+        app:layout_constraintBottom_toBottomOf="@+id/btn5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn5"
+        app:layout_constraintTop_toTopOf="@+id/btn5" />
+
+    <com.itinergo.utils.RecomendedButton
+        android:id="@+id/btn7"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/perbelanjaan"
+        app:layout_constraintEnd_toEndOf="@+id/btn5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn5"
+        app:layout_constraintTop_toBottomOf="@+id/btn5" />
+
+    <com.itinergo.utils.RecomendedButton
+        android:id="@+id/btn8"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/edukasi"
+        app:layout_constraintBottom_toBottomOf="@+id/btn7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn7"
+        app:layout_constraintTop_toTopOf="@+id/btn7" />
+
+    <com.itinergo.utils.SecondaryButton
+        android:id="@+id/btn_plan"
+        android:layout_width="259dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn7" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="50dp"
+        android:background="#5E5E5E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_plan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

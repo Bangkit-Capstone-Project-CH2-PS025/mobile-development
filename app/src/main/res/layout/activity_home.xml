@@ -6,9 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background"
-    tools:context=".ui.HomeActivity">
+    tools:context=".ui.home.HomeActivity">
 
-
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <ImageView
         android:id="@+id/iv_view_home"
         android:layout_width="382dp"
@@ -63,7 +66,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/iv_view_home"
         app:layout_constraintEnd_toEndOf="@+id/iv_view_home"
         app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toEndOf="@+id/tv_place" />
+        app:layout_constraintStart_toEndOf="@+id/tv_place"
+        tools:ignore="UseCompatTextViewDrawableXml" />
 
     <ImageView
         android:id="@+id/bg_activities"
@@ -74,7 +78,8 @@
         app:layout_constraintEnd_toEndOf="@+id/iv_view_home"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/iv_view_home"
-        app:layout_constraintTop_toBottomOf="@+id/iv_view_home" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_view_home"
+        android:contentDescription="null" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_profile"
@@ -98,18 +103,20 @@
         app:layout_constraintStart_toEndOf="@+id/iv_profile"
         app:layout_constraintTop_toTopOf="@+id/bg_activities"
         app:layout_constraintVertical_bias="0.3"
-        tools:text="Hi, Zoro" />
+        android:text="Hi, Zoro" />
 
     <TextView
         android:id="@+id/tv_exp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/istok_web_bold"
+        android:text="1227 XP"
         android:textColor="@color/white"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_name_home"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="@+id/tv_name_home"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name_home"
-        tools:text="1227 XP" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_home" />
 
     <ImageView
         android:id="@+id/iv_item_countries"
@@ -137,6 +144,18 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_item_countries"
         tools:ignore="SmallSp" />
 
+    <TextView
+        android:id="@+id/tv_countries_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="20sp"
+        android:fontFamily="@font/istok_web_bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_item_countries"
+        app:layout_constraintEnd_toEndOf="@+id/iv_item_countries"
+        app:layout_constraintStart_toStartOf="@+id/iv_item_countries"
+        app:layout_constraintTop_toTopOf="@+id/iv_item_countries" />
+
     <ImageView
         android:id="@+id/iv_item_cities"
         android:layout_width="44dp"
@@ -162,6 +181,18 @@
         app:layout_constraintStart_toStartOf="@+id/iv_item_cities"
         app:layout_constraintTop_toBottomOf="@+id/iv_item_cities"
         tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_cities_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:textSize="20sp"
+        android:fontFamily="@font/istok_web_bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_item_cities"
+        app:layout_constraintEnd_toEndOf="@+id/iv_item_cities"
+        app:layout_constraintStart_toStartOf="@+id/iv_item_cities"
+        app:layout_constraintTop_toTopOf="@+id/iv_item_cities" />
 
     <ImageView
         android:id="@+id/iv_item_carbon"
@@ -388,13 +419,14 @@
         app:layout_constraintTop_toTopOf="@+id/bg_preference" />
 
     <com.itinergo.utils.SecondaryButton
+        android:id="@+id/btnSearch"
         android:layout_width="204dp"
         android:layout_height="30dp"
         android:layout_marginTop="15dp"
-        android:text="@string/search"
-        android:textSize="15sp"
-        android:textColor="@color/purple"
         android:fontFamily="@font/istok_web_bold"
+        android:text="@string/search"
+        android:textColor="@color/purple"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/editText3"
         app:layout_constraintStart_toStartOf="@+id/bg_preference"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />

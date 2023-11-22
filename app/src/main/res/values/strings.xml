@@ -11,8 +11,8 @@
     <string name="name">Name</string>
     <string name="input_name">Masukkan Nama</string>
     <string name="register">Register</string>
-    <string name="text_register"> Create your\n<font color="#11a158">Account!</font></string>
-    <string name="sudah_punya_akun">Sudah mempunyai akun? <font color="#11a158"> Login</font></string>
+    <string name="text_register"> Create your\nAccount!</string>
+    <string name="sudah_punya_akun">Already Have account? <font color="#646464"> Sign In</font></string>
     <string name="welcome">Welcome</string>
     <string name="text_splashscreen">Explore.\nInspire.</string>
     <string name="text_btn_splashscreen">Get Started</string>
@@ -25,4 +25,17 @@
     <string name="travel_budgeting">Travel\nBudgeting</string>
     <string name="travel_tips">Travel\nTips</string>
     <string name="search">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alam">Alam</string>
+    <string name="pegunungan">Pegunungan</string>
+    <string name="sejarah_budaya"><![CDATA[Sejarah & budaya]]></string>
+    <string name="tempat_rekreasi">Tempat Rekreasi</string>
+    <string name="tempat_ibadah">Tempat Ibadah</string>
+    <string name="desa_wisata">Desa Wisata</string>
+    <string name="perbelanjaan">Perbelanjaan</string>
+    <string name="edukasi">Edukasi</string>
+    <string name="username">Username</string>
+    <string name="input_username">Input Username</string>
+    <string name="done">Done</string>
 </resources>
