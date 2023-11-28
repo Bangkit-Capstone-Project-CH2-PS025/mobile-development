@@ -2,14 +2,15 @@
     <string name="app_name">Itinergo</string>
     <string name="text_sign_in">Welcome\nExplorer!</string>
     <string name="email">Email</string>
-    <string name="input_email">Input Username or Email</string>
+    <string name="input_email">Input Email</string>
+    <string name="input_username_or_email">Input Username or Email</string>
     <string name="password">Password</string>
     <string name="input_password">Input Password</string>
     <string name="login">Login</string>
     <string name="belum_punya_akun">Don\'t have an account? <font color="#646464"> Sign Up</font></string>
     <string name="loginGoogle">login with google</string>
     <string name="name">Name</string>
-    <string name="input_name">Masukkan Nama</string>
+    <string name="input_name">Input Name</string>
     <string name="register">Register</string>
     <string name="text_register"> Create your\nAccount!</string>
     <string name="sudah_punya_akun">Already Have account? <font color="#646464"> Sign In</font></string>
