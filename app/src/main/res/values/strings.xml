@@ -39,4 +39,5 @@
     <string name="input_username">Input Username</string>
     <string name="done">Done</string>
     <string name="here_you_go">Here you go, Explorer!</string>
+    <string name="forget_password_click_here">Forget password? <font color="#646464">Click Here</font></string>
 </resources>
