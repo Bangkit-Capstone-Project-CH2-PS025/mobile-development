@@ -7,18 +7,6 @@
     android:background="@drawable/background"
     tools:context=".ui.verification.VerificationActivity">
 
-    <com.itinergo.utils.PrimaryButton
-        android:id="@+id/btn_splashcreen2"
-        android:layout_width="265dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="100dp"
-        android:fontFamily="@font/istok_web_bold"
-        android:text="@string/text_btn_splashscreen"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/splashscreen_bg2"
@@ -37,13 +25,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_splashcreen2" />
+        app:layout_constraintTop_toTopOf="@+id/splashscreen_bg2" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="224dp"
         android:layout_height="206dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/ic_mailbox"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
@@ -53,7 +41,10 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/you_re_almost_here"
+        android:textColor="@color/purple"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
@@ -62,17 +53,74 @@
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/email_has_been_sent"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView23"
+        app:layout_constraintStart_toStartOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/tv_email_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="angelika@itinergo.com"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView24"
+        app:layout_constraintStart_toStartOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/didn_t_receive_an_email"
+        android:textColor="@color/purple"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_email_user"
+        app:layout_constraintStart_toStartOf="@+id/tv_email_user"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_user" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/check_email_spam"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView26"
+        app:layout_constraintStart_toStartOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    <com.itinergo.utils.SecondaryButton
+        android:id="@+id/secondaryButton2"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/istok_web_bold"
+        android:text="Send Email"
+        android:textColor="@color/purple"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <com.itinergo.utils.PrimaryButton
+        android:id="@+id/btn_login"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:enabled="false"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/secondaryButton2"
+        app:layout_constraintStart_toStartOf="@+id/secondaryButton2"
+        app:layout_constraintTop_toBottomOf="@+id/secondaryButton2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
