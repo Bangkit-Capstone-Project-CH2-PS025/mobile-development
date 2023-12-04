@@ -1,19 +1,21 @@
 <resources>
     <string name="app_name">Itinergo</string>
-    <string name="text_sign_in">Welcome\nExplorer!</string>
+    <string name="text_sign_in">Welcome</string>
+    <string name="text_sign_in2">Explorer!</string>
     <string name="email">Email</string>
     <string name="input_email">Input Email</string>
     <string name="input_username_or_email">Input Username or Email</string>
     <string name="password">Password</string>
     <string name="input_password">Input Password</string>
     <string name="login">Login</string>
-    <string name="belum_punya_akun">Don\'t have an account? <font color="#646464"> Sign Up</font></string>
+    <string name="belum_punya_akun">Don\'t have an account? <font color="#FD865B"> Sign Up</font></string>
     <string name="loginGoogle">login with google</string>
     <string name="name">Name</string>
     <string name="input_name">Input Name</string>
     <string name="register">Register</string>
-    <string name="text_register"> Create your\nAccount!</string>
-    <string name="sudah_punya_akun">Already Have account? <font color="#646464"> Sign In</font></string>
+    <string name="text_register"> Let\'s Start</string>
+    <string name="text_register2"> the journey!</string>
+    <string name="sudah_punya_akun">Already Have account? <font color="#FD865B"> Sign In</font></string>
     <string name="welcome">Welcome</string>
     <string name="text_splashscreen">Explore.\nInspire.</string>
     <string name="text_btn_splashscreen">Get Started</string>
