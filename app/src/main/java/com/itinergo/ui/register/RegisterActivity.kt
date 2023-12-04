@@ -27,18 +27,31 @@ class RegisterActivity : AppCompatActivity() {
         registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
 
         setEditText()
-        setRegister()
+        setButton()
         registerResult()
-        toLogin()
 
     }
 
-    private fun toLogin() {
+    private fun setButton() {
+        binding.btnRegister.setOnClickListener {
+            val username = binding.etUsernameRegister.text.toString()
+            val name = binding.etNameRegister.text.toString()
+            val email = binding.etEmailRegister.text.toString()
+            val password = binding.etPassword.text.toString()
+
+            registerViewModel.registerUser(
+                username = username,
+                name = name,
+                email = email,
+                password = password
+            )
+        }
         binding.tvToLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }
+
 
     private fun registerResult() {
         registerViewModel.registerResult.observe(this) {
@@ -83,21 +96,6 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun setRegister() {
-        binding.btnRegister.setOnClickListener {
-            val username = binding.etUsernameRegister.text.toString()
-            val name = binding.etNameRegister.text.toString()
-            val email = binding.etEmailRegister.text.toString()
-            val password = binding.etPassword.text.toString()
-
-            registerViewModel.registerUser(
-                username = username,
-                name = name,
-                email = email,
-                password = password
-            )
-        }
-    }
 
     private fun setEditText() {
         binding.etPassword.addTextChangedListener(object : TextWatcher {
@@ -137,7 +135,7 @@ class RegisterActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                setButton()
+                setButtonText()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -152,7 +150,7 @@ class RegisterActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                setButton()
+                setButtonText()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -162,7 +160,7 @@ class RegisterActivity : AppCompatActivity() {
         })
     }
 
-    private fun setButton() {
+    private fun setButtonText() {
         binding.btnRegister.isEnabled =
             binding.etUsernameRegister.text != null && binding.etNameRegister.text != null && binding.etEmailRegister.text != null && binding.etPassword.text != null && binding.etUsernameRegister.text.toString()
                 .isNotEmpty() && binding.etNameRegister.text.toString()

@@ -26,9 +26,21 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         setEditText()
-        setLogin()
+        setButton()
         loginResult()
-        toRegister()
+    }
+
+    private fun setButton() {
+        binding.btnLogin.setOnClickListener {
+            val usernameOrEmail = binding.etEmail.text.toString()
+            val password = binding.etPassword.text.toString()
+
+            loginViewModel.loginUser(usernameOrEmail = usernameOrEmail, password = password)
+        }
+        binding.tvToRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun loginResult() {
@@ -77,22 +89,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun toRegister() {
-        binding.tvToRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun setLogin() {
-        binding.btnLogin.setOnClickListener {
-            val usernameOrEmail = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
-
-            loginViewModel.loginUser(usernameOrEmail = usernameOrEmail, password = password)
-        }
-    }
-
     private fun setEditText() {
         binding.etPassword.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -101,7 +97,7 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                setButton()
+                setButtonText()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -115,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                setButton()
+                setButtonText()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -125,7 +121,7 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    private fun setButton() {
+    private fun setButtonText() {
         binding.btnLogin.isEnabled =
             binding.etEmail.text != null && binding.etPassword.text != null && binding.etEmail.text.toString()
                 .isNotEmpty() && binding.etPassword.text.toString().isNotEmpty()
