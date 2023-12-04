@@ -39,9 +39,9 @@ class EditTextPlan : AppCompatEditText {
     }
 
     private fun init() {
-        editTextBackground = ContextCompat.getDrawable(context, R.drawable.bg_edit_text) as Drawable
+        editTextBackground = ContextCompat.getDrawable(context, R.drawable.bg_edit_text_plan) as Drawable
         errorBackground =
-            ContextCompat.getDrawable(context, R.drawable.bg_edit_text_error) as Drawable
+            ContextCompat.getDrawable(context, R.drawable.bg_edit_text_plan_error) as Drawable
 
     }
 }

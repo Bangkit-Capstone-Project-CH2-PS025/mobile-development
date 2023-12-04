@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tvt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="380dp"
+            android:layout_height="355dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ed_plan_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Plan your itinerary!"
+            android:textColor="@color/purple"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+        <ImageView
+            android:id="@+id/bg_city"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:src="@drawable/plan_background"
+            app:layout_constraintStart_toStartOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="City"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_city"
+            app:layout_constraintEnd_toEndOf="@+id/bg_city"
+            app:layout_constraintStart_toStartOf="@+id/bg_city"
+            app:layout_constraintTop_toTopOf="@+id/bg_city" />
+
+        <ImageView
+            android:id="@+id/bg_budget"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/plan_background"
+            app:layout_constraintEnd_toEndOf="@+id/bg_city"
+            app:layout_constraintStart_toStartOf="@+id/bg_city"
+            app:layout_constraintTop_toBottomOf="@+id/bg_city" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Budget"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_budget"
+            app:layout_constraintEnd_toEndOf="@+id/bg_budget"
+            app:layout_constraintStart_toStartOf="@+id/bg_budget"
+            app:layout_constraintTop_toTopOf="@+id/bg_budget" />
+
+        <ImageView
+            android:id="@+id/bg_duration"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/plan_background"
+            app:layout_constraintEnd_toEndOf="@+id/bg_budget"
+            app:layout_constraintStart_toStartOf="@+id/bg_budget"
+            app:layout_constraintTop_toBottomOf="@+id/bg_budget" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Duration"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_duration"
+            app:layout_constraintEnd_toEndOf="@+id/bg_duration"
+            app:layout_constraintStart_toStartOf="@+id/bg_duration"
+            app:layout_constraintTop_toTopOf="@+id/bg_duration" />
+
+        <ImageView
+            android:id="@+id/bg_preference"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/plan_background"
+            app:layout_constraintEnd_toEndOf="@+id/bg_duration"
+            app:layout_constraintStart_toStartOf="@+id/bg_duration"
+            app:layout_constraintTop_toBottomOf="@+id/bg_duration" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Preference"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_preference"
+            app:layout_constraintEnd_toEndOf="@+id/bg_preference"
+            app:layout_constraintStart_toStartOf="@+id/bg_preference"
+            app:layout_constraintTop_toTopOf="@+id/bg_preference" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_city"
+            android:layout_width="222dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:hint="Input City"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_city"
+            app:layout_constraintStart_toEndOf="@+id/bg_city"
+            app:layout_constraintTop_toTopOf="@+id/bg_city" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_budget"
+            android:layout_width="222dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:hint="Input Budget"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_budget"
+            app:layout_constraintStart_toEndOf="@+id/bg_budget"
+            app:layout_constraintTop_toTopOf="@+id/bg_budget" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_duration"
+            android:layout_width="222dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:hint="Input Duration"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_duration"
+            app:layout_constraintStart_toEndOf="@+id/bg_duration"
+            app:layout_constraintTop_toTopOf="@+id/bg_duration" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_preference"
+            android:layout_width="222dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:enabled="false"
+            android:hint="Choose Your Activity"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_preference"
+            app:layout_constraintStart_toEndOf="@+id/bg_preference"
+            app:layout_constraintTop_toTopOf="@+id/bg_preference" />
+
+        <com.itinergo.utils.PrimaryButton
+            android:id="@+id/btnSearch"
+            android:layout_width="204dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:enabled="false"
+            android:fontFamily="@font/istok_web_bold"
+            android:text="@string/search"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/et_preference"
+            app:layout_constraintStart_toStartOf="@+id/bg_preference"
+            app:layout_constraintTop_toBottomOf="@+id/et_preference" />
+
+        <ImageView
+            android:id="@+id/iv_travel_budgeting"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_travel_budgeting"
+            app:layout_constraintEnd_toEndOf="@+id/imageView8"
+            app:layout_constraintStart_toStartOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_travel_budgeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="center"
+            android:text="@string/travel_budgeting"
+            app:layout_constraintEnd_toEndOf="@+id/iv_travel_budgeting"
+            app:layout_constraintStart_toStartOf="@+id/iv_travel_budgeting"
+            app:layout_constraintTop_toBottomOf="@+id/iv_travel_budgeting" />
+
+        <ImageView
+            android:id="@+id/iv_find_trip"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_find_trip"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_travel_budgeting"
+            app:layout_constraintEnd_toStartOf="@+id/iv_travel_budgeting"
+            app:layout_constraintTop_toTopOf="@+id/iv_travel_budgeting" />
+
+        <TextView
+            android:id="@+id/tv_find_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="Find Trip"
+            app:layout_constraintEnd_toEndOf="@+id/iv_find_trip"
+            app:layout_constraintStart_toStartOf="@+id/iv_find_trip"
+            app:layout_constraintTop_toBottomOf="@+id/iv_find_trip" />
+
+        <ImageView
+            android:id="@+id/iv_travel_tips"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="32dp"
+            android:src="@drawable/ic_travel_tips"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_travel_budgeting"
+            app:layout_constraintStart_toEndOf="@+id/iv_travel_budgeting"
+            app:layout_constraintTop_toTopOf="@+id/iv_travel_budgeting" />
+
+        <TextView
+            android:id="@+id/tv_travel_tips2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="center"
+            android:text="@string/travel_tips"
+            app:layout_constraintEnd_toEndOf="@+id/iv_travel_tips"
+            app:layout_constraintStart_toStartOf="@+id/iv_travel_tips"
+            app:layout_constraintTop_toBottomOf="@+id/iv_travel_tips" />
+
+        <ImageView
+            android:id="@+id/rectangle_1"
+            android:layout_width="380dp"
+            android:layout_height="59dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/bg_image_1"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_view_home"
+            app:layout_constraintEnd_toEndOf="@+id/iv_view_home"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/iv_view_home"
+            app:layout_constraintTop_toBottomOf="@+id/iv_view_home" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_view_home"
+            android:layout_width="382dp"
+            android:layout_height="232dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/place_of_today"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_travel_budgeting"
+            app:shapeAppearanceOverlay="@style/RoundedSquare"
+            app:srcCompat="@drawable/view_home" />
+
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:shadowColor="@color/purple"
+            android:shadowDy="10"
+            android:shadowRadius="1"
+            android:text="@string/place_of_today"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/iv_view_home"
+            app:layout_constraintTop_toBottomOf="@+id/tv_travel_budgeting" />
+
+        <TextView
+            android:id="@+id/tv_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+            app:layout_constraintTop_toBottomOf="@+id/iv_view_home"
+            android:text="Raja Ampat, Papua Barat, Indonesia" />
+
+        <ImageView
+            android:id="@+id/iv_explore"
+            android:layout_width="55dp"
+            android:layout_height="31dp"
+            android:src="@drawable/ic_explore"
+            app:layout_constraintEnd_toEndOf="@+id/iv_view_home"
+            app:layout_constraintTop_toBottomOf="@+id/iv_view_home" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

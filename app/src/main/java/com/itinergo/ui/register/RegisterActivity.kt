@@ -8,11 +8,8 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import com.itinergo.R
 import com.itinergo.data.response.BaseResponse
 import com.itinergo.databinding.ActivityRegisterBinding
-import com.itinergo.databinding.ActivitySplashscreenBinding
-import com.itinergo.ui.home.HomeActivity
 import com.itinergo.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
