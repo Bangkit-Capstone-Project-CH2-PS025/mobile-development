@@ -1,7 +1,9 @@
 package com.itinergo.data.service
 
+import com.itinergo.data.request.ForgotPasswordRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
+import com.itinergo.data.response.ForgotPasswordResponse
 import com.itinergo.data.response.LoginResponse
 import com.itinergo.data.response.RegisterResponse
 import retrofit2.Call
@@ -15,4 +17,7 @@ interface ApiService {
 
     @POST("auth/register")
     fun registerUser(@Body registerRequest : RegisterRequest): Call<RegisterResponse>
+
+    @POST("auth/forgot-password")
+    fun forgotPassword(@Body request : ForgotPasswordRequest): Call<ForgotPasswordResponse>
 }

@@ -10,6 +10,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.itinergo.data.response.BaseResponse
 import com.itinergo.databinding.ActivityLoginBinding
+import com.itinergo.ui.forgot.ForgotPasswordFragment
 import com.itinergo.ui.home.HomeActivity
 import com.itinergo.ui.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,6 +40,10 @@ class LoginActivity : AppCompatActivity() {
         binding.tvToRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+        }
+        binding.tvForgotPassword.setOnClickListener {
+            val dialogFragment = ForgotPasswordFragment()
+            dialogFragment.show(supportFragmentManager, "dialog_forgot")
         }
     }
 
