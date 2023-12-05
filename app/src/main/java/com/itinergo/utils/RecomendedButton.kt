@@ -39,7 +39,5 @@ class RecomendedButton : AppCompatButton {
             ContextCompat.getDrawable(context, R.drawable.bg_add_recomend_button) as Drawable
         disabledBackground =
             ContextCompat.getDrawable(context, R.drawable.bg_add_recomend_button_disabled) as Drawable
-
-
     }
 }
