@@ -1,14 +1,14 @@
 package com.itinergo.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itinergo.R
 import com.itinergo.databinding.FragmentHomeBinding
-import com.itinergo.databinding.FragmentPlanBinding
+import com.itinergo.ui.PlaceTodayFragment
 
 
 class HomeFragment : Fragment() {
@@ -18,7 +18,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -27,9 +27,17 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setButton()
+
+    }
+
+    private fun setButton() {
         binding.etPreference.setOnClickListener {
             val dialogFragment = PlanFragment()
             dialogFragment.show(childFragmentManager, "bottomsheet")
+        }
+        binding.ivViewHome.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_placeTodayFragment)
         }
     }
 

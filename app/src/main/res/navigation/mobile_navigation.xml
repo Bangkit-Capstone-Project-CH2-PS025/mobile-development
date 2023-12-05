@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.itinergo.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_placeTodayFragment"
+            app:destination="@id/placeTodayFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_place"
@@ -27,4 +31,9 @@
         android:name="com.itinergo.ui.ProfileFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/placeTodayFragment"
+        android:name="com.itinergo.ui.PlaceTodayFragment"
+        android:label="fragment_place_today"
+        tools:layout="@layout/fragment_place_today" />
 </navigation>

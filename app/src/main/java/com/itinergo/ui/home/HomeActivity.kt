@@ -1,6 +1,7 @@
 package com.itinergo.ui.home
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -24,5 +25,6 @@ class HomeActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         navView.setupWithNavController(navController)
+
     }
 }
