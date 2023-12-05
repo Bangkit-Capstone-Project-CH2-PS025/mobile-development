@@ -13,7 +13,6 @@ import com.itinergo.databinding.ActivityLoginBinding
 import com.itinergo.ui.home.HomeActivity
 import com.itinergo.ui.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {

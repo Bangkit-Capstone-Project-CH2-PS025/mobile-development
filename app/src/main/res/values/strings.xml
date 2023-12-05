@@ -1,19 +1,21 @@
 <resources>
     <string name="app_name">Itinergo</string>
-    <string name="text_sign_in">Welcome\nExplorer!</string>
+    <string name="text_sign_in">Welcome</string>
+    <string name="text_sign_in2">Explorer!</string>
     <string name="email">Email</string>
     <string name="input_email">Input Email</string>
     <string name="input_username_or_email">Input Username or Email</string>
     <string name="password">Password</string>
     <string name="input_password">Input Password</string>
     <string name="login">Login</string>
-    <string name="belum_punya_akun">Don\'t have an account? <font color="#646464"> Sign Up</font></string>
+    <string name="belum_punya_akun">Don\'t have an account? <font color="#FD865B"> Sign Up</font></string>
     <string name="loginGoogle">login with google</string>
     <string name="name">Name</string>
     <string name="input_name">Input Name</string>
     <string name="register">Register</string>
-    <string name="text_register"> Create your\nAccount!</string>
-    <string name="sudah_punya_akun">Already Have account? <font color="#646464"> Sign In</font></string>
+    <string name="text_register"> Let\'s Start</string>
+    <string name="text_register2"> the journey!</string>
+    <string name="sudah_punya_akun">Already Have account? <font color="#FD865B"> Sign In</font></string>
     <string name="welcome">Welcome</string>
     <string name="text_splashscreen">Explore.\nInspire.</string>
     <string name="text_btn_splashscreen">Get Started</string>
@@ -40,4 +42,16 @@
     <string name="input_username">Input Username</string>
     <string name="done">Done</string>
     <string name="here_you_go">Here you go, Explorer!</string>
+    <string name="you_re_almost_here">You\'re almost there</string>
+    <string name="email_has_been_sent">A link has been sent to your email</string>
+    <string name="didn_t_receive_an_email">Didn\'t receive an email?</string>
+    <string name="check_email_spam">Check your email spam or junk files</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_place">Place</string>
+    <string name="title_saved_place">Saved Place</string>
+    <string name="title_account">Account</string>
+    <string name="description_place_today">Nestled in the heart of the North Halmahera Regency in Maluku, Indonesia, Tanjung Bongo awaits travelers seeking an untouched paradise. Often referred to as the “Miniature Raja Ampat,” the hidden gem offers a pristine natural experience that rivals its more famous counterpart. Tanjung Bongo is a symphony of islands scattered across the azure waters of the Indonesian archipelago. Each island contributes to the breathtaking panorama, adorned with lust greenery and surrounded by crystal-clear waters. The charm of Tanjung Bongo lies not only in its landscapes but in the serenity that envelops every corner.\n\nFurthermore, one cannot explore Tanjung Bongo without diving into its vibrant underwater world. The coral reefs here are a kaleidoscope of colors, home to a diverse array of marine life. Snorkeling or diving in these pristine waters reveals an underwater paradise where schools of fish dance around intricate coral formations.\n\nThe region’s unique ecosystem adds a layer of fascination to the experience. Rare species of flora and fauna thrive in the untouched landscapes, providing a haven for nature enthusiasts and wildlife lovers. The air is filled with the sweet fragrance of exotic flowers, creating an immersive experience for all senses.\n\nBeyond its natural wonders, Tanjung Bongo welcomes visitors with the warm hospitality of its local communities. Engaging with the local culture, tasting traditional cuisine, and participating in cultural activities provide a glimpse into the authentic Malukan way of life.</string>
 </resources>
