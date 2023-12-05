@@ -14,7 +14,6 @@ import com.itinergo.ui.forgot.ForgotPasswordFragment
 import com.itinergo.ui.home.HomeActivity
 import com.itinergo.ui.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
