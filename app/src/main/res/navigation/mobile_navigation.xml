@@ -12,14 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.itinergo.ui.home.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_place"
+        android:name="com.itinergo.ui.PlaceFragment"
+        android:label="@string/title_place"
+        tools:layout="@layout/fragment_place" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.itinergo.ui.home.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_saved_place"
+        android:name="com.itinergo.ui.SavedPlaceFragment"
+        android:label="@string/title_saved_place"
+        tools:layout="@layout/fragment_saved_place" />
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.itinergo.ui.ProfileFragment"
+        android:label="@string/title_account"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
