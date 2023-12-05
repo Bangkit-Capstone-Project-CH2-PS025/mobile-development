@@ -10,11 +10,13 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.itinergo.R
 import com.itinergo.databinding.FragmentPlanBinding
+import com.itinergo.utils.RecomendedButton
 
-class PlanFragment : BottomSheetDialogFragment(), View.OnClickListener {
+class PlanFragment : BottomSheetDialogFragment() {
     private var _binding: FragmentPlanBinding? = null
     private val binding get() = _binding!!
     private var isAdded: Boolean = false
+    private var selectedButtonCount = 0
     override fun onStart() {
         super.onStart()
         dialog!!.window
@@ -33,203 +35,232 @@ class PlanFragment : BottomSheetDialogFragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setIcon()
+//        setIcon()
         clickListeners()
 
     }
 
     private fun clickListeners() {
-        binding.btn.setOnClickListener(this)
-        binding.btn2.setOnClickListener(this)
-        binding.btn3.setOnClickListener(this)
-        binding.btn4.setOnClickListener(this)
-        binding.btn5.setOnClickListener(this)
-        binding.btn6.setOnClickListener(this)
-        binding.btn7.setOnClickListener(this)
-        binding.btn8.setOnClickListener(this)
+        binding.btn.setOnClickListener{onButtonClick(binding.btn)}
+        binding.btn2.setOnClickListener { onButtonClick(binding.btn2) }
+        binding.btn3.setOnClickListener{onButtonClick(binding.btn3)}
+        binding.btn4.setOnClickListener { onButtonClick(binding.btn4) }
+        binding.btn5.setOnClickListener { onButtonClick(binding.btn5) }
+        binding.btn6.setOnClickListener { onButtonClick(binding.btn6) }
+        binding.btn7.setOnClickListener { onButtonClick(binding.btn7) }
+        binding.btn8.setOnClickListener { onButtonClick(binding.btn8) }
     }
 
-    private fun setIcon() {
-        val initialDrawable =
-            ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-        binding.btn.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
-        binding.btn2.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
-        binding.btn3.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
-        binding.btn4.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
-        binding.btn5.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
-        binding.btn6.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
-        binding.btn7.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
-        binding.btn8.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
-    }
+    private fun onButtonClick(clickedButton: RecomendedButton) {
+        if (selectedButtonCount < 2){
+            clickedButton.isEnabled = !clickedButton.isEnabled
 
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.btn -> if (isAdded) {
-                val initialDrawable =
-                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-                binding.btn.setCompoundDrawablesWithIntrinsicBounds(
-                    null,
-                    null,
-                    initialDrawable,
-                    null
-                )
-            } else {
-                val newDrawable =
-                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
-                binding.btn.setCompoundDrawablesWithIntrinsicBounds(
-                    null,
-                    null,
-                    newDrawable,
-                    null
-                )
-            }
+            selectedButtonCount += if (clickedButton.isEnabled) 1 else -1
 
-            R.id.btn2 -> if (isAdded) {
-                val initialDrawable =
-                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-                binding.btn2.setCompoundDrawablesWithIntrinsicBounds(
-                    null,
-                    null,
-                    initialDrawable,
-                    null
-                )
-            } else {
-                val newDrawable =
-                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
-                binding.btn2.setCompoundDrawablesWithIntrinsicBounds(
-                    null,
-                    null,
-                    newDrawable,
-                    null
-                )
-            }
-
-            R.id.btn3 ->
-                if (isAdded) {
-                    val initialDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-                    binding.btn3.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        initialDrawable,
-                        null
-                    )
-                } else {
-                    val newDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
-                    binding.btn3.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        newDrawable,
-                        null
-                    )
-                }
-
-            R.id.btn4 ->
-                if (isAdded) {
-                    val initialDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-                    binding.btn4.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        initialDrawable,
-                        null
-                    )
-                } else {
-                    val newDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
-                    binding.btn4.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        newDrawable,
-                        null
-                    )
-                }
-
-            R.id.btn5 ->
-                if (isAdded) {
-                    val initialDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-                    binding.btn5.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        initialDrawable,
-                        null
-                    )
-                } else {
-                    val newDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
-                    binding.btn5.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        newDrawable,
-                        null
-                    )
-                }
-
-            R.id.btn6 ->
-                if (isAdded) {
-                    val initialDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-                    binding.btn6.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        initialDrawable,
-                        null
-                    )
-                } else {
-                    val newDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
-                    binding.btn6.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        newDrawable,
-                        null
-                    )
-                }
-
-            R.id.btn7 ->
-                if (isAdded) {
-                    val initialDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-                    binding.btn7.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        initialDrawable,
-                        null
-                    )
-                } else {
-                    val newDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
-                    binding.btn7.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        newDrawable,
-                        null
-                    )
-                }
-
-            R.id.btn8 ->
-                if (isAdded) {
-                    val initialDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
-                    binding.btn8.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        initialDrawable,
-                        null
-                    )
-                } else {
-                    val newDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
-                    binding.btn8.setCompoundDrawablesWithIntrinsicBounds(
-                        null,
-                        null,
-                        newDrawable,
-                        null
-                    )
-                }
+            disableOtherButtons(clickedButton)
         }
-        isAdded = !isAdded
+
     }
+    private fun disableOtherButtons(clickedButton: RecomendedButton) {
+        val buttons = listOf(
+            binding.btn,
+            binding.btn2,
+            binding.btn3,
+            binding.btn4,
+            binding.btn5,
+            binding.btn6,
+            binding.btn7,
+            binding.btn8)
+
+        for (button in buttons) {
+            if (button != clickedButton && button.isEnabled) {
+                button.isEnabled = false
+                selectedButtonCount++
+            }
+        }
+    }
+
+//    private fun setIcon() {
+//        val initialDrawable =
+//            ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//        binding.btn.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
+//        binding.btn2.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
+//        binding.btn3.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
+//        binding.btn4.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
+//        binding.btn5.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
+//        binding.btn6.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
+//        binding.btn7.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
+//        binding.btn8.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
+//    }
+
+//    override fun onClick(v: View?) {
+//        when (v?.id) {
+//            R.id.btn -> if (isAdded) {
+//                val initialDrawable =
+//                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//                binding.btn.setCompoundDrawablesWithIntrinsicBounds(
+//                    null,
+//                    null,
+//                    initialDrawable,
+//                    null
+//                )
+//            } else {
+//                val newDrawable =
+//                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
+//                binding.btn.setCompoundDrawablesWithIntrinsicBounds(
+//                    null,
+//                    null,
+//                    newDrawable,
+//                    null
+//                )
+//            }
+//
+//            R.id.btn2 -> if (isAdded) {
+//                val initialDrawable =
+//                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//                binding.btn2.setCompoundDrawablesWithIntrinsicBounds(
+//                    null,
+//                    null,
+//                    initialDrawable,
+//                    null
+//                )
+//            } else {
+//                val newDrawable =
+//                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
+//                binding.btn2.setCompoundDrawablesWithIntrinsicBounds(
+//                    null,
+//                    null,
+//                    newDrawable,
+//                    null
+//                )
+//            }
+//
+//            R.id.btn3 ->
+//                if (isAdded) {
+//                    val initialDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//                    binding.btn3.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        initialDrawable,
+//                        null
+//                    )
+//                } else {
+//                    val newDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
+//                    binding.btn3.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        newDrawable,
+//                        null
+//                    )
+//                }
+//
+//            R.id.btn4 ->
+//                if (isAdded) {
+//                    val initialDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//                    binding.btn4.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        initialDrawable,
+//                        null
+//                    )
+//                } else {
+//                    val newDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
+//                    binding.btn4.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        newDrawable,
+//                        null
+//                    )
+//                }
+//
+//            R.id.btn5 ->
+//                if (isAdded) {
+//                    val initialDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//                    binding.btn5.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        initialDrawable,
+//                        null
+//                    )
+//                } else {
+//                    val newDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
+//                    binding.btn5.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        newDrawable,
+//                        null
+//                    )
+//                }
+//
+//            R.id.btn6 ->
+//                if (isAdded) {
+//                    val initialDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//                    binding.btn6.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        initialDrawable,
+//                        null
+//                    )
+//                } else {
+//                    val newDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
+//                    binding.btn6.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        newDrawable,
+//                        null
+//                    )
+//                }
+//
+//            R.id.btn7 ->
+//                if (isAdded) {
+//                    val initialDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//                    binding.btn7.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        initialDrawable,
+//                        null
+//                    )
+//                } else {
+//                    val newDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
+//                    binding.btn7.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        newDrawable,
+//                        null
+//                    )
+//                }
+//
+//            R.id.btn8 ->
+//                if (isAdded) {
+//                    val initialDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+//                    binding.btn8.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        initialDrawable,
+//                        null
+//                    )
+//                } else {
+//                    val newDrawable =
+//                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_check_24)
+//                    binding.btn8.setCompoundDrawablesWithIntrinsicBounds(
+//                        null,
+//                        null,
+//                        newDrawable,
+//                        null
+//                    )
+//                }
+//        }
+//        isAdded = !isAdded
+//    }
 }

@@ -11,6 +11,7 @@ import com.itinergo.R
 class RecomendedButton : AppCompatButton {
 
     private lateinit var enabledBackground: Drawable
+    private lateinit var disabledBackground: Drawable
 
     constructor(context: Context) : super(context) {
         init()
@@ -30,11 +31,15 @@ class RecomendedButton : AppCompatButton {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        background = enabledBackground
+        background = if(isEnabled) enabledBackground else disabledBackground
     }
 
     private fun init() {
         enabledBackground =
             ContextCompat.getDrawable(context, R.drawable.bg_add_recomend_button) as Drawable
+        disabledBackground =
+            ContextCompat.getDrawable(context, R.drawable.bg_add_recomend_button_disabled) as Drawable
+
+
     }
 }

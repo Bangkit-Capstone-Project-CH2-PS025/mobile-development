@@ -32,6 +32,7 @@ class PrimaryButton : AppCompatButton {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         background = if (isEnabled) enabledBackground else disabledBackground
+
     }
 
     private fun init() {
