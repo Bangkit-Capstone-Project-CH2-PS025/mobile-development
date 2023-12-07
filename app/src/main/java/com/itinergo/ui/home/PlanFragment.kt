@@ -12,7 +12,7 @@ import com.itinergo.R
 import com.itinergo.databinding.FragmentPlanBinding
 import com.itinergo.utils.RecomendedButton
 
-class PlanFragment : BottomSheetDialogFragment(), View.OnClickListener {
+class PlanFragment : BottomSheetDialogFragment() {
     private var _binding: FragmentPlanBinding? = null
     private val binding get() = _binding!!
 
