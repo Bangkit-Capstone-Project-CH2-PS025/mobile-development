@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
     private fun setButton() {
         binding.etPreference.setOnClickListener {
             val dialogFragment = PlanFragment()
-            dialogFragment.show(childFragmentManager, "bottom-sheet")
+            dialogFragment.show(childFragmentManager, "bottomsheet")
         }
 
         binding.ivViewHome.setOnClickListener {
