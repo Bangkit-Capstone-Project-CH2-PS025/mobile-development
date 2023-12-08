@@ -28,7 +28,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setButton()
-
     }
 
     private fun setButton() {
@@ -36,9 +35,9 @@ class HomeFragment : Fragment() {
             val dialogFragment = PlanFragment()
             dialogFragment.show(childFragmentManager, "bottomsheet")
         }
+
         binding.ivViewHome.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_placeTodayFragment)
         }
     }
-
 }
