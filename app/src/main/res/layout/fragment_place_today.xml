@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="70dp"
-        android:fontFamily="@font/poppins_semibold"
+        android:fontFamily="@font/poppins_bold"
         android:text="Tanjung Bongo"
         android:textColor="@color/purple"
         android:textSize="24sp"
@@ -86,7 +86,6 @@
         android:drawableTint="@color/purple"
         android:fontFamily="@font/poppins_semibold"
         android:text="Maluku Utara, Maluku"
-        android:textColor="@color/peach"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@+id/imageView11"
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
@@ -100,7 +99,6 @@
         android:drawableStart="@drawable/baseline_monetization_on_24"
         android:drawableTint="@color/purple"
         android:drawablePadding="5dp"
-        android:textColor="@color/peach"
         android:fontFamily="@font/poppins_semibold"
         app:layout_constraintStart_toStartOf="@+id/tv_location_place_today"
         app:layout_constraintTop_toBottomOf="@+id/tv_location_place_today" />
