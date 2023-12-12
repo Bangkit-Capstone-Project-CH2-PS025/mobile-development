@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.FindTripFragment">
+
+
+    <TextView
+        android:id="@+id/find_trip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Find Trip"
+        android:fontFamily="@font/istok_web_bold"
+        android:textSize="16sp"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@+id/find_trip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/find_trip" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:boxBackgroundColor="#F2F2F2"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/find_trip">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_search_trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_search_24"
+            android:drawablePadding="5dp"
+            android:hint="Search" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Your Trip..."
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <ImageView
+        android:id="@+id/iv_add_list_ftrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_add_circle_outline_24"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_default"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toTopOf="@+id/tv_default" />
+
+    <TextView
+        android:id="@+id/tv_default10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Your Trip..."
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_ytrip"
+        android:layout_width="wrap_content"
+        android:layout_height="217dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_add_list_ftrip"
+        app:layout_constraintStart_toStartOf="@+id/tv_default"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default"
+        tools:listitem="@layout/your_trip_list_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tv_default11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/find_trip"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_default"
+        app:layout_constraintTop_toBottomOf="@+id/rv_ytrip" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_ftrip"
+        android:layout_width="356dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/iv_add_list_ftrip"
+        app:layout_constraintStart_toStartOf="@+id/tv_default11"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default11"
+        tools:listitem="@layout/find_trip_list_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
