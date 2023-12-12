@@ -63,6 +63,12 @@
     <string name="input_city">Input City</string>
     <string name="city">City</string>
     <string name="budget">Budget</string>
+    <string name="newbie">Newbie\n500XP</string>
+    <string name="seasonal">Seasonal\n1000XP</string>
+    <string name="traveller">Traveller\n2000XP</string>
+    <string name="explorer">Explorer\n3000XP</string>
+    <string name="points_xp">+50XP: Join a trip\n+100XP: Add new places\n+150XP: Finish a trip from saved itinerary</string>
+    <string name="logout">Log Out</string>
     <string name="add_new_place">Add a new place</string>
     <string name="country">Country</string>
     <string name="input_country">Input Country</string>
