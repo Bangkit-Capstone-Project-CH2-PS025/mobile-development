@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AddTripFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_default_add_trip"
+            android:layout_width="360dp"
+            android:layout_height="300dp"
+            android:src="@drawable/img_add_place"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_add_new_place"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/istok_web_bold"
+            android:gravity="center"
+            android:text="Find your trip's Friend"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_add_trip"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_add_trip"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_add_trip" />
+
+        <TextView
+            android:id="@+id/tv_city_add"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/add_place_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/city"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_add_new_place"
+            app:layout_constraintTop_toBottomOf="@+id/tv_add_new_place" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_city_add"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#f1f1f1"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:hint="@string/input_city"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_city_add"
+            app:layout_constraintEnd_toEndOf="@+id/tv_add_new_place"
+            app:layout_constraintStart_toEndOf="@+id/tv_city_add"
+            app:layout_constraintTop_toTopOf="@+id/tv_city_add" />
+
+        <TextView
+            android:id="@+id/tv_country_add"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/add_place_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/country"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_city_add"
+            app:layout_constraintStart_toStartOf="@+id/tv_city_add"
+            app:layout_constraintTop_toBottomOf="@+id/tv_city_add" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_country_add"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#f1f1f1"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:hint="@string/input_country"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_country_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_city_add"
+            app:layout_constraintStart_toEndOf="@+id/tv_country_add"
+            app:layout_constraintTop_toTopOf="@+id/tv_country_add" />
+
+        <TextView
+            android:id="@+id/tv_departure_add"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/add_place_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Departure"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_country_add"
+            app:layout_constraintStart_toStartOf="@+id/tv_country_add"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_add" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_departure_add"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#f1f1f1"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:hint="Input Departure"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_departure_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_country_add"
+            app:layout_constraintStart_toEndOf="@+id/tv_departure_add"
+            app:layout_constraintTop_toTopOf="@+id/tv_departure_add" />
+
+        <TextView
+            android:id="@+id/tv_until_add"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/add_place_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Until"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_departure_add"
+            app:layout_constraintStart_toStartOf="@+id/tv_departure_add"
+            app:layout_constraintTop_toBottomOf="@+id/tv_departure_add" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_until_add"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#f1f1f1"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:hint="Input Until"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_until_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_departure_add"
+            app:layout_constraintStart_toEndOf="@+id/tv_until_add"
+            app:layout_constraintTop_toTopOf="@+id/tv_until_add" />
+
+        <TextView
+            android:id="@+id/tv_persons_add"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/add_place_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Persons"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_until_add"
+            app:layout_constraintTop_toBottomOf="@+id/tv_until_add" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_persons_add"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#f1f1f1"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:hint="Input Persons"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_persons_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_until_add"
+            app:layout_constraintStart_toEndOf="@+id/tv_persons_add"
+            app:layout_constraintTop_toTopOf="@+id/tv_persons_add" />
+
+        <TextView
+            android:id="@+id/tv_contact_add"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/add_place_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Contact"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_persons_add"
+            app:layout_constraintTop_toBottomOf="@+id/tv_persons_add" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_contact_add"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#f1f1f1"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:hint="Input Contact"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_contact_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_until_add"
+            app:layout_constraintStart_toEndOf="@+id/tv_contact_add"
+            app:layout_constraintTop_toTopOf="@+id/tv_contact_add" />
+
+        <TextView
+            android:id="@+id/tv_image_add"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/add_place_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/image"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_contact_add"
+            app:layout_constraintTop_toBottomOf="@+id/tv_contact_add" />
+
+        <com.itinergo.utils.EditTextPlan
+            android:id="@+id/et_image_add"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#f1f1f1"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:hint="@string/input_image"
+            android:inputType="none"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_image_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_contact_add"
+            app:layout_constraintStart_toEndOf="@+id/tv_image_add"
+            app:layout_constraintTop_toTopOf="@+id/tv_image_add" />
+
+        <com.itinergo.utils.SecondaryButton
+            android:id="@+id/btn_upload_add_place"
+            android:layout_width="204dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/upload"
+            android:textColor="@color/purple"
+            app:layout_constraintEnd_toEndOf="@+id/et_image_add"
+            app:layout_constraintStart_toStartOf="@+id/tv_image_add"
+            app:layout_constraintTop_toBottomOf="@+id/et_image_add" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
