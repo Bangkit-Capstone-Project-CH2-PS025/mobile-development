@@ -24,7 +24,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView9"
         app:layout_constraintTop_toTopOf="@+id/imageView9"
         app:shapeAppearanceOverlay="@style/RoundedSquare"
-        app:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/monas" />
 
     <TextView
         android:id="@+id/textView22"
