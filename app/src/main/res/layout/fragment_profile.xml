@@ -1,14 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/iv_default_acc"
+        android:layout_width="347dp"
+        android:layout_height="414dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/account_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_account_profile"
+        android:layout_width="70dp"
+        android:layout_height="94dp"
+        android:src="@drawable/zoro"
+        app:layout_constraintEnd_toEndOf="@+id/iv_default_acc"
+        app:layout_constraintStart_toStartOf="@+id/iv_default_acc"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_acc" />
+
+    <TextView
+        android:id="@+id/tv_account_name"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:text="Roronoa Zoro"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:drawableEnd="@drawable/baseline_edit_24"
+        app:layout_constraintEnd_toEndOf="@+id/iv_account_profile"
+        app:layout_constraintStart_toStartOf="@+id/iv_account_profile"
+        app:layout_constraintTop_toBottomOf="@+id/iv_account_profile" />
+
+    <com.itinergo.utils.PrimaryButton
+        android:id="@+id/primaryButton2"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="the Traveller"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_account_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_account_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_account_name" />
+
+    <View
+        android:id="@+id/view_default"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_acc"
+        app:layout_constraintEnd_toEndOf="@+id/iv_default_acc"
+        app:layout_constraintStart_toStartOf="@+id/iv_default_acc"
+        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+
+    <ImageView
+        android:id="@+id/iv_bullet_acc1"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/bullet_plan"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_acc"
+        app:layout_constraintEnd_toEndOf="@+id/view_default"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/view_default"
+        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+
+    <ImageView
+        android:id="@+id/iv_bullet_acc2"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/bullet_plan"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_acc"
+        app:layout_constraintEnd_toEndOf="@+id/view_default"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/view_default"
+        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+
+    <ImageView
+        android:id="@+id/iv_bullet_acc3"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/bullet_plan"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_acc"
+        app:layout_constraintEnd_toEndOf="@+id/view_default"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/view_default"
+        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+
+    <ImageView
+        android:id="@+id/iv_bullet_acc4"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/bullet_plan"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_acc"
+        app:layout_constraintEnd_toEndOf="@+id/view_default"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@+id/view_default"
+        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+
+    <TextView
+        android:id="@+id/tv_default_newbie_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="@string/newbie"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_bullet_acc1"
+        app:layout_constraintEnd_toEndOf="@+id/iv_bullet_acc1"
+        app:layout_constraintStart_toStartOf="@+id/iv_bullet_acc1"
+        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+
+    <TextView
+        android:id="@+id/tv_default_seasonal_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/seasonal"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_acc"
+        app:layout_constraintEnd_toEndOf="@+id/iv_bullet_acc2"
+        app:layout_constraintStart_toStartOf="@+id/iv_bullet_acc2"
+        app:layout_constraintTop_toBottomOf="@+id/view_default" />
+
+    <TextView
+        android:id="@+id/tv_default_traveller_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="@string/traveller"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_bullet_acc3"
+        app:layout_constraintEnd_toEndOf="@+id/iv_bullet_acc3"
+        app:layout_constraintStart_toStartOf="@+id/iv_bullet_acc3"
+        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+    <TextView
+        android:id="@+id/tv_default_explorer_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/explorer"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_acc"
+        app:layout_constraintEnd_toEndOf="@+id/iv_bullet_acc4"
+        app:layout_constraintStart_toStartOf="@+id/iv_bullet_acc4"
+        app:layout_constraintTop_toBottomOf="@+id/view_default" />
+
+    <TextView
+        android:id="@+id/tv_default_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/email"
+        android:textColor="@color/purple"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/iv_default_acc"
+        app:layout_constraintTop_toBottomOf="@+id/iv_default_acc" />
+
+    <TextView
+        android:id="@+id/tv_account_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="roronoazoro@gmail.com"
+        android:fontFamily="@font/poppins"
+        android:drawableEnd="@drawable/baseline_edit_24"
+        app:layout_constraintEnd_toEndOf="@+id/iv_default_acc"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_email"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_email" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
