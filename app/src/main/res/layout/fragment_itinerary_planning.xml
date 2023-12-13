@@ -1,367 +1,373 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="HardcodedText, ContentDescription, SmallSp">
 
-    <TextView
-        android:id="@+id/tv_default_plan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/here_you_go"
-        android:textColor="@color/purple"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_budget_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="With your IDR 300.000 budget for 5 days trip"
-        android:fontFamily="@font/poppins"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_plan"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_plan" />
+        <TextView
+            android:id="@+id/tv_default_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/here_you_go"
+            android:textColor="@color/purple"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_place_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="We got you 6 places in Bali!"
-        android:fontFamily="@font/poppins"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_budget_result"
-        app:layout_constraintTop_toBottomOf="@+id/tv_budget_result" />
+        <TextView
+            android:id="@+id/tv_budget_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="With your IDR 300.000 budget for 5 days trip"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_default_plan"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_plan" />
 
-    <ImageView
-        android:id="@+id/iv_default_bg_plan"
-        android:layout_width="310dp"
-        android:layout_height="100dp"
-        android:src="@drawable/planning_bg"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_day1_plan"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_day1_plan" />
+        <TextView
+            android:id="@+id/tv_place_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="We got you 6 places in Bali!"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_budget_result"
+            app:layout_constraintTop_toBottomOf="@+id/tv_budget_result" />
 
-    <View
-        android:layout_width="2dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/purple"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan2"
-        app:layout_constraintEnd_toStartOf="@+id/iv_default_bg_plan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_default_day1_plan" />
+        <ImageView
+            android:id="@+id/iv_default_bg_plan"
+            android:layout_width="310dp"
+            android:layout_height="100dp"
+            android:src="@drawable/planning_bg"
+            app:layout_constraintStart_toStartOf="@+id/tv_default_day1_plan"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_day1_plan" />
 
-    <ImageView
-        android:id="@+id/iv_bullet_plan"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_default_day1_plan"
-        app:layout_constraintEnd_toStartOf="@+id/tv_default_day1_plan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_default_day1_plan" />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/purple"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan2"
+            app:layout_constraintEnd_toStartOf="@+id/iv_default_bg_plan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_default_day1_plan" />
 
-    <ImageView
-        android:id="@+id/iv_bullet_plan1"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_default_day2_plan"
-        app:layout_constraintEnd_toStartOf="@+id/tv_default_day2_plan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_default_day2_plan" />
+        <ImageView
+            android:id="@+id/iv_bullet_plan"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/bullet_plan"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_default_day1_plan"
+            app:layout_constraintEnd_toStartOf="@+id/tv_default_day1_plan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_default_day1_plan" />
 
-    <ImageView
-        android:id="@+id/iv_bullet_plan2"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_default_day3_plan"
-        app:layout_constraintEnd_toStartOf="@+id/tv_default_day3_plan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_default_day3_plan" />
+        <ImageView
+            android:id="@+id/iv_bullet_plan1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/bullet_plan"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_default_day2_plan"
+            app:layout_constraintEnd_toStartOf="@+id/tv_default_day2_plan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_default_day2_plan" />
 
-    <TextView
-        android:id="@+id/tv_default_day1_plan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Day 1"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_place_result"
-        app:layout_constraintTop_toBottomOf="@+id/tv_place_result" />
+        <ImageView
+            android:id="@+id/iv_bullet_plan2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/bullet_plan"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_default_day3_plan"
+            app:layout_constraintEnd_toStartOf="@+id/tv_default_day3_plan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_default_day3_plan" />
 
-    <ImageView
-        android:id="@+id/iv_default_bg_plan1"
-        android:layout_width="310dp"
-        android:layout_height="100dp"
-        android:src="@drawable/planning_bg"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_day2_plan" />
+        <TextView
+            android:id="@+id/tv_default_day1_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Day 1"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_place_result"
+            app:layout_constraintTop_toBottomOf="@+id/tv_place_result" />
 
-    <TextView
-        android:id="@+id/tv_default_day2_plan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Day 2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan" />
+        <ImageView
+            android:id="@+id/iv_default_bg_plan1"
+            android:layout_width="310dp"
+            android:layout_height="100dp"
+            android:src="@drawable/planning_bg"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_day2_plan" />
 
-    <ImageView
-        android:id="@+id/iv_default_bg_plan2"
-        android:layout_width="310dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/planning_bg"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_day3_plan"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_day3_plan" />
+        <TextView
+            android:id="@+id/tv_default_day2_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Day 2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan" />
 
-    <TextView
-        android:id="@+id/tv_default_day3_plan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Day 3"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan1"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan1" />
+        <ImageView
+            android:id="@+id/iv_default_bg_plan2"
+            android:layout_width="310dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/planning_bg"
+            app:layout_constraintStart_toStartOf="@+id/tv_default_day3_plan"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_day3_plan" />
 
-    <ImageView
-        android:id="@+id/iv_default_bg_plan3"
-        android:layout_width="366dp"
-        android:layout_height="132dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/available_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan2" />
+        <TextView
+            android:id="@+id/tv_default_day3_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Day 3"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan1"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan1" />
 
-    <ImageView
-        android:id="@+id/iv_default_bg_plan4"
-        android:layout_width="102dp"
-        android:layout_height="108dp"
-        android:src="@drawable/bg_distance"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan3"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan3"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan3" />
+        <ImageView
+            android:id="@+id/iv_default_bg_plan3"
+            android:layout_width="366dp"
+            android:layout_height="132dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/available_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan2" />
 
-    <TextView
-        android:id="@+id/tv_distance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="6 Km"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="24sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan4"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan4"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan4"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan4"
-        app:layout_constraintVertical_bias="0.8" />
+        <ImageView
+            android:id="@+id/iv_default_bg_plan4"
+            android:layout_width="102dp"
+            android:layout_height="108dp"
+            android:src="@drawable/bg_distance"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan3"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan3"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan3" />
 
-    <TextView
-        android:id="@+id/tv_default_distance1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Travel Distance"
-        android:fontFamily="@font/poppins_semibold"
-        android:textSize="10sp"
-        android:textColor="@color/white"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/tv_distance"
-        app:layout_constraintEnd_toEndOf="@+id/tv_distance"
-        app:layout_constraintStart_toStartOf="@+id/tv_distance"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan4" />
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="6 Km"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan4"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan4"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan4"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan4"
+            app:layout_constraintVertical_bias="0.8" />
 
-    <TextView
-        android:id="@+id/tv_default_available1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Available Transportation"
-        android:textColor="@color/purple"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
-        app:layout_constraintStart_toEndOf="@+id/iv_default_bg_plan4"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan3" />
+        <TextView
+            android:id="@+id/tv_default_distance1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="Travel Distance"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_distance"
+            app:layout_constraintEnd_toEndOf="@+id/tv_distance"
+            app:layout_constraintStart_toStartOf="@+id/tv_distance"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan4" />
 
-    <ImageView
-        android:id="@+id/iv_default_bg_plan5"
-        android:layout_width="220dp"
-        android:layout_height="94dp"
-        android:src="@drawable/bg_transportation"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toEndOf="@+id/iv_default_bg_plan4"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
+        <TextView
+            android:id="@+id/tv_default_available1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Available Transportation"
+            android:textColor="@color/purple"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
+            app:layout_constraintStart_toEndOf="@+id/iv_default_bg_plan4"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan3" />
 
-    <ImageView
-        android:id="@+id/iv_transport1"
-        android:layout_width="25dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="24dp"
-        android:src="@drawable/bus"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan5"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
+        <ImageView
+            android:id="@+id/iv_default_bg_plan5"
+            android:layout_width="220dp"
+            android:layout_height="94dp"
+            android:src="@drawable/bg_transportation"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toEndOf="@+id/iv_default_bg_plan4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
 
-    <TextView
-        android:id="@+id/tv_transport_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro_semibold"
-        android:text="Trans Metro Dewata"
-        android:textColor="@color/purple"
-        android:gravity="center"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_transport1"
-        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost"
-        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
+        <ImageView
+            android:id="@+id/iv_transport1"
+            android:layout_width="25dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/bus"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan5"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
 
-    <TextView
-        android:id="@+id/tv_transport_cost"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro"
-        android:text="-Rp. 5000"
-        android:textSize="10sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="@+id/iv_transport1"
-        app:layout_constraintStart_toStartOf="@+id/iv_transport1"
-        app:layout_constraintTop_toBottomOf="@+id/iv_transport1" />
+        <TextView
+            android:id="@+id/tv_transport_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:gravity="center"
+            android:text="Trans Metro Dewata"
+            android:textColor="@color/purple"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_transport1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost"
+            app:layout_constraintStart_toStartOf="@+id/tv_transport_cost"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
 
-    <TextView
-        android:id="@+id/tv_transport_carbon"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro_bold"
-        android:text="15kg CO2"
-        android:textSize="8sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost"
-        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost"
-        app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost" />
+        <TextView
+            android:id="@+id/tv_transport_cost"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro"
+            android:gravity="center"
+            android:text="-Rp. 5000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_transport1"
+            app:layout_constraintStart_toStartOf="@+id/iv_transport1"
+            app:layout_constraintTop_toBottomOf="@+id/iv_transport1" />
 
-    <ImageView
-        android:id="@+id/iv_transport2"
-        android:layout_width="25dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="45dp"
-        android:src="@drawable/motocycle"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
-        app:layout_constraintStart_toEndOf="@+id/iv_transport1"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
+        <TextView
+            android:id="@+id/tv_transport_carbon"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:gravity="center"
+            android:text="15kg CO2"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost"
+            app:layout_constraintStart_toStartOf="@+id/tv_transport_cost"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost" />
 
-    <TextView
-        android:id="@+id/tv_transport_name1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro_semibold"
-        android:gravity="center"
-        android:text="Ojek Online"
-        android:textColor="@color/purple"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_transport2"
-        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost1"
-        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost1"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
+        <ImageView
+            android:id="@+id/iv_transport2"
+            android:layout_width="25dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="45dp"
+            android:src="@drawable/motocycle"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
+            app:layout_constraintStart_toEndOf="@+id/iv_transport1"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
 
-    <TextView
-        android:id="@+id/tv_transport_cost1"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro"
-        android:gravity="center"
-        android:text="-Rp. 16.000"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_transport2"
-        app:layout_constraintStart_toStartOf="@+id/iv_transport2"
-        app:layout_constraintTop_toBottomOf="@+id/iv_transport2" />
+        <TextView
+            android:id="@+id/tv_transport_name1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:gravity="center"
+            android:text="Ojek Online"
+            android:textColor="@color/purple"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_transport2"
+            app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost1"
+            app:layout_constraintStart_toStartOf="@+id/tv_transport_cost1"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
 
-    <TextView
-        android:id="@+id/tv_transport_carbon1"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro_bold"
-        android:gravity="center"
-        android:text="15kg CO2"
-        android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost1"
-        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost1" />
+        <TextView
+            android:id="@+id/tv_transport_cost1"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro"
+            android:gravity="center"
+            android:text="-Rp. 16.000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_transport2"
+            app:layout_constraintStart_toStartOf="@+id/iv_transport2"
+            app:layout_constraintTop_toBottomOf="@+id/iv_transport2" />
 
-    <ImageView
-        android:id="@+id/iv_transport3"
-        android:layout_width="25dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="45dp"
-        android:src="@drawable/car"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
-        app:layout_constraintStart_toEndOf="@+id/iv_transport2"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
+        <TextView
+            android:id="@+id/tv_transport_carbon1"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:gravity="center"
+            android:text="15kg CO2"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost1"
+            app:layout_constraintStart_toStartOf="@+id/tv_transport_cost1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost1" />
 
-    <TextView
-        android:id="@+id/tv_transport_name2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro_semibold"
-        android:gravity="center"
-        android:text="Taxi"
-        android:textColor="@color/purple"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_transport3"
-        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost2"
-        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost2"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
+        <ImageView
+            android:id="@+id/iv_transport3"
+            android:layout_width="25dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="45dp"
+            android:src="@drawable/car"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
+            app:layout_constraintStart_toEndOf="@+id/iv_transport2"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
 
-    <TextView
-        android:id="@+id/tv_transport_cost2"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro"
-        android:gravity="center"
-        android:text="-Rp. 16.000"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_transport3"
-        app:layout_constraintStart_toStartOf="@+id/iv_transport3"
-        app:layout_constraintTop_toBottomOf="@+id/iv_transport3" />
+        <TextView
+            android:id="@+id/tv_transport_name2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:gravity="center"
+            android:text="Taxi"
+            android:textColor="@color/purple"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_transport3"
+            app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost2"
+            app:layout_constraintStart_toStartOf="@+id/tv_transport_cost2"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
 
-    <TextView
-        android:id="@+id/tv_transport_carbon2"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/source_sans_pro_bold"
-        android:gravity="center"
-        android:text="15kg CO2"
-        android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost2"
-        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost1" />
+        <TextView
+            android:id="@+id/tv_transport_cost2"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro"
+            android:gravity="center"
+            android:text="-Rp. 16.000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_transport3"
+            app:layout_constraintStart_toStartOf="@+id/iv_transport3"
+            app:layout_constraintTop_toBottomOf="@+id/iv_transport3" />
 
-    <com.itinergo.utils.SecondaryButton
-        android:id="@+id/btn_save_plan"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Save"
-        android:textColor="@color/purple"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan3"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan3" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_transport_carbon2"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:gravity="center"
+            android:text="15kg CO2"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost2"
+            app:layout_constraintStart_toStartOf="@+id/tv_transport_cost2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost1" />
+
+        <com.itinergo.utils.SecondaryButton
+            android:id="@+id/btn_save_plan"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Save"
+            android:textColor="@color/purple"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan3"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
