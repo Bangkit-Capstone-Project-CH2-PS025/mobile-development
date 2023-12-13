@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.planning.ItineraryPlanningActivity">
+    tools:ignore="HardcodedText, ContentDescription, SmallSp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_default_plan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -19,75 +19,75 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_budget_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="With your IDR 300.000 budget for 5 days trip"
         android:fontFamily="@font/poppins"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/tv_default_plan"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_plan" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_place_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="We got you 6 places in Bali!"
         android:fontFamily="@font/poppins"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="@+id/tv_budget_result"
+        app:layout_constraintTop_toBottomOf="@+id/tv_budget_result" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_default_bg_plan"
         android:layout_width="310dp"
         android:layout_height="100dp"
         android:src="@drawable/planning_bg"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="@+id/tv_default_day1_plan"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_day1_plan" />
 
     <View
         android:layout_width="2dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:background="@color/purple"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan2"
+        app:layout_constraintEnd_toStartOf="@+id/iv_default_bg_plan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="@+id/tv_default_day1_plan" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/iv_bullet_plan"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_default_day1_plan"
+        app:layout_constraintEnd_toStartOf="@+id/tv_default_day1_plan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="@+id/tv_default_day1_plan" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/iv_bullet_plan1"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_default_day2_plan"
+        app:layout_constraintEnd_toStartOf="@+id/tv_default_day2_plan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
+        app:layout_constraintTop_toTopOf="@+id/tv_default_day2_plan" />
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/iv_bullet_plan2"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/textView12"
-        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_default_day3_plan"
+        app:layout_constraintEnd_toStartOf="@+id/tv_default_day3_plan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView12" />
+        app:layout_constraintTop_toTopOf="@+id/tv_default_day3_plan" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_default_day1_plan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -95,84 +95,85 @@
         android:fontFamily="@font/poppins_bold"
         android:text="Day 1"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="@+id/tv_place_result"
+        app:layout_constraintTop_toBottomOf="@+id/tv_place_result" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/iv_default_bg_plan1"
         android:layout_width="310dp"
         android:layout_height="100dp"
         android:src="@drawable/planning_bg"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_day2_plan" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tv_default_day2_plan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Day 2"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan"
+        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/iv_default_bg_plan2"
         android:layout_width="310dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/planning_bg"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintStart_toStartOf="@+id/tv_default_day3_plan"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_day3_plan" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tv_default_day3_plan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Day 3"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan1"
+        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan1" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/iv_default_bg_plan3"
         android:layout_width="366dp"
         android:layout_height="132dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/available_bg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan2" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/iv_default_bg_plan4"
         android:layout_width="102dp"
         android:layout_height="108dp"
         android:src="@drawable/bg_distance"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan3"
+        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
         app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan3"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan3" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/tv_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="6 Km"
         android:fontFamily="@font/poppins_bold"
         android:textSize="24sp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-        app:layout_constraintEnd_toEndOf="@+id/imageView13"
-        app:layout_constraintStart_toStartOf="@+id/imageView13"
-        app:layout_constraintTop_toTopOf="@+id/imageView13"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan4"
+        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan4"
+        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan4"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan4"
         app:layout_constraintVertical_bias="0.8" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/tv_default_distance1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Travel Distance"
@@ -180,13 +181,13 @@
         android:textSize="10sp"
         android:textColor="@color/white"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView20"
-        app:layout_constraintEnd_toEndOf="@+id/textView20"
-        app:layout_constraintStart_toStartOf="@+id/textView20"
-        app:layout_constraintTop_toTopOf="@+id/imageView13" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_distance"
+        app:layout_constraintEnd_toEndOf="@+id/tv_distance"
+        app:layout_constraintStart_toStartOf="@+id/tv_distance"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan4" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tv_default_available1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -194,32 +195,32 @@
         android:text="Available Transportation"
         android:textColor="@color/purple"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView13"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
+        app:layout_constraintStart_toEndOf="@+id/iv_default_bg_plan4"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan3" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/iv_default_bg_plan5"
         android:layout_width="220dp"
         android:layout_height="94dp"
         android:src="@drawable/bg_transportation"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
         app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toEndOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintStart_toEndOf="@+id/iv_default_bg_plan4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/iv_transport1"
         android:layout_width="25dp"
         android:layout_height="19dp"
         android:layout_marginStart="24dp"
         android:src="@drawable/bus"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-        app:layout_constraintStart_toStartOf="@+id/imageView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
+        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan5"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_transport_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro_semibold"
@@ -227,47 +228,47 @@
         android:textColor="@color/purple"
         android:gravity="center"
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView15"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintBottom_toTopOf="@+id/iv_transport1"
+        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost"
+        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_available1" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_transport_cost"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro"
         android:text="-Rp. 5000"
         android:textSize="10sp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="@+id/imageView15"
-        app:layout_constraintStart_toStartOf="@+id/imageView15"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_transport1"
+        app:layout_constraintStart_toStartOf="@+id/iv_transport1"
+        app:layout_constraintTop_toBottomOf="@+id/iv_transport1" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tv_transport_carbon"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro_bold"
         android:text="15kg CO2"
         android:textSize="8sp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost"
+        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost"
+        app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost" />
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/iv_transport2"
         android:layout_width="25dp"
         android:layout_height="19dp"
         android:layout_marginStart="45dp"
         android:src="@drawable/motocycle"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-        app:layout_constraintStart_toEndOf="@+id/imageView15"
-        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
+        app:layout_constraintStart_toEndOf="@+id/iv_transport1"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_transport_name1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro_semibold"
@@ -275,47 +276,47 @@
         android:text="Ojek Online"
         android:textColor="@color/purple"
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView16"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+        app:layout_constraintBottom_toTopOf="@+id/iv_transport2"
+        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost1"
+        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost1"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tv_transport_cost1"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro"
         android:gravity="center"
         android:text="-Rp. 16.000"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView16"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_transport2"
+        app:layout_constraintStart_toStartOf="@+id/iv_transport2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_transport2" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_transport_carbon1"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro_bold"
         android:gravity="center"
         android:text="15kg CO2"
         android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost1"
+        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost1" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/iv_transport3"
         android:layout_width="25dp"
         android:layout_height="19dp"
         android:layout_marginStart="45dp"
-        android:src="@drawable/motocycle"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-        app:layout_constraintStart_toEndOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+        android:src="@drawable/car"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_plan5"
+        app:layout_constraintStart_toEndOf="@+id/iv_transport2"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tv_transport_name2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro_semibold"
@@ -323,44 +324,44 @@
         android:text="Taxi"
         android:textColor="@color/purple"
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView17"
-        app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+        app:layout_constraintBottom_toTopOf="@+id/iv_transport3"
+        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost2"
+        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost2"
+        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan5" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/tv_transport_cost2"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro"
         android:gravity="center"
         android:text="-Rp. 16.000"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView17"
-        app:layout_constraintStart_toStartOf="@+id/imageView17"
-        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_transport3"
+        app:layout_constraintStart_toStartOf="@+id/iv_transport3"
+        app:layout_constraintTop_toBottomOf="@+id/iv_transport3" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/tv_transport_carbon2"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro_bold"
         android:gravity="center"
         android:text="15kg CO2"
         android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_transport_cost2"
+        app:layout_constraintStart_toStartOf="@+id/tv_transport_cost2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_transport_cost1" />
 
     <com.itinergo.utils.SecondaryButton
-        android:id="@+id/secondaryButton"
+        android:id="@+id/btn_save_plan"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Save"
         android:textColor="@color/purple"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
+        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan3"
+        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
