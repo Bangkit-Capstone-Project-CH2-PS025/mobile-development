@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_detail_saved_place"
-    tools:context=".ui.DetailSavedPlaceFragment"
+    tools:context=".ui.savedplace.DetailSavedPlaceFragment"
     tools:ignore="SmallSp,HardcodedText,ContentDescription">
 
 

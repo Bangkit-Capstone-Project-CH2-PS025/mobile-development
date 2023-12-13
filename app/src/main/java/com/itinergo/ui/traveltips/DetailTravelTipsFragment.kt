@@ -1,4 +1,4 @@
-package com.itinergo.ui
+package com.itinergo.ui.traveltips
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

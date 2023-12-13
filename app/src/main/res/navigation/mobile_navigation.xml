@@ -17,23 +17,23 @@
 
     <fragment
         android:id="@+id/navigation_place"
-        android:name="com.itinergo.ui.PlaceFragment"
+        android:name="com.itinergo.ui.place.PlaceFragment"
         android:label="@string/title_place"
         tools:layout="@layout/fragment_place" />
 
     <fragment
         android:id="@+id/navigation_saved_place"
-        android:name="com.itinergo.ui.SavedPlaceFragment"
+        android:name="com.itinergo.ui.savedplace.SavedPlaceFragment"
         android:label="@string/title_saved_place"
         tools:layout="@layout/fragment_saved_place" />
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.itinergo.ui.ProfileFragment"
+        android:name="com.itinergo.ui.account.ProfileFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/placeTodayFragment"
-        android:name="com.itinergo.ui.PlaceTodayFragment"
+        android:name="com.itinergo.ui.home.PlaceTodayFragment"
         android:label="fragment_place_today"
         tools:layout="@layout/fragment_place_today" />
 </navigation>

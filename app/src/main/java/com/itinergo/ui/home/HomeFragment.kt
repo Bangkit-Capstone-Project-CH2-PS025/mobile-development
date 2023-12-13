@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itinergo.R
 import com.itinergo.databinding.FragmentHomeBinding
-import com.itinergo.ui.PlaceTodayFragment
 
 
 class HomeFragment : Fragment() {
