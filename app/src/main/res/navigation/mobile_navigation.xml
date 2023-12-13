@@ -13,27 +13,160 @@
         <action
             android:id="@+id/action_navigation_home_to_placeTodayFragment"
             app:destination="@id/placeTodayFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_itineraryPlanningFragment2"
+            app:destination="@id/itineraryPlanningFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_travelTipsFragment"
+            app:destination="@id/travelTipsFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_findTripFragment"
+            app:destination="@id/findTripFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_place"
         android:name="com.itinergo.ui.place.PlaceFragment"
         android:label="@string/title_place"
-        tools:layout="@layout/fragment_place" />
+        tools:layout="@layout/fragment_place" >
+        <action
+            android:id="@+id/action_navigation_place_to_addPlaceFragment"
+            app:destination="@id/addPlaceFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_saved_place"
         android:name="com.itinergo.ui.savedplace.SavedPlaceFragment"
         android:label="@string/title_saved_place"
-        tools:layout="@layout/fragment_saved_place" />
+        tools:layout="@layout/fragment_saved_place" >
+        <action
+            android:id="@+id/action_navigation_saved_place_to_detailSavedPlaceFragment"
+            app:destination="@id/detailSavedPlaceFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_account"
         android:name="com.itinergo.ui.account.ProfileFragment"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_account_to_detailProfileFragment"
+            app:destination="@id/detailProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/placeTodayFragment"
         android:name="com.itinergo.ui.home.PlaceTodayFragment"
         android:label="fragment_place_today"
         tools:layout="@layout/fragment_place_today" />
+
+    <fragment
+        android:id="@+id/voilaHomeFragment"
+        android:name="com.itinergo.ui.home.VoilaHomeFragment"
+        android:label="fragment_voila_home"
+        tools:layout="@layout/fragment_voila_home" >
+        <action
+            android:id="@+id/action_voilaHomeFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/itineraryPlanningFragment"
+        android:name="com.itinergo.ui.home.ItineraryPlanningFragment"
+        android:label="fragment_itinerary_planning"
+        tools:layout="@layout/fragment_itinerary_planning" >
+        <action
+            android:id="@+id/action_itineraryPlanningFragment_to_voilaHomeFragment"
+            app:destination="@id/voilaHomeFragment" />
+        <action
+            android:id="@+id/action_itineraryPlanningFragment_to_placeTodayFragment2"
+            app:destination="@id/placeTodayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlaceFragment"
+        android:name="com.itinergo.ui.place.AddPlaceFragment"
+        android:label="fragment_add_place"
+        tools:layout="@layout/fragment_add_place" >
+        <action
+            android:id="@+id/action_addPlaceFragment_to_voilaPlaceFragment"
+            app:destination="@id/voilaPlaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/voilaPlaceFragment"
+        android:name="com.itinergo.ui.place.VoilaPlaceFragment"
+        android:label="fragment_voila_place"
+        tools:layout="@layout/fragment_voila_place" >
+        <action
+            android:id="@+id/action_voilaPlaceFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailSavedPlaceFragment"
+        android:name="com.itinergo.ui.savedplace.DetailSavedPlaceFragment"
+        android:label="fragment_detail_saved_place"
+        tools:layout="@layout/fragment_detail_saved_place" >
+        <action
+            android:id="@+id/action_detailSavedPlaceFragment_to_placeTodayFragment"
+            app:destination="@id/placeTodayFragment" />
+        <action
+            android:id="@+id/action_detailSavedPlaceFragment_to_voilaSavedPlaceFragment"
+            app:destination="@id/voilaSavedPlaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/voilaSavedPlaceFragment"
+        android:name="com.itinergo.ui.savedplace.VoilaSavedPlaceFragment"
+        android:label="VoilaSavedPlaceFragment"
+        tools:layout="@layout/fragment_voila_saved_place">
+        <action
+            android:id="@+id/action_voilaSavedPlaceFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailProfileFragment"
+        android:name="com.itinergo.ui.account.DetailProfileFragment"
+        android:label="fragment_detail_profile"
+        tools:layout="@layout/fragment_detail_profile" >
+        <action
+            android:id="@+id/action_detailProfileFragment_to_navigation_account"
+            app:destination="@id/navigation_account" />
+    </fragment>
+    <fragment
+        android:id="@+id/travelTipsFragment"
+        android:name="com.itinergo.ui.traveltips.TravelTipsFragment"
+        android:label="fragment_travel_tips"
+        tools:layout="@layout/fragment_travel_tips" >
+        <action
+            android:id="@+id/action_travelTipsFragment_to_detailTravelTipsFragment"
+            app:destination="@id/detailTravelTipsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTravelTipsFragment"
+        android:name="com.itinergo.ui.traveltips.DetailTravelTipsFragment"
+        android:label="fragment_detail_travel_tips"
+        tools:layout="@layout/fragment_detail_travel_tips" />
+    <fragment
+        android:id="@+id/findTripFragment"
+        android:name="com.itinergo.ui.findtrip.FindTripFragment"
+        android:label="fragment_find_trip"
+        tools:layout="@layout/fragment_find_trip" >
+        <action
+            android:id="@+id/action_findTripFragment_to_addTripFragment"
+            app:destination="@id/addTripFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTripFragment"
+        android:name="com.itinergo.ui.findtrip.AddTripFragment"
+        android:label="fragment_add_trip"
+        tools:layout="@layout/fragment_add_trip" >
+        <action
+            android:id="@+id/action_addTripFragment_to_voilaFtripFragment"
+            app:destination="@id/voilaFtripFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/voilaFtripFragment"
+        android:name="com.itinergo.ui.findtrip.VoilaFtripFragment"
+        android:label="VoilaFtripFragment"
+        tools:layout="@layout/fragment_voila_ftrip">
+        <action
+            android:id="@+id/action_voilaFtripFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 </navigation>
