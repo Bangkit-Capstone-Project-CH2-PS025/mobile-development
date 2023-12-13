@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
 import com.itinergo.databinding.FragmentDetailSavedPlaceBinding
 import com.itinergo.databinding.FragmentSavedPlaceBinding
@@ -27,6 +28,8 @@ class DetailSavedPlaceFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setButton()
+        val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        navbar?.visibility = View.GONE
     }
 
     private fun setButton() {

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
 import com.itinergo.databinding.FragmentVoilaHomeBinding
 
@@ -24,6 +25,8 @@ class VoilaHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        navbar?.visibility = View.GONE
         setButton()
     }
 
