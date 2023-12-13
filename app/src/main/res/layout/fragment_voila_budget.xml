@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ui.verification.VerificationActivity">
-
+    tools:context=".ui.VoilaHomeFragment"
+    tools:ignore="HardcodedText, ContentDescription">
 
     <ImageView
         android:id="@+id/splashscreen_bg2"
@@ -30,98 +30,85 @@
         app:layout_constraintTop_toTopOf="@+id/splashscreen_bg2" />
 
     <ImageView
-        android:id="@+id/iv_default_verif"
-        android:layout_width="224dp"
-        android:layout_height="206dp"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/ic_mailbox"
+        android:id="@+id/iv_default_voila_ftrip"
+        android:layout_width="308dp"
+        android:layout_height="247dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_voila_ftrip"
         app:layout_constraintEnd_toEndOf="@+id/iv_default_bg"
         app:layout_constraintStart_toStartOf="@+id/iv_default_bg"
         app:layout_constraintTop_toTopOf="@+id/iv_default_bg" />
 
     <TextView
-        android:id="@+id/tv_default_verif"
+        android:id="@+id/tv_default_voila_ftrip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/you_re_almost_here"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Voila!\n+50XP"
         android:textColor="@color/purple"
-        android:fontFamily="@font/poppins_medium"
-        android:textSize="24sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_default_bg"
         app:layout_constraintStart_toStartOf="@+id/iv_default_bg"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_verif" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_default_voila_ftrip" />
 
     <TextView
-        android:id="@+id/tv_default_verif1"
+        android:id="@+id/tv_default_voila_ftrip1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
-        android:text="@string/email_has_been_sent"
+        android:text="You joined a new trip"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_default_verif"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_verif"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_verif" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_ftrip"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_ftrip"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_ftrip" />
 
     <TextView
-        android:id="@+id/tv_email_user"
+        android:id="@+id/tv_default_voila_ftrip2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="angelika@itinergo.com"
-        android:fontFamily="@font/poppins_semibold"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_default_verif1"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_verif1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_verif1" />
-
-    <TextView
-        android:id="@+id/tv_default_verif2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/didn_t_receive_an_email"
-        android:textColor="@color/purple"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_email_user"
-        app:layout_constraintStart_toStartOf="@+id/tv_email_user"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email_user" />
-
-    <TextView
-        android:id="@+id/tv_defult_verif3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins"
-        android:text="@string/check_email_spam"
+        android:text="Please contact the owner through"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_default_verif2"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_verif2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_verif2" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_ftrip1"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_ftrip1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_ftrip1" />
+
+    <TextView
+        android:id="@+id/tv_contact_ftrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="+628123456789"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_ftrip1"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_ftrip1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_ftrip2" />
 
     <com.itinergo.utils.SecondaryButton
-        android:id="@+id/btn_change_verif"
+        android:id="@+id/btn_cancel_join"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/istok_web_bold"
-        android:text="Change Email"
+        android:text="Cancel Join"
         android:textColor="@color/purple"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_default_bg"
         app:layout_constraintStart_toStartOf="@+id/iv_default_bg"
-        app:layout_constraintTop_toBottomOf="@+id/tv_defult_verif3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_contact_ftrip" />
 
     <com.itinergo.utils.PrimaryButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_to_home"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:text="@string/login"
+        android:text="Back to Home"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_change_verif"
-        app:layout_constraintStart_toStartOf="@+id/btn_change_verif"
-        app:layout_constraintTop_toBottomOf="@+id/btn_change_verif" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_cancel_join"
+        app:layout_constraintStart_toStartOf="@+id/btn_cancel_join"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cancel_join" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
