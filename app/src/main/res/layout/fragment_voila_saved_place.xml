@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    tools:context=".ui.VoilaPlaceFragment">
+
+
+    <ImageView
+        android:id="@+id/iv_default_voila_splace"
+        android:layout_width="514dp"
+        android:layout_height="477dp"
+        android:src="@drawable/ic_voila_saved"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_default_voila_saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Voila!\n+150XP"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_default_voila_splace" />
+
+    <TextView
+        android:id="@+id/tv_default_voila_saved1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="You've finished a new trip"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_saved"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_saved"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_saved" />
+
+    <com.itinergo.utils.SecondaryButton
+        android:id="@+id/btn_to_home1"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/istok_web_bold"
+        android:text="Back to Home"
+        android:textColor="@color/purple"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_saved1"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_saved1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_saved1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
