@@ -1,418 +1,422 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="HardcodedText,ContentDescription"
-    tools:context=".ui.DetailProfileFragment">
+    tools:context=".ui.account.DetailProfileFragment"
+    tools:ignore="HardcodedText,ContentDescription">
 
-
-    <ImageView
-        android:id="@+id/iv_default_bg_acc"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/account_detail_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/iv_default_bg_detailacc"
-        android:layout_width="356dp"
-        android:layout_height="150dp"
-        android:src="@drawable/account_background_exp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_acc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_acc"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_acc" />
+        <ImageView
+            android:id="@+id/iv_default_bg_acc"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/account_detail_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
-        android:layout_width="111dp"
-        android:layout_height="118dp"
-        android:src="@drawable/zoro"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintHorizontal_bias="0.90"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_detailacc" />
+        <ImageView
+            android:id="@+id/iv_default_bg_detailacc"
+            android:layout_width="356dp"
+            android:layout_height="150dp"
+            android:src="@drawable/account_background_exp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_acc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_acc"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_acc" />
 
-    <TextView
-        android:id="@+id/tv_name_detail_acc"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Roronoa Zoro"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/circleImageView"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_detailacc" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="111dp"
+            android:layout_height="118dp"
+            android:src="@drawable/zoro"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_detailacc" />
 
-    <ImageView
-        android:id="@+id/imageView22"
-        android:layout_width="39dp"
-        android:layout_height="39dp"
-        android:src="@drawable/ic_logo_exp"
-        app:layout_constraintStart_toStartOf="@+id/tv_name_detail_acc"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name_detail_acc" />
+        <TextView
+            android:id="@+id/tv_name_detail_acc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Roronoa Zoro"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/circleImageView"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_detailacc" />
 
-    <TextView
-        android:id="@+id/tv_exp_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="1227"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView22"
-        app:layout_constraintStart_toEndOf="@+id/imageView22"
-        app:layout_constraintTop_toTopOf="@+id/imageView22" />
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:src="@drawable/ic_logo_exp"
+            app:layout_constraintStart_toStartOf="@+id/tv_name_detail_acc"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_detail_acc" />
 
-    <TextView
-        android:id="@+id/tv_exp_kind"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/bg_button"
-        android:fontFamily="@font/poppins_semibold"
-        android:gravity="center"
-        android:text="the Traveller"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_exp_detail"
-        app:layout_constraintEnd_toStartOf="@+id/circleImageView"
-        app:layout_constraintStart_toEndOf="@+id/tv_exp_detail"
-        app:layout_constraintTop_toTopOf="@+id/tv_exp_detail" />
+        <TextView
+            android:id="@+id/tv_exp_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="1227"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView22"
+            app:layout_constraintStart_toEndOf="@+id/imageView22"
+            app:layout_constraintTop_toTopOf="@+id/imageView22" />
 
-    <TextView
-        android:id="@+id/txt_cities"
-        android:layout_width="173dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/plan_background"
-        android:backgroundTint="#CFDAE6"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:paddingStart="50dp"
-        android:textSize="16sp"
-        android:text="Cities"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_detailacc" />
+        <TextView
+            android:id="@+id/tv_exp_kind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_button"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="the Traveller"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_exp_detail"
+            app:layout_constraintEnd_toStartOf="@+id/circleImageView"
+            app:layout_constraintStart_toEndOf="@+id/tv_exp_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_exp_detail" />
 
-    <TextView
-        android:id="@+id/tv_cities_count"
-        android:layout_width="74dp"
-        android:layout_height="71dp"
-        android:text="10"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:textSize="35sp"
-        android:textColor="@color/purple"
-        android:background="@drawable/plan_background"
-        android:backgroundTint="@color/disabled_purple"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_cities"
-        app:layout_constraintStart_toStartOf="@+id/txt_cities"
-        app:layout_constraintTop_toTopOf="@+id/txt_cities" />
+        <TextView
+            android:id="@+id/txt_cities"
+            android:layout_width="173dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/plan_background"
+            android:backgroundTint="#CFDAE6"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:paddingStart="50dp"
+            android:text="Cities"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_detailacc" />
 
-    <TextView
-        android:id="@+id/txt_countries"
-        android:layout_width="173dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/plan_background"
-        android:backgroundTint="#CFDAE6"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:paddingStart="60dp"
-        android:text="@string/countries"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintStart_toEndOf="@+id/txt_cities"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_detailacc" />
+        <TextView
+            android:id="@+id/tv_cities_count"
+            android:layout_width="74dp"
+            android:layout_height="71dp"
+            android:background="@drawable/plan_background"
+            android:backgroundTint="@color/disabled_purple"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@color/purple"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_cities"
+            app:layout_constraintStart_toStartOf="@+id/txt_cities"
+            app:layout_constraintTop_toTopOf="@+id/txt_cities" />
 
-    <TextView
-        android:id="@+id/tv_countries_count"
-        android:layout_width="74dp"
-        android:layout_height="71dp"
-        android:background="@drawable/plan_background"
-        android:backgroundTint="@color/disabled_purple"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:text="3"
-        android:textColor="@color/purple"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_countries"
-        app:layout_constraintStart_toStartOf="@+id/txt_countries"
-        app:layout_constraintTop_toTopOf="@+id/txt_countries" />
+        <TextView
+            android:id="@+id/txt_countries"
+            android:layout_width="173dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/plan_background"
+            android:backgroundTint="#CFDAE6"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:paddingStart="60dp"
+            android:text="@string/countries"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintStart_toEndOf="@+id/txt_cities"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_detailacc" />
 
-    <ImageView
-        android:id="@+id/iv_bg_detail"
-        android:layout_width="0dp"
-        android:layout_height="241dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/plan_background"
-        android:backgroundTint="#f1f1f1"
-        app:layout_constraintEnd_toEndOf="@+id/txt_countries"
-        app:layout_constraintStart_toStartOf="@+id/txt_cities"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cities" />
+        <TextView
+            android:id="@+id/tv_countries_count"
+            android:layout_width="74dp"
+            android:layout_height="71dp"
+            android:background="@drawable/plan_background"
+            android:backgroundTint="@color/disabled_purple"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/purple"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_countries"
+            app:layout_constraintStart_toStartOf="@+id/txt_countries"
+            app:layout_constraintTop_toTopOf="@+id/txt_countries" />
 
-    <View
-        android:id="@+id/view_default"
-        android:layout_width="4dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/purple"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_bg_detail"
-        app:layout_constraintStart_toStartOf="@+id/iv_bg_detail"
-        app:layout_constraintTop_toTopOf="@+id/iv_bg_detail" />
+        <ImageView
+            android:id="@+id/iv_bg_detail"
+            android:layout_width="0dp"
+            android:layout_height="241dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/plan_background"
+            android:backgroundTint="#f1f1f1"
+            app:layout_constraintEnd_toEndOf="@+id/txt_countries"
+            app:layout_constraintStart_toStartOf="@+id/txt_cities"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cities" />
 
-    <ImageView
-        android:id="@+id/iv_default_bullet1"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/view_default"
-        app:layout_constraintEnd_toEndOf="@+id/view_default"
-        app:layout_constraintStart_toStartOf="@+id/view_default"
-        app:layout_constraintTop_toTopOf="@+id/view_default"
-        app:layout_constraintVertical_bias="0.0" />
+        <View
+            android:id="@+id/view_default"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/purple"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_bg_detail"
+            app:layout_constraintStart_toStartOf="@+id/iv_bg_detail"
+            app:layout_constraintTop_toTopOf="@+id/iv_bg_detail" />
 
-    <ImageView
-        android:id="@+id/iv_default_bullet2"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/view_default"
-        app:layout_constraintEnd_toEndOf="@+id/view_default"
-        app:layout_constraintStart_toStartOf="@+id/view_default"
-        app:layout_constraintTop_toTopOf="@+id/view_default"
-        app:layout_constraintVertical_bias="0.33" />
+        <ImageView
+            android:id="@+id/iv_default_bullet1"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/bullet_plan"
+            app:layout_constraintBottom_toBottomOf="@+id/view_default"
+            app:layout_constraintEnd_toEndOf="@+id/view_default"
+            app:layout_constraintStart_toStartOf="@+id/view_default"
+            app:layout_constraintTop_toTopOf="@+id/view_default"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/iv_default_bullet3"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/view_default"
-        app:layout_constraintEnd_toEndOf="@+id/view_default"
-        app:layout_constraintStart_toStartOf="@+id/view_default"
-        app:layout_constraintTop_toTopOf="@+id/view_default"
-        app:layout_constraintVertical_bias="0.66" />
+        <ImageView
+            android:id="@+id/iv_default_bullet2"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/bullet_plan"
+            app:layout_constraintBottom_toBottomOf="@+id/view_default"
+            app:layout_constraintEnd_toEndOf="@+id/view_default"
+            app:layout_constraintStart_toStartOf="@+id/view_default"
+            app:layout_constraintTop_toTopOf="@+id/view_default"
+            app:layout_constraintVertical_bias="0.33" />
 
-    <ImageView
-        android:id="@+id/iv_default_bullet4"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:src="@drawable/bullet_plan"
-        app:layout_constraintBottom_toBottomOf="@+id/view_default"
-        app:layout_constraintEnd_toEndOf="@+id/view_default"
-        app:layout_constraintStart_toStartOf="@+id/view_default"
-        app:layout_constraintTop_toTopOf="@+id/view_default"
-        app:layout_constraintVertical_bias="1" />
+        <ImageView
+            android:id="@+id/iv_default_bullet3"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/bullet_plan"
+            app:layout_constraintBottom_toBottomOf="@+id/view_default"
+            app:layout_constraintEnd_toEndOf="@+id/view_default"
+            app:layout_constraintStart_toStartOf="@+id/view_default"
+            app:layout_constraintTop_toTopOf="@+id/view_default"
+            app:layout_constraintVertical_bias="0.66" />
 
-    <ImageView
-        android:id="@+id/iv_default1"
-        android:layout_width="249dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="24dp"
-        android:background="@drawable/rate_background"
-        android:backgroundTint="@color/disabled_purple"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bullet1"
-        app:layout_constraintStart_toEndOf="@+id/iv_default_bullet1"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bullet1" />
+        <ImageView
+            android:id="@+id/iv_default_bullet4"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/bullet_plan"
+            app:layout_constraintBottom_toBottomOf="@+id/view_default"
+            app:layout_constraintEnd_toEndOf="@+id/view_default"
+            app:layout_constraintStart_toStartOf="@+id/view_default"
+            app:layout_constraintTop_toTopOf="@+id/view_default"
+            app:layout_constraintVertical_bias="1" />
 
-    <TextView
-        android:id="@+id/tv_default"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Newbie"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default1"
-        app:layout_constraintStart_toStartOf="@+id/iv_default1"
-        app:layout_constraintTop_toTopOf="@+id/iv_default1" />
+        <ImageView
+            android:id="@+id/iv_default1"
+            android:layout_width="249dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/rate_background"
+            android:backgroundTint="@color/disabled_purple"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bullet1"
+            app:layout_constraintStart_toEndOf="@+id/iv_default_bullet1"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bullet1" />
 
-    <TextView
-        android:id="@+id/tv_default1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="500XP"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_default"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default1"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toEndOf="@+id/tv_default"
-        app:layout_constraintTop_toTopOf="@+id/tv_default" />
+        <TextView
+            android:id="@+id/tv_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Newbie"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default1"
+            app:layout_constraintStart_toStartOf="@+id/iv_default1"
+            app:layout_constraintTop_toTopOf="@+id/iv_default1" />
 
-    <ImageView
-        android:id="@+id/iv_default2"
-        android:layout_width="249dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="24dp"
-        android:background="@drawable/rate_background"
-        android:backgroundTint="@color/disabled_purple"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bullet2"
-        app:layout_constraintStart_toEndOf="@+id/iv_default_bullet2"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bullet2" />
+        <TextView
+            android:id="@+id/tv_default1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="500XP"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_default"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default1"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toEndOf="@+id/tv_default"
+            app:layout_constraintTop_toTopOf="@+id/tv_default" />
 
-    <TextView
-        android:id="@+id/tv_default2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Seasonal"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default2"
-        app:layout_constraintStart_toStartOf="@+id/iv_default2"
-        app:layout_constraintTop_toTopOf="@+id/iv_default2" />
+        <ImageView
+            android:id="@+id/iv_default2"
+            android:layout_width="249dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/rate_background"
+            android:backgroundTint="@color/disabled_purple"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bullet2"
+            app:layout_constraintStart_toEndOf="@+id/iv_default_bullet2"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bullet2" />
 
-    <TextView
-        android:id="@+id/tv_default3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="1000XP"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_default2"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default2"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toEndOf="@+id/tv_default2"
-        app:layout_constraintTop_toTopOf="@+id/tv_default2" />
+        <TextView
+            android:id="@+id/tv_default2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Seasonal"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default2"
+            app:layout_constraintStart_toStartOf="@+id/iv_default2"
+            app:layout_constraintTop_toTopOf="@+id/iv_default2" />
 
-    <ImageView
-        android:id="@+id/iv_default3"
-        android:layout_width="249dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="24dp"
-        android:background="@drawable/rate_background"
-        android:backgroundTint="@color/disabled_purple"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bullet3"
-        app:layout_constraintStart_toEndOf="@+id/iv_default_bullet3"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bullet3" />
+        <TextView
+            android:id="@+id/tv_default3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="1000XP"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_default2"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default2"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toEndOf="@+id/tv_default2"
+            app:layout_constraintTop_toTopOf="@+id/tv_default2" />
 
-    <TextView
-        android:id="@+id/tv_default4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Traveller"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default3"
-        app:layout_constraintStart_toStartOf="@+id/iv_default3"
-        app:layout_constraintTop_toTopOf="@+id/iv_default3" />
+        <ImageView
+            android:id="@+id/iv_default3"
+            android:layout_width="249dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/rate_background"
+            android:backgroundTint="@color/disabled_purple"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bullet3"
+            app:layout_constraintStart_toEndOf="@+id/iv_default_bullet3"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bullet3" />
 
-    <TextView
-        android:id="@+id/tv_default5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="2000XP"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_default4"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default3"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toEndOf="@+id/tv_default4"
-        app:layout_constraintTop_toTopOf="@+id/tv_default4" />
+        <TextView
+            android:id="@+id/tv_default4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Traveller"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default3"
+            app:layout_constraintStart_toStartOf="@+id/iv_default3"
+            app:layout_constraintTop_toTopOf="@+id/iv_default3" />
 
-    <ImageView
-        android:id="@+id/iv_default4"
-        android:layout_width="249dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="24dp"
-        android:background="@drawable/rate_background"
-        android:backgroundTint="@color/disabled_purple"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bullet4"
-        app:layout_constraintStart_toEndOf="@+id/iv_default_bullet4"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bullet4" />
+        <TextView
+            android:id="@+id/tv_default5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="2000XP"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_default4"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default3"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toEndOf="@+id/tv_default4"
+            app:layout_constraintTop_toTopOf="@+id/tv_default4" />
 
-    <TextView
-        android:id="@+id/tv_default6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Explorer"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default4"
-        app:layout_constraintStart_toStartOf="@+id/iv_default4"
-        app:layout_constraintTop_toTopOf="@+id/iv_default4" />
+        <ImageView
+            android:id="@+id/iv_default4"
+            android:layout_width="249dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/rate_background"
+            android:backgroundTint="@color/disabled_purple"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bullet4"
+            app:layout_constraintStart_toEndOf="@+id/iv_default_bullet4"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bullet4" />
 
-    <TextView
-        android:id="@+id/tv_default7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="3000XP"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_default6"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default4"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toEndOf="@+id/tv_default6"
-        app:layout_constraintTop_toTopOf="@+id/tv_default6" />
+        <TextView
+            android:id="@+id/tv_default6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Explorer"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default4"
+            app:layout_constraintStart_toStartOf="@+id/iv_default4"
+            app:layout_constraintTop_toTopOf="@+id/iv_default4" />
 
-    <TextView
-        android:id="@+id/tv_default_email2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/email"
-        android:textColor="@color/purple"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_bg_detail"
-        app:layout_constraintTop_toBottomOf="@+id/iv_bg_detail" />
+        <TextView
+            android:id="@+id/tv_default7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="3000XP"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_default6"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default4"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toEndOf="@+id/tv_default6"
+            app:layout_constraintTop_toTopOf="@+id/tv_default6" />
 
-    <TextView
-        android:id="@+id/tv_account_email2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:drawableEnd="@drawable/baseline_edit_24"
-        android:fontFamily="@font/poppins"
-        android:text="roronoazoro@gmail.com"
-        app:layout_constraintEnd_toEndOf="@+id/iv_bg_detail"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_email2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_email2" />
+        <TextView
+            android:id="@+id/tv_default_email2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/email"
+            android:textColor="@color/purple"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/iv_bg_detail"
+            app:layout_constraintTop_toBottomOf="@+id/iv_bg_detail" />
 
-    <TextView
-        android:id="@+id/tv_default8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="How to Get Points"
-        android:textColor="@color/purple"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_account_email2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_account_email2" />
+        <TextView
+            android:id="@+id/tv_account_email2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_edit_24"
+            android:fontFamily="@font/poppins"
+            android:text="roronoazoro@gmail.com"
+            app:layout_constraintEnd_toEndOf="@+id/iv_bg_detail"
+            app:layout_constraintStart_toStartOf="@+id/tv_default_email2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_email2" />
 
-    <TextView
-        android:id="@+id/tv_default9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/points_xp"
-        android:fontFamily="@font/poppins"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_default8"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default8" />
+        <TextView
+            android:id="@+id/tv_default8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="How to Get Points"
+            android:textColor="@color/purple"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_account_email2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_account_email2" />
 
-    <com.itinergo.utils.SecondaryButton
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/logout"
-        android:textColor="@color/purple"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default9" />
+        <TextView
+            android:id="@+id/tv_default9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="@string/points_xp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_default8"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default8" />
 
+        <com.itinergo.utils.SecondaryButton
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/logout"
+            android:textColor="@color/purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default9" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

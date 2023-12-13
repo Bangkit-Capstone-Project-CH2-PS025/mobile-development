@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itinergo.R
 import com.itinergo.databinding.FragmentHomeBinding
-import com.itinergo.ui.PlaceTodayFragment
 
 
 class HomeFragment : Fragment() {
@@ -38,6 +37,15 @@ class HomeFragment : Fragment() {
 
         binding.ivViewHome.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_placeTodayFragment)
+        }
+        binding.btnSearch.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_itineraryPlanningFragment2)
+        }
+        binding.ivFindTrip.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_findTripFragment)
+        }
+        binding.ivTravelTips.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_travelTipsFragment)
         }
     }
 }

@@ -1,34 +1,35 @@
-package com.itinergo.ui
+package com.itinergo.ui.place
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.fragment.findNavController
 import com.itinergo.R
-import com.itinergo.databinding.FragmentPlaceTodayBinding
+import com.itinergo.databinding.FragmentPlaceBinding
 
-
-class PlaceTodayFragment : Fragment() {
-    private var _binding: FragmentPlaceTodayBinding? = null
+class PlaceFragment : Fragment() {
+    private var _binding: FragmentPlaceBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentPlaceTodayBinding.inflate(inflater,container,false)
+        _binding = FragmentPlaceBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setButton()
+    }
 
-        val navBar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
-        navBar?.visibility = View.GONE
-
+    private fun setButton() {
+        binding.tvAddPlace.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_place_to_addPlaceFragment)
+        }
     }
 }

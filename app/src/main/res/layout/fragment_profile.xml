@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ProfileFragment">
+    tools:context=".ui.account.ProfileFragment">
 
 
     <ImageView
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_account_profile" />
 
     <com.itinergo.utils.PrimaryButton
-        android:id="@+id/primaryButton2"
+        android:id="@+id/btn_profile"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -62,7 +62,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/iv_default_acc"
         app:layout_constraintEnd_toEndOf="@+id/iv_default_acc"
         app:layout_constraintStart_toStartOf="@+id/iv_default_acc"
-        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_profile" />
 
     <ImageView
         android:id="@+id/iv_bullet_acc1"
@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view_default"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="@+id/view_default"
-        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_profile" />
 
     <ImageView
         android:id="@+id/iv_bullet_acc2"
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view_default"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/view_default"
-        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_profile" />
 
     <ImageView
         android:id="@+id/iv_bullet_acc3"
@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view_default"
         app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="@+id/view_default"
-        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_profile" />
 
     <ImageView
         android:id="@+id/iv_bullet_acc4"
@@ -106,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view_default"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="@+id/view_default"
-        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_profile" />
 
     <TextView
         android:id="@+id/tv_default_newbie_acc"
@@ -119,7 +119,7 @@
         app:layout_constraintBottom_toTopOf="@+id/iv_bullet_acc1"
         app:layout_constraintEnd_toEndOf="@+id/iv_bullet_acc1"
         app:layout_constraintStart_toStartOf="@+id/iv_bullet_acc1"
-        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_profile" />
 
     <TextView
         android:id="@+id/tv_default_seasonal_acc"
@@ -145,7 +145,7 @@
         app:layout_constraintBottom_toTopOf="@+id/iv_bullet_acc3"
         app:layout_constraintEnd_toEndOf="@+id/iv_bullet_acc3"
         app:layout_constraintStart_toStartOf="@+id/iv_bullet_acc3"
-        app:layout_constraintTop_toBottomOf="@+id/primaryButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_profile" />
     <TextView
         android:id="@+id/tv_default_explorer_acc"
         android:layout_width="wrap_content"
