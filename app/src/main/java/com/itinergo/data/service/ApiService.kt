@@ -1,6 +1,7 @@
 package com.itinergo.data.service
 
 import com.itinergo.data.request.ForgotPasswordRequest
+import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
 import com.itinergo.data.response.DataItinerary
@@ -28,6 +29,9 @@ interface ApiService {
 
     @GET("visited-place/get-all")
     fun getAllVisitedPlace(): Call<VisitedPlaceResponse>
+
+    @POST("itinerary/predict")
+    fun postItinerary(@Body request: ItineraryRequest): Call<GetItineraryResponse>
 
     //getall
     @GET("itinerary/get-recomend")

@@ -1,26 +1,32 @@
 package com.itinergo.ui.home
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
+import com.itinergo.data.response.BaseResponse
 import com.itinergo.databinding.FragmentHomeBinding
 import com.itinergo.databinding.FragmentItineraryPlanningBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ItineraryPlanningFragment : Fragment() {
     private var _binding: FragmentItineraryPlanningBinding? = null
     private val binding get() = _binding!!
+    private lateinit var viewModel : HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         _binding = FragmentItineraryPlanningBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -30,6 +36,49 @@ class ItineraryPlanningFragment : Fragment() {
         val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         navbar?.visibility = View.GONE
         setButton()
+        getItineraryResult()
+    }
+
+    private fun getItineraryResult() {
+        viewModel.getAllItinerary()
+        viewModel.itineraryResult.observe(viewLifecycleOwner) {
+            when (it) {
+
+                is BaseResponse.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+
+                is BaseResponse.Success -> {
+                    binding.progressBar.visibility = View.GONE
+
+                    binding.tvDay11.text = it.data!!.data[0].placeName
+                    binding.tvDay12.text = it.data.data[1].placeName
+                    binding.tvDay13.text = it.data.data[2].placeName
+                    binding.tvDay21.text = it.data.data[3].placeName
+                    binding.tvDay22.text = it.data.data[4].placeName
+                    binding.tvDay23.text = it.data.data[5].placeName
+                    binding.tvDay31.text = it.data.data[6].placeName
+                    binding.tvDay32.text = it.data.data[7].placeName
+                    binding.tvDay33.text = it.data.data[8].placeName
+                }
+
+                is BaseResponse.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    val builder = AlertDialog.Builder(requireContext())
+                    builder.setTitle("Error")
+                    builder.setMessage(it.msg)
+
+                    builder.setPositiveButton("OK") { _, _ ->
+
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
+                }
+
+                else -> {
+                }
+            }
+        }
     }
 
     private fun setButton() {

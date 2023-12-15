@@ -105,7 +105,7 @@
                     android:ellipsize="start"
                     android:gravity="center"
                     android:hint="@string/input_city"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -135,8 +135,9 @@
                     android:backgroundTint="#f1f1f1"
                     android:ellipsize="start"
                     android:gravity="center"
+                    android:inputType="number"
                     android:hint="Input Budget"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -167,7 +168,8 @@
                     android:ellipsize="start"
                     android:gravity="center"
                     android:hint="Input Duration"
-                    android:textSize="16sp" />
+                    android:inputType="number"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -198,9 +200,10 @@
                     android:ellipsize="start"
                     android:focusable="false"
                     android:gravity="center"
+                    android:maxLines="1"
                     android:hint="Input Preferences"
                     android:inputType="none"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -220,8 +223,15 @@
                 android:text="@string/search"
                 android:textColor="@color/purple"
                 android:textSize="15sp" />
+
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
