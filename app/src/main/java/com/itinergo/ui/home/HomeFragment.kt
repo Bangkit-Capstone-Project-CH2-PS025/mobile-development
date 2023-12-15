@@ -1,5 +1,6 @@
 package com.itinergo.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,12 +31,21 @@ class HomeFragment : Fragment() {
         navbar?.visibility = View.VISIBLE
 
         setButton()
+        setText()
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun setText() {
+        val firstPreferences = arguments?.getString("first_preferences")
+        val secondPreferences = arguments?.getString("second_preferences")
+        if (firstPreferences != null) {
+            binding.etPreference.setText("$firstPreferences, $secondPreferences")
+        }
     }
 
     private fun setButton() {
         binding.etPreference.setOnClickListener {
-            val dialogFragment = PlanFragment()
-            dialogFragment.show(childFragmentManager, "bottomsheet")
+            findNavController().navigate(R.id.action_navigation_home_to_planFragment)
         }
 
         binding.ivViewHome.setOnClickListener {

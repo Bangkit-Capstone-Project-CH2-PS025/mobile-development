@@ -39,9 +39,9 @@ class PlaceAdapter(private var itemClick: ListPlaceInterface) :
 
             binding.tvNamePlace.text = "${item.city}, ${item.country}"
             binding.tvTimePlace.text = "${item.month} ${item.year}"
-//            Glide.with(itemView.context)
-//                .load(item.)
-//                .into(binding.itemPhoto)
+            Glide.with(itemView.context)
+                .load(item.image)
+                .into(binding.ivPlace)
 
             }
 

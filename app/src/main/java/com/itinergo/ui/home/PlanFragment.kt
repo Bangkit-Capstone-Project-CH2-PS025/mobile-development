@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.itinergo.R
 import com.itinergo.databinding.FragmentPlanBinding
@@ -146,8 +148,30 @@ class PlanFragment : BottomSheetDialogFragment() {
 
                     addButtonChecked(i)
                 }
+                binding.btnPlan.setOnClickListener {
+                    // Ambil teks dari dua tombol yang dipilih
+                    val selectedTexts = getSelectedButtonTexts()
+                    if (selectedTexts.size == 2) {
+                        val firstPreferences = selectedTexts[0]
+                        val secondPreferences = selectedTexts[1]
+
+                        val bundle = Bundle()
+                        bundle.putString("first_preferences", firstPreferences)
+                        bundle.putString("second_preferences", secondPreferences)
+                        findNavController().navigate(R.id.action_planFragment_to_navigation_home,bundle)
+                    }
+                }
             }
         }
+    }
+    private fun getSelectedButtonTexts(): List<String> {
+        val selectedTexts = mutableListOf<String>()
+        for (index in clickedButtonIndex) {
+            buttons.getOrNull(index)?.let {
+                selectedTexts.add(it.text.toString())
+            }
+        }
+        return selectedTexts
     }
     private fun setIcon() {
         val initialDrawable =

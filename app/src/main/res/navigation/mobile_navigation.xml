@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_navigation_home_to_findTripFragment"
             app:destination="@id/findTripFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_planFragment"
+            app:destination="@id/planFragment" />
     </fragment>
 
     <fragment
@@ -169,4 +172,13 @@
             android:id="@+id/action_voilaFtripFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
+    <dialog
+        android:id="@+id/planFragment"
+        android:name="com.itinergo.ui.home.PlanFragment"
+        android:label="fragment_plan"
+        tools:layout="@layout/fragment_plan" >
+        <action
+            android:id="@+id/action_planFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </dialog>
 </navigation>

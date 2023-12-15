@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName
 data class DataPlace(
     @SerializedName("city")
     val city: String,
+    @SerializedName("image")
+    val image: String,
     @SerializedName("country")
     val country: String,
     @SerializedName("createdAt")
