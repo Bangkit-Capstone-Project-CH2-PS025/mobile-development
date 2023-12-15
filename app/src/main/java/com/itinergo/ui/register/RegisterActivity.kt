@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.itinergo.data.response.BaseResponse
 import com.itinergo.databinding.ActivityRegisterBinding
 import com.itinergo.ui.login.LoginActivity
+import com.itinergo.ui.verification.VerificationActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -65,9 +66,10 @@ class RegisterActivity : AppCompatActivity() {
                     builder.setMessage(it.data?.message)
 
                     builder.setPositiveButton("OK") { _, _ ->
-                        val intent = Intent(this, LoginActivity::class.java)
+                        val intent = Intent(this, VerificationActivity::class.java)
                         intent.flags =
                             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                        intent.putExtra("email", it.data!!.data.email)
                         startActivity(intent)
                     }
                     val dialog = builder.create()
@@ -102,7 +104,7 @@ class RegisterActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                setButton()
+                setButtonText()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -117,7 +119,7 @@ class RegisterActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                setButton()
+                setButtonText()
             }
 
             override fun afterTextChanged(s: Editable?) {

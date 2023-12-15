@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/card_list_view"
         android:layout_width="282dp"
         android:layout_height="81dp"
         android:background="@drawable/bg_place_list"
@@ -15,36 +15,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView18"
+        android:id="@+id/iv_place"
         android:layout_width="89dp"
         android:layout_height="81dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
+        app:layout_constraintBottom_toBottomOf="@+id/card_list_view"
+        app:layout_constraintEnd_toEndOf="@+id/card_list_view"
+        app:layout_constraintStart_toEndOf="@+id/card_list_view"
+        app:layout_constraintTop_toTopOf="@+id/card_list_view"
         app:shapeAppearanceOverlay="@style/RoundedSquare"
         app:srcCompat="@drawable/monas" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/tv_name_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Jakarta, Indonesia"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
+        app:layout_constraintBottom_toBottomOf="@+id/card_list_view"
+        app:layout_constraintStart_toStartOf="@+id/card_list_view"
+        app:layout_constraintTop_toTopOf="@+id/card_list_view"
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/tv_time_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:text="January 2023"
         android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintStart_toStartOf="@+id/tv_name_place"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_place" />
 </androidx.constraintlayout.widget.ConstraintLayout>
