@@ -130,4 +130,14 @@ class LoginActivity : AppCompatActivity() {
             binding.etEmail.text != null && binding.etPassword.text != null && binding.etEmail.text.toString()
                 .isNotEmpty() && binding.etPassword.text.toString().isNotEmpty()
     }
+    override fun onStart() {
+        super.onStart()
+        loginViewModel.getDataStoreIsLogin().observe(this) { isLogin ->
+            if (isLogin == true) {
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+            }
+        }
+    }
 }

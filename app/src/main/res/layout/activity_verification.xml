@@ -43,9 +43,9 @@
         android:id="@+id/tv_default_verif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/you_re_almost_here"
         android:textColor="@color/purple"
-        android:fontFamily="@font/poppins_medium"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_default_bg"
         app:layout_constraintStart_toStartOf="@+id/iv_default_bg"
@@ -67,12 +67,12 @@
         android:id="@+id/tv_email_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="angelika@itinergo.com"
         android:fontFamily="@font/poppins_semibold"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_default_verif1"
         app:layout_constraintStart_toStartOf="@+id/tv_default_verif1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_verif1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_verif1"
+        tools:text="angelika@itinergo.com" />
 
     <TextView
         android:id="@+id/tv_default_verif2"
