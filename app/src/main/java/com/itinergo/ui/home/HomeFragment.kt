@@ -57,15 +57,7 @@ class HomeFragment : Fragment() {
                 is BaseResponse.Success -> {
                     binding.progressBar.visibility = View.GONE
 
-                    val builder = AlertDialog.Builder(requireContext())
-                    builder.setTitle("Success")
-                    builder.setMessage(it.data?.message)
-
-                    builder.setPositiveButton("OK") { _, _ ->
-                        findNavController().navigate(R.id.action_navigation_home_to_itineraryPlanningFragment2)
-                    }
-                    val dialog = builder.create()
-                    dialog.show()
+                    findNavController().navigate(R.id.action_navigation_home_to_itineraryPlanningFragment2)
                 }
 
                 is BaseResponse.Error -> {

@@ -39,5 +39,5 @@ interface ApiService {
 
     // untuk detail
     @GET("itinerary/get-recomend")
-    fun getItineraryByQuery(@Query ("place_name") placeName: String): Call<DataItinerary>
+    fun getItineraryByQuery(@Query ("place_name") placeName: String): Call<GetItineraryResponse>
 }

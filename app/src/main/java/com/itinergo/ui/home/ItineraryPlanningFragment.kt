@@ -51,15 +51,78 @@ class ItineraryPlanningFragment : Fragment() {
                 is BaseResponse.Success -> {
                     binding.progressBar.visibility = View.GONE
 
-                    binding.tvDay11.text = it.data!!.data[0].placeName
-                    binding.tvDay12.text = it.data.data[1].placeName
-                    binding.tvDay13.text = it.data.data[2].placeName
-                    binding.tvDay21.text = it.data.data[3].placeName
-                    binding.tvDay22.text = it.data.data[4].placeName
-                    binding.tvDay23.text = it.data.data[5].placeName
-                    binding.tvDay31.text = it.data.data[6].placeName
-                    binding.tvDay32.text = it.data.data[7].placeName
-                    binding.tvDay33.text = it.data.data[8].placeName
+                    it.data!!.data[0].placeName.let{placeName ->
+                        binding.tvDay11.text = placeName
+                        binding.tvDay11.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
+                    it.data.data[1].placeName.let{placeName ->
+                        binding.tvDay12.text = placeName
+                        binding.tvDay12.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
+                    it.data.data[2].placeName.let{placeName ->
+                        binding.tvDay13.text = placeName
+                        binding.tvDay13.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
+                    it.data.data[3].placeName.let{placeName ->
+                        binding.tvDay21.text = placeName
+                        binding.tvDay21.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
+                    it.data.data[4].placeName.let{placeName ->
+                        binding.tvDay22.text = placeName
+                        binding.tvDay22.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
+                    it.data.data[5].placeName.let{placeName ->
+                        binding.tvDay23.text = placeName
+                        binding.tvDay23.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
+                    it.data.data[6].placeName.let{placeName ->
+                        binding.tvDay31.text = placeName
+                        binding.tvDay31.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
+                    it.data.data[7].placeName.let{placeName ->
+                        binding.tvDay32.text = placeName
+                        binding.tvDay32.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
+                    it.data.data[8].placeName.let{placeName ->
+                        binding.tvDay33.text = placeName
+                        binding.tvDay33.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putString("place_name", placeName)
+                            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2,bundle)
+                        }
+                    }
                 }
 
                 is BaseResponse.Error -> {
@@ -84,9 +147,6 @@ class ItineraryPlanningFragment : Fragment() {
     private fun setButton() {
         binding.btnSavePlan.setOnClickListener {
             findNavController().navigate(R.id.action_itineraryPlanningFragment_to_voilaHomeFragment)
-        }
-        binding.ivDefaultBgPlan.setOnClickListener {
-            findNavController().navigate(R.id.action_itineraryPlanningFragment_to_placeTodayFragment2)
         }
     }
 
