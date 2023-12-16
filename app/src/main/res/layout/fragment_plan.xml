@@ -68,7 +68,7 @@
         android:id="@+id/btn6"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="@string/desa_wisata"
+        android:text="Wisata"
         android:textColor="@color/purple"
         app:layout_constraintBottom_toBottomOf="@+id/btn5"
         app:layout_constraintEnd_toEndOf="parent"

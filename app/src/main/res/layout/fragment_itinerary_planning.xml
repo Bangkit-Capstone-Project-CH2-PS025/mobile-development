@@ -111,6 +111,43 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_default_day2_plan" />
 
         <TextView
+            android:id="@+id/tv_day1_1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan"
+            tools:text="Itinerary 1" />
+
+        <TextView
+            android:id="@+id/tv_day1_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_day1_1"
+            app:layout_constraintStart_toStartOf="@+id/tv_day1_1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_day1_1"
+            tools:text="Itinerary 2" />
+
+        <TextView
+            android:id="@+id/tv_day1_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_day1_2"
+            app:layout_constraintStart_toStartOf="@+id/tv_day1_2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_day1_2"
+            tools:text="Itinerary 3" />
+
+        <TextView
             android:id="@+id/tv_default_day2_plan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,6 +157,43 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan"
             app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan" />
+
+        <TextView
+            android:id="@+id/tv_day2_1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan1"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan1"
+            tools:text="Itinerary 4" />
+
+        <TextView
+            android:id="@+id/tv_day2_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_day2_1"
+            app:layout_constraintStart_toStartOf="@+id/tv_day2_1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_day2_1"
+            tools:text="Itinerary 5" />
+
+        <TextView
+            android:id="@+id/tv_day2_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_day2_2"
+            app:layout_constraintStart_toStartOf="@+id/tv_day2_2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_day2_2"
+            tools:text="Itinerary 6" />
 
         <ImageView
             android:id="@+id/iv_default_bg_plan2"
@@ -140,6 +214,43 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan1"
             app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan1" />
+
+        <TextView
+            android:id="@+id/tv_day3_1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan2"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_plan2"
+            tools:text="Itinerary 7" />
+
+        <TextView
+            android:id="@+id/tv_day3_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_day3_1"
+            app:layout_constraintStart_toStartOf="@+id/tv_day3_1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_day3_1"
+            tools:text="Itinerary 8" />
+
+        <TextView
+            android:id="@+id/tv_day3_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_day3_2"
+            app:layout_constraintStart_toStartOf="@+id/tv_day3_2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_day3_2"
+            tools:text="Itinerary 9" />
 
         <ImageView
             android:id="@+id/iv_default_bg_plan3"
@@ -368,6 +479,17 @@
             app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_plan3"
             app:layout_constraintStart_toStartOf="@+id/iv_default_bg_plan3"
             app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_plan3" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
