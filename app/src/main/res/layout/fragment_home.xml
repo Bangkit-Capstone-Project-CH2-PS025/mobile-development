@@ -86,6 +86,7 @@
                     android:id="@+id/tv_city"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:background="@drawable/plan_background"
                     android:fontFamily="@font/poppins_semibold"
                     android:padding="10dp"
@@ -96,16 +97,27 @@
                     android:textColor="@color/purple"
                     android:textSize="15sp" />
 
-                <com.itinergo.utils.EditTextPlan
-                    android:id="@+id/et_city"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
                     android:layout_marginStart="10dp"
-                    android:backgroundTint="#f1f1f1"
-                    android:ellipsize="start"
-                    android:gravity="center"
-                    android:hint="@string/input_city"
-                    android:textSize="12sp" />
+                    app:boxStrokeWidth="0dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/et_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_button"
+                        android:backgroundTint="#f1f1f1"
+                        android:hint="@string/input_city"
+                        android:ellipsize="start"
+                        android:inputType="none"
+                        android:textSize="12sp"
+                        app:boxStrokeWidth="0dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -127,17 +139,24 @@
                     android:textColor="@color/purple"
                     android:textSize="16sp" />
 
-                <com.itinergo.utils.EditTextPlan
-                    android:id="@+id/et_budget"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
                     android:layout_marginStart="10dp"
-                    android:backgroundTint="#f1f1f1"
-                    android:ellipsize="start"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:hint="Input Budget"
-                    android:textSize="12sp" />
+                    app:boxStrokeWidth="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_budget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_button"
+                        android:backgroundTint="#f1f1f1"
+                        android:ellipsize="start"
+                        android:hint="Input Budget"
+                        android:inputType="number"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -149,6 +168,7 @@
                     android:id="@+id/tv_duration"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:background="@drawable/plan_background"
                     android:fontFamily="@font/poppins_semibold"
                     android:padding="10dp"
@@ -159,17 +179,26 @@
                     android:textColor="@color/purple"
                     android:textSize="16sp" />
 
-                <com.itinergo.utils.EditTextPlan
-                    android:id="@+id/et_duration"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
                     android:layout_marginStart="10dp"
-                    android:backgroundTint="#f1f1f1"
-                    android:ellipsize="start"
-                    android:gravity="center"
                     android:hint="Input Duration"
-                    android:inputType="number"
-                    android:textSize="12sp" />
+                    app:boxStrokeWidth="0dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/et_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_button"
+                        android:backgroundTint="#f1f1f1"
+                        android:ellipsize="start"
+                        android:inputType="none"
+                        android:textSize="12sp"
+                        app:boxStrokeWidth="0dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -191,19 +220,26 @@
                     android:textColor="@color/purple"
                     android:textSize="16sp" />
 
-                <com.itinergo.utils.EditTextPlan
-                    android:id="@+id/et_preference"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
                     android:layout_marginStart="10dp"
-                    android:backgroundTint="#f1f1f1"
-                    android:ellipsize="start"
-                    android:focusable="false"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:hint="Input Preferences"
-                    android:inputType="none"
-                    android:textSize="12sp" />
+                    app:boxStrokeWidth="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_preference"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_button"
+                        android:backgroundTint="#f1f1f1"
+                        android:ellipsize="start"
+                        android:inputType="none"
+                        android:maxLines="1"
+                        android:focusable="false"
+                        android:hint="Input Preference"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </LinearLayout>
 
@@ -232,6 +268,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:visibility="gone" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
