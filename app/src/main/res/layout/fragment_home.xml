@@ -153,7 +153,7 @@
                         android:background="@drawable/bg_button"
                         android:backgroundTint="#f1f1f1"
                         android:ellipsize="start"
-                        android:hint="Input Budget"
+                        android:hint="Input Budget (IDR)"
                         android:inputType="number"
                         android:textSize="12sp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -185,7 +185,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:layout_marginStart="10dp"
-                    android:hint="Input Duration"
+                    android:hint="Input Duration (days)"
                     app:boxStrokeWidth="0dp">
 
                     <AutoCompleteTextView

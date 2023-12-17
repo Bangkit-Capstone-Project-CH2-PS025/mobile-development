@@ -7,9 +7,9 @@ import androidx.lifecycle.asLiveData
 import com.google.gson.Gson
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.response.BaseResponse
-import com.itinergo.data.response.DataItinerary
 import com.itinergo.data.response.ErrorResponse
 import com.itinergo.data.response.GetItineraryResponse
+import com.itinergo.data.response.PostItineraryResponse
 import com.itinergo.data.service.ApiService
 import com.itinergo.utils.DatastoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,33 +25,34 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
 
     val itineraryResult: MutableLiveData<BaseResponse<GetItineraryResponse>> = MutableLiveData()
+    val postItineraryResult: MutableLiveData<BaseResponse<PostItineraryResponse>> = MutableLiveData()
 
     fun postItinerary(city: String, budget: Int, duration: Int, preferences1: String, preferences2: String) {
-        itineraryResult.value = BaseResponse.Loading()
+        postItineraryResult.value = BaseResponse.Loading()
         client.postItinerary(ItineraryRequest(city,budget, duration, preferences1, preferences2))
-            .enqueue(object : Callback<GetItineraryResponse> {
+            .enqueue(object : Callback<PostItineraryResponse> {
                 override fun onResponse(
-                    call: Call<GetItineraryResponse>,
-                    response: Response<GetItineraryResponse>
+                    call: Call<PostItineraryResponse>,
+                    response: Response<PostItineraryResponse>
                 ) {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
-                        itineraryResult.value = BaseResponse.Success(responseBody)
+                        postItineraryResult.value = BaseResponse.Success(responseBody)
                     } else {
                         val errorBody = response.errorBody()
                         if (errorBody != null) {
                             val errorResponse =
                                 Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
                             val errorMessage = errorResponse.message
-                            itineraryResult.value = BaseResponse.Error(errorMessage)
+                            postItineraryResult.value = BaseResponse.Error(errorMessage)
                         } else {
-                            itineraryResult.value = BaseResponse.Error("Unknown error occurred")
+                            postItineraryResult.value = BaseResponse.Error("Unknown error occurred")
                         }
                     }
                 }
 
-                override fun onFailure(call: Call<GetItineraryResponse>, t: Throwable) {
-                    itineraryResult.value = BaseResponse.Error("Network Error")
+                override fun onFailure(call: Call<PostItineraryResponse>, t: Throwable) {
+                    postItineraryResult.value = BaseResponse.Error("Network Error")
                 }
             })
     }
