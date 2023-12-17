@@ -56,6 +56,7 @@
             android:ellipsize="start"
             android:gravity="center"
             android:hint="@string/input_city"
+            android:maxLines="1"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_city_add"
             app:layout_constraintEnd_toEndOf="@+id/tv_add_new_place"
@@ -90,6 +91,7 @@
             android:gravity="center"
             android:hint="@string/input_country"
             android:textSize="16sp"
+            android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="@+id/tv_country_add"
             app:layout_constraintEnd_toEndOf="@+id/et_city_add"
             app:layout_constraintStart_toEndOf="@+id/tv_country_add"
@@ -123,6 +125,7 @@
             android:gravity="center"
             android:hint="@string/input_month"
             android:textSize="16sp"
+            android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="@+id/tv_month_add"
             app:layout_constraintEnd_toEndOf="@+id/et_country_add"
             app:layout_constraintStart_toEndOf="@+id/tv_month_add"
@@ -147,7 +150,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_month_add" />
 
         <com.itinergo.utils.EditTextPlan
-            android:id="@+id/et_until_add"
+            android:id="@+id/et_year_add"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
@@ -156,6 +159,7 @@
             android:gravity="center"
             android:hint="@string/input_year"
             android:textSize="16sp"
+            android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="@+id/tv_year_add"
             app:layout_constraintEnd_toEndOf="@+id/et_month_add"
             app:layout_constraintStart_toEndOf="@+id/tv_year_add"
@@ -189,11 +193,24 @@
             android:gravity="center"
             android:hint="@string/input_image"
             android:inputType="none"
+            android:focusable="false"
             android:textSize="16sp"
+            android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="@+id/tv_image_add"
-            app:layout_constraintEnd_toEndOf="@+id/et_until_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_year_add"
             app:layout_constraintStart_toEndOf="@+id/tv_image_add"
             app:layout_constraintTop_toTopOf="@+id/tv_image_add" />
+
+        <ImageView
+            android:id="@+id/add_photo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_image_add"
+            app:layout_constraintStart_toStartOf="@+id/tv_image_add"
+            app:layout_constraintTop_toBottomOf="@+id/et_image_add" />
 
         <com.itinergo.utils.SecondaryButton
             android:id="@+id/btn_upload_add_place"
@@ -204,7 +221,17 @@
             android:textColor="@color/purple"
             app:layout_constraintEnd_toEndOf="@+id/et_image_add"
             app:layout_constraintStart_toStartOf="@+id/tv_image_add"
-            app:layout_constraintTop_toBottomOf="@+id/et_image_add" />
+            app:layout_constraintTop_toBottomOf="@+id/add_photo" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

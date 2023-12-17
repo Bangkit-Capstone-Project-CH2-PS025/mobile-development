@@ -1,7 +1,9 @@
 package com.itinergo.ui.home
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.google.gson.Gson
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.response.BaseResponse
@@ -9,6 +11,7 @@ import com.itinergo.data.response.DataItinerary
 import com.itinergo.data.response.ErrorResponse
 import com.itinergo.data.response.GetItineraryResponse
 import com.itinergo.data.service.ApiService
+import com.itinergo.utils.DatastoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,6 +21,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val client: ApiService,
+    private val pref: DatastoreManager
 ) : ViewModel() {
 
     val itineraryResult: MutableLiveData<BaseResponse<GetItineraryResponse>> = MutableLiveData()
@@ -110,6 +114,9 @@ class HomeViewModel @Inject constructor(
                     itineraryDetailResult.value = BaseResponse.Error("Network Error")
                 }
             })
+    }
+    fun getDataStoreName(): LiveData<String> {
+        return pref.getName.asLiveData()
     }
 
 }
