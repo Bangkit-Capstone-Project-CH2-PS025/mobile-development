@@ -2,7 +2,9 @@ package com.itinergo.ui.home
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
 import com.itinergo.data.response.BaseResponse
+import com.itinergo.data.response.DataDay
+import com.itinergo.data.response.DataX
 import com.itinergo.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
@@ -57,7 +61,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun postItineraryResult() {
-        viewModel.itineraryResult.observe(viewLifecycleOwner) {
+        viewModel.postItineraryResult.observe(viewLifecycleOwner) {
             when (it) {
 
                 is BaseResponse.Loading -> {
@@ -66,8 +70,90 @@ class HomeFragment : Fragment() {
 
                 is BaseResponse.Success -> {
                     binding.progressBar.visibility = View.GONE
-
-                    findNavController().navigate(R.id.action_navigation_home_to_itineraryPlanningFragment2)
+                    val dataArrayList1 = ArrayList<DataDay>()
+                    val dataArrayList2 = ArrayList<DataDay>()
+                    val dataArrayList3 = ArrayList<DataDay>()
+                    dataArrayList1.add(
+                        DataDay(
+                            it.data?.data?.day1?.get(0)?.id,
+                            it.data?.data?.day1?.get(0)?.placeName
+                        )
+                    )
+                    dataArrayList1.add(
+                        DataDay(
+                            it.data?.data?.day1?.get(1)?.id,
+                            it.data?.data?.day1?.get(1)?.placeName
+                        )
+                    )
+                    dataArrayList1.add(
+                        DataDay(
+                            it.data?.data?.day1?.get(2)?.id,
+                            it.data?.data?.day1?.get(2)?.placeName
+                        )
+                    )
+                    dataArrayList2.add(
+                        DataDay(
+                            it.data?.data?.day2?.get(0)?.id,
+                            it.data?.data?.day2?.get(0)?.placeName
+                        )
+                    )
+                    dataArrayList2.add(
+                        DataDay(
+                            it.data?.data?.day2?.get(1)?.id,
+                            it.data?.data?.day2?.get(1)?.placeName
+                        )
+                    )
+                    dataArrayList2.add(
+                        DataDay(
+                            it.data?.data?.day2?.get(2)?.id,
+                            it.data?.data?.day2?.get(2)?.placeName
+                        )
+                    )
+                    dataArrayList3.add(
+                        DataDay(
+                            it.data?.data?.day3?.get(0)?.id,
+                            it.data?.data?.day3?.get(0)?.placeName
+                        )
+                    )
+                    dataArrayList3.add(
+                        DataDay(
+                            it.data?.data?.day3?.get(1)?.id,
+                            it.data?.data?.day3?.get(1)?.placeName
+                        )
+                    )
+                    dataArrayList3.add(
+                        DataDay(
+                            it.data?.data?.day3?.get(2)?.id,
+                            it.data?.data?.day3?.get(2)?.placeName
+                        )
+                    )
+                    Log.d(
+                        TAG,
+                        "postItineraryResult: ${it.data?.data?.day1?.get(0)?.placeName.toString()}"
+                    )
+                    val bundle = Bundle()
+                    val city = binding.etCity.text.toString()
+                    val duration = binding.etDuration.text.toString()
+                    val budget = binding.etBudget.text.toString()
+                    var countPlace = ""
+                    if(duration == "1"){
+                        countPlace = "3"
+                    } else if (duration == "2"){
+                        countPlace = "6"
+                    } else{
+                        countPlace = "9"
+                    }
+                    bundle.putString("city", city)
+                    bundle.putString("budget", budget)
+                    bundle.putString("duration", duration)
+                    bundle.putString("count_place", countPlace)
+                    bundle.putParcelable(
+                        "listDay",
+                        DataX(dataArrayList1, dataArrayList2, dataArrayList3)
+                    )
+                    findNavController().navigate(
+                        R.id.action_navigation_home_to_itineraryPlanningFragment2, bundle
+                    )
                 }
 
                 is BaseResponse.Error -> {
@@ -100,18 +186,18 @@ class HomeFragment : Fragment() {
         if (firstPreferences != null) {
             binding.etPreference.setText("$firstPreferences, $secondPreferences")
         }
-        if (city != null){
+        if (city != null) {
             binding.etCity.setText(city)
         }
-        if (budget != null){
+        if (budget != null) {
             binding.etBudget.setText(budget)
         }
-        if (duration != null){
+        if (duration != null) {
             binding.etDuration.setText(duration)
         }
         setDropdown()
 
-        viewModel.getDataStoreName().observe(viewLifecycleOwner){
+        viewModel.getDataStoreName().observe(viewLifecycleOwner) {
             binding.tvUsernameIntro.text = "Hi, $it"
         }
 
@@ -141,8 +227,7 @@ class HomeFragment : Fragment() {
             val preferences1 = firstPreferences.toString().lowercase(Locale.getDefault())
             val preferences2 = secondPreferences.toString().lowercase(Locale.getDefault())
 
-
-            viewModel.postItinerary(city,budget, duration, preferences1, preferences2)
+            viewModel.postItinerary(city, budget, duration, preferences1, preferences2)
         }
         binding.ivFindTrip.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_findTripFragment)
@@ -150,5 +235,10 @@ class HomeFragment : Fragment() {
         binding.ivTravelTips.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_travelTipsFragment)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

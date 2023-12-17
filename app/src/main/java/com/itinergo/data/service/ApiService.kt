@@ -4,12 +4,13 @@ import com.itinergo.data.request.ForgotPasswordRequest
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
-import com.itinergo.data.response.DataItinerary
 import com.itinergo.data.response.ForgotPasswordResponse
 import com.itinergo.data.response.GetItineraryResponse
 import com.itinergo.data.response.LoginResponse
 import com.itinergo.data.response.PostAddPlaceResponse
+import com.itinergo.data.response.PostItineraryResponse
 import com.itinergo.data.response.RegisterResponse
+import com.itinergo.data.response.SavedPlaceResponse
 import com.itinergo.data.response.VisitedPlaceResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -36,7 +37,7 @@ interface ApiService {
     fun getAllVisitedPlace(): Call<VisitedPlaceResponse>
 
     @POST("itinerary/predict")
-    fun postItinerary(@Body request: ItineraryRequest): Call<GetItineraryResponse>
+    fun postItinerary(@Body request: ItineraryRequest): Call<PostItineraryResponse>
 
     //getall
     @GET("itinerary/get-recomend")
@@ -55,4 +56,7 @@ interface ApiService {
         @Part("year") year: RequestBody,
         @Part image: MultipartBody.Part
     ): Call<PostAddPlaceResponse>
+
+    @GET("detail-itinerary/get-all")
+    fun getAllSavedPlace(): Call <SavedPlaceResponse>
 }
