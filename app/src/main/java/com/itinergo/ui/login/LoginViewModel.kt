@@ -62,6 +62,11 @@ class LoginViewModel @Inject constructor(
             pref.saveIsLoginStatus(status)
         }
     }
+    fun saveName(name: String) {
+        viewModelScope.launch {
+            pref.saveName(name)
+        }
+    }
 
     fun saveToken(token: String) {
         viewModelScope.launch {

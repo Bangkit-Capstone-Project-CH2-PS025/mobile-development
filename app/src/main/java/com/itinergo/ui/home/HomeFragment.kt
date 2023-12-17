@@ -39,8 +39,6 @@ class HomeFragment : Fragment() {
         val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         navbar?.visibility = View.VISIBLE
 
-        val username = activity?.intent?.getStringExtra("username")
-        binding.tvUsernameIntro.text = "Hi $username"
 
         setButton()
         setDropdown()
@@ -111,13 +109,12 @@ class HomeFragment : Fragment() {
         if (duration != null){
             binding.etDuration.setText(duration)
         }
-        val arrayCity = resources.getStringArray(R.array.city)
-        val adapter = ArrayAdapter(requireContext(), R.layout.dropdown_items, arrayCity)
-        binding.etCity.setAdapter(adapter)
+        setDropdown()
 
-        val arrayDuration = resources.getStringArray(R.array.duration)
-        val durationAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_items, arrayDuration)
-        binding.etDuration.setAdapter(durationAdapter)
+        viewModel.getDataStoreName().observe(viewLifecycleOwner){
+            binding.tvUsernameIntro.text = "Hi, $it"
+        }
+
     }
 
     private fun setButton() {

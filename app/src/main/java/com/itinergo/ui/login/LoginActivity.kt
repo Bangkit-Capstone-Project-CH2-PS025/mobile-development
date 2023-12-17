@@ -65,10 +65,9 @@ class LoginActivity : AppCompatActivity() {
                     builder.setPositiveButton("OK") { _, _ ->
                         loginViewModel.saveIsLoginStatus(true)
                         loginViewModel.saveToken(it.data?.token.toString())
-
+                        loginViewModel.saveName(it.data?.data?.username.toString())
                         val intent = Intent(this, HomeActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                        intent.putExtra("username",it.data?.data?.username)
                         startActivity(intent)
                     }
                     val dialog = builder.create()
