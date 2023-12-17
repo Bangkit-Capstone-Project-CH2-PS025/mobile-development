@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -42,8 +43,19 @@ class HomeFragment : Fragment() {
         binding.tvUsernameIntro.text = "Hi $username"
 
         setButton()
+        setDropdown()
         setText()
         postItineraryResult()
+    }
+
+    private fun setDropdown() {
+        val city = resources.getStringArray(R.array.city)
+        val adapter = ArrayAdapter(requireContext(), R.layout.dropdown_items, city)
+        binding.etCity.setAdapter(adapter)
+
+        val duration = resources.getStringArray(R.array.duration)
+        val durationAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_items, duration)
+        binding.etDuration.setAdapter(durationAdapter)
     }
 
     private fun postItineraryResult() {
@@ -83,14 +95,41 @@ class HomeFragment : Fragment() {
     private fun setText() {
         val firstPreferences = arguments?.getString("first_preferences")
         val secondPreferences = arguments?.getString("second_preferences")
+        val city = arguments?.getString("city")
+        val budget = arguments?.getString("budget")
+        val duration = arguments?.getString("duration")
+
         if (firstPreferences != null) {
             binding.etPreference.setText("$firstPreferences, $secondPreferences")
         }
+        if (city != null){
+            binding.etCity.setText(city)
+        }
+        if (budget != null){
+            binding.etBudget.setText(budget)
+        }
+        if (duration != null){
+            binding.etDuration.setText(duration)
+        }
+        val arrayCity = resources.getStringArray(R.array.city)
+        val adapter = ArrayAdapter(requireContext(), R.layout.dropdown_items, arrayCity)
+        binding.etCity.setAdapter(adapter)
+
+        val arrayDuration = resources.getStringArray(R.array.duration)
+        val durationAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_items, arrayDuration)
+        binding.etDuration.setAdapter(durationAdapter)
     }
 
     private fun setButton() {
         binding.etPreference.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_home_to_planFragment)
+            val city = binding.etCity.text.toString()
+            val budget = binding.etBudget.text.toString()
+            val duration = binding.etDuration.text.toString()
+            val bundle = Bundle()
+            bundle.putString("city", city)
+            bundle.putString("budget", budget)
+            bundle.putString("duration", duration)
+            findNavController().navigate(R.id.action_navigation_home_to_planFragment, bundle)
         }
 
         binding.ivViewHome.setOnClickListener {
@@ -99,11 +138,12 @@ class HomeFragment : Fragment() {
         binding.btnSearch.setOnClickListener {
             val firstPreferences = arguments?.getString("first_preferences")
             val secondPreferences = arguments?.getString("second_preferences")
-            val city = binding.etCity.text.toString()
+            val city = binding.etCity.text.toString().lowercase(Locale.getDefault())
             val duration = binding.etDuration.text.toString().toInt()
             val budget = binding.etBudget.text.toString().toInt()
             val preferences1 = firstPreferences.toString().lowercase(Locale.getDefault())
             val preferences2 = secondPreferences.toString().lowercase(Locale.getDefault())
+
 
             viewModel.postItinerary(city,budget, duration, preferences1, preferences2)
         }

@@ -154,10 +154,16 @@ class PlanFragment : BottomSheetDialogFragment() {
                     if (selectedTexts.size == 2) {
                         val firstPreferences = selectedTexts[0]
                         val secondPreferences = selectedTexts[1]
+                        val city = arguments?.getString("city")
+                        val budget = arguments?.getString("budget")
+                        val duration = arguments?.getString("duration")
 
                         val bundle = Bundle()
                         bundle.putString("first_preferences", firstPreferences)
                         bundle.putString("second_preferences", secondPreferences)
+                        bundle.putString("city", city)
+                        bundle.putString("budget", budget)
+                        bundle.putString("duration", duration)
                         findNavController().navigate(R.id.action_planFragment_to_navigation_home,bundle)
                     }
                 }

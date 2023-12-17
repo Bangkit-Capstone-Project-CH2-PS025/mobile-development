@@ -80,4 +80,22 @@
     <string name="input_image">Input Image</string>
     <string name="upload">Upload</string>
     <string name="voila">Voila!</string>
+
+    <string-array name="city">
+        <item>Jakarta</item>
+        <item>Yogyakarta</item>
+        <item>Bandung</item>
+        <item>Semarang</item>
+        <item>Surabaya</item>
+        <item>Bengkulu</item>
+        <item>Banjarbaru</item>
+        <item>Denpasar</item>
+        <item>Maluku</item>
+        <item>Jayapura</item>
+    </string-array>
+    <string-array name="duration">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>
