@@ -1,11 +1,11 @@
-package com.itinergo.data.response
+package com.itinergo.data.response.postitinerary
 
 
 import com.google.gson.annotations.SerializedName
 
-data class GetItineraryResponse(
+data class PostItineraryResponse(
     @SerializedName("data")
-    val `data`: List<DataItinerary>,
+    val `data`: DataX,
     @SerializedName("message")
     val message: String,
     @SerializedName("status")

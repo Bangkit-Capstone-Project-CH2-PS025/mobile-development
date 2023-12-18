@@ -1,4 +1,4 @@
-package com.itinergo.data.response
+package com.itinergo.data.response.base
 
 sealed class BaseResponse<out T> {
     data class Success<out T>(val data: T? = null) : BaseResponse<T>()

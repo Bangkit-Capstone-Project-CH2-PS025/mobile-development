@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.itinergo.data.response.DataPlace
+import com.itinergo.data.response.visitedplace.DataPlace
 import com.itinergo.databinding.PlaceListItemBinding
 
 class PlaceAdapter(private var itemClick: ListPlaceInterface) :

@@ -11,10 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
-import com.itinergo.data.response.BaseResponse
+import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentPlaceTodayBinding
 import dagger.hilt.android.AndroidEntryPoint
 

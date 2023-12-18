@@ -4,9 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.itinergo.data.request.ForgotPasswordRequest
-import com.itinergo.data.response.BaseResponse
-import com.itinergo.data.response.ErrorResponse
-import com.itinergo.data.response.ForgotPasswordResponse
+import com.itinergo.data.response.base.BaseResponse
+import com.itinergo.data.response.base.ErrorResponse
+import com.itinergo.data.response.forgot.ForgotPasswordResponse
 import com.itinergo.data.service.ApiService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call

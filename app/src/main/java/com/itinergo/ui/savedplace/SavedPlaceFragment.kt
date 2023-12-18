@@ -1,21 +1,19 @@
 package com.itinergo.ui.savedplace
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
-import com.itinergo.adapter.PlaceAdapter
 import com.itinergo.adapter.SavedPlaceAdapter
-import com.itinergo.data.response.BaseResponse
+import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentSavedPlaceBinding
-import com.itinergo.ui.place.PlaceViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -73,13 +71,13 @@ class SavedPlaceFragment : Fragment(),
     }
 
     private fun setButton() {
-        binding.rvSaved.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_saved_place_to_detailSavedPlaceFragment)
-        }
+
     }
 
     override fun place(id: String) {
-
+        val bundle = Bundle()
+        bundle.putString("id", id)
+        findNavController().navigate(R.id.action_navigation_saved_place_to_detailSavedPlaceFragment, bundle)
     }
 
 

@@ -1,4 +1,4 @@
-package com.itinergo.data.response
+package com.itinergo.data.response.postitinerary
 
 
 import android.os.Parcelable

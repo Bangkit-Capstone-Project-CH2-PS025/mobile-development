@@ -1,4 +1,4 @@
-package com.itinergo.data.response
+package com.itinergo.data.response.getitinerary
 
 
 import com.google.gson.annotations.SerializedName
