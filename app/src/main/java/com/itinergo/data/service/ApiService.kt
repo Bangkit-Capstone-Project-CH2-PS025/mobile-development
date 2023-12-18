@@ -4,6 +4,7 @@ import com.itinergo.data.request.ForgotPasswordRequest
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
+import com.itinergo.data.response.account.GetAccountResponse
 import com.itinergo.data.response.forgot.ForgotPasswordResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.login.LoginResponse
@@ -69,5 +70,9 @@ interface ApiService {
 
     @PUT("detail-itinerary/update/{id}")
     fun updateFinishSaved(@Path ("id") id: String): Call <FinishSavedResponse>
+
+    @GET("account/getAccount")
+    fun getAccount(): Call <GetAccountResponse>
+
 
 }
