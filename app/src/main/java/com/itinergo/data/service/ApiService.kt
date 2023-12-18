@@ -8,6 +8,7 @@ import com.itinergo.data.response.forgot.ForgotPasswordResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.login.LoginResponse
 import com.itinergo.data.response.addplace.PostAddPlaceResponse
+import com.itinergo.data.response.finishsaved.FinishSavedResponse
 import com.itinergo.data.response.postitinerary.PostItineraryResponse
 import com.itinergo.data.response.register.RegisterResponse
 import com.itinergo.data.response.savedplace.DetailSavedPlaceResponse
@@ -20,6 +21,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Part
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -64,4 +66,8 @@ interface ApiService {
 
     @GET("detail-itinerary/get-one/{id}")
     fun getDetailSavedPlace(@Path ("id") id: String): Call <DetailSavedPlaceResponse>
+
+    @PUT("detail-itinerary/update/{id}")
+    fun updateFinishSaved(@Path ("id") id: String): Call <FinishSavedResponse>
+
 }

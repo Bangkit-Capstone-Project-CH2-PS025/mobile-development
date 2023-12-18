@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.base.ErrorResponse
+import com.itinergo.data.response.finishsaved.FinishSavedResponse
 import com.itinergo.data.response.savedplace.DetailSavedPlaceResponse
 import com.itinergo.data.response.savedplace.SavedPlaceResponse
 import com.itinergo.data.service.ApiService
@@ -21,6 +22,7 @@ class SavedPlaceViewModel @Inject constructor(
 
     val savedPlaceResult: MutableLiveData<BaseResponse<SavedPlaceResponse>> = MutableLiveData()
     val detailSavedPlaceResult: MutableLiveData<BaseResponse<DetailSavedPlaceResponse>> = MutableLiveData()
+    val updateSavedPlaceResult: MutableLiveData<BaseResponse<FinishSavedResponse>> = MutableLiveData()
 
     fun getAllSavedPlace() {
         savedPlaceResult.value = BaseResponse.Loading()
@@ -77,6 +79,35 @@ class SavedPlaceViewModel @Inject constructor(
 
                 override fun onFailure(call: Call<DetailSavedPlaceResponse>, t: Throwable) {
                     detailSavedPlaceResult.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
+    fun updateFinishSaved(id: String) {
+        updateSavedPlaceResult.value = BaseResponse.Loading()
+        client.updateFinishSaved(id)
+            .enqueue(object : Callback<FinishSavedResponse> {
+                override fun onResponse(
+                    call: Call<FinishSavedResponse>,
+                    response: Response<FinishSavedResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        updateSavedPlaceResult.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            updateSavedPlaceResult.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            updateSavedPlaceResult.value = BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<FinishSavedResponse>, t: Throwable) {
+                    updateSavedPlaceResult.value = BaseResponse.Error("Network Error")
                 }
             })
     }

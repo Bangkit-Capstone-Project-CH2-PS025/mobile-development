@@ -1,5 +1,6 @@
 package com.itinergo.ui.savedplace
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,7 +24,7 @@ class DetailSavedPlaceFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         viewModel = ViewModelProvider(this)[SavedPlaceViewModel::class.java]
         _binding = FragmentDetailSavedPlaceBinding.inflate(inflater, container, false)
@@ -34,10 +35,38 @@ class DetailSavedPlaceFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setButton()
         setDetailResult()
+        setFinishResult()
         val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         navbar?.visibility = View.GONE
     }
 
+    private fun setFinishResult() {
+        viewModel.updateSavedPlaceResult.observe(viewLifecycleOwner){
+            when(it){
+                is BaseResponse.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                is BaseResponse.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    findNavController().navigate(R.id.action_detailSavedPlaceFragment_to_voilaSavedPlaceFragment)
+                }
+                is BaseResponse.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    val builder = AlertDialog.Builder(requireContext())
+                    builder.setTitle("Error")
+                    builder.setMessage(it.msg)
+
+                    builder.setPositiveButton("OK") { _, _ ->
+
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
+                }
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
     private fun setDetailResult() {
         val id = arguments?.getString("id")
         if (id != null) {
@@ -192,7 +221,10 @@ class DetailSavedPlaceFragment : Fragment() {
 
     private fun setButton() {
         binding.btnFinishDetail.setOnClickListener {
-            findNavController().navigate(R.id.action_detailSavedPlaceFragment_to_voilaSavedPlaceFragment)
+            val id = arguments?.getString("id")
+            if (id != null) {
+                viewModel.updateFinishSaved(id)
+            }
         }
     }
 
