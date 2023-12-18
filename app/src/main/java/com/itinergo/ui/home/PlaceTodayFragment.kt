@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
 import com.itinergo.data.response.base.BaseResponse
@@ -66,6 +67,9 @@ class PlaceTodayFragment : Fragment() {
                     binding.tvBudgetPlaceToday.text = it.data.data[0].price.toString()
                     binding.tvRatePlaceToday.text = it.data.data[0].rating.toString()
                     binding.tvLocationPlaceToday.text = it.data.data[0].province
+                    Glide.with(requireContext())
+                        .load(it.data.data[0].dir)
+                        .into(binding.imgPlaceTodayDetail)
                     binding.ivLocationPlace.setOnClickListener { _ ->
                         val lat = it.data.data[0].lat.toString()
                         val lon = it.data.data[0].long.toString()

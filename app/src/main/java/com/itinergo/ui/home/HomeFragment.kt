@@ -4,11 +4,14 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -47,7 +50,6 @@ class HomeFragment : Fragment() {
         setButton()
         setDropdown()
         setText()
-        postItineraryResult()
     }
 
     private fun setDropdown() {
@@ -136,11 +138,11 @@ class HomeFragment : Fragment() {
                     val duration = binding.etDuration.text.toString()
                     val budget = binding.etBudget.text.toString()
                     var countPlace = ""
-                    if(duration == "1"){
+                    if (duration == "1") {
                         countPlace = "3"
-                    } else if (duration == "2"){
+                    } else if (duration == "2") {
                         countPlace = "6"
-                    } else{
+                    } else {
                         countPlace = "9"
                     }
                     bundle.putString("city", city)
@@ -219,15 +221,24 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_navigation_home_to_placeTodayFragment)
         }
         binding.btnSearch.setOnClickListener {
-            val firstPreferences = arguments?.getString("first_preferences")
-            val secondPreferences = arguments?.getString("second_preferences")
-            val city = binding.etCity.text.toString().lowercase(Locale.getDefault())
-            val duration = binding.etDuration.text.toString().toInt()
-            val budget = binding.etBudget.text.toString().toInt()
-            val preferences1 = firstPreferences.toString().lowercase(Locale.getDefault())
-            val preferences2 = secondPreferences.toString().lowercase(Locale.getDefault())
+            if (arguments != null) {
+                val firstPreferences = arguments?.getString("first_preferences")
+                val secondPreferences = arguments?.getString("second_preferences")
+                val city = binding.etCity.text.toString().lowercase(Locale.getDefault())
+                val duration = binding.etDuration.text.toString().toInt()
+                val budget = binding.etBudget.text.toString().toInt()
+                val preferences1 = firstPreferences.toString().lowercase(Locale.getDefault())
+                val preferences2 = secondPreferences.toString().lowercase(Locale.getDefault())
 
-            viewModel.postItinerary(city, budget, duration, preferences1, preferences2)
+                if (binding.etCity.text.toString()
+                        .isNotEmpty() && binding.etDuration.text.toString()
+                        .isNotEmpty() && binding.etBudget.text.toString()
+                        .isNotEmpty() && binding.etPreference.text.toString().isNotEmpty()
+                ) {
+                    viewModel.postItinerary(city, budget, duration, preferences1, preferences2)
+                    postItineraryResult()
+                }
+            }
         }
         binding.ivFindTrip.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_findTripFragment)

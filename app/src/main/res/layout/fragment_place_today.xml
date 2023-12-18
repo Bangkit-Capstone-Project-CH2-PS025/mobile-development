@@ -10,7 +10,7 @@
         android:id="@+id/img_place_today_detail"
         android:layout_width="485dp"
         android:layout_height="463dp"
-        android:src="@drawable/img_tanjung"
+        tools:src="@drawable/img_tanjung"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="70dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Tanjung Bongo"
+        tools:text="Tanjung Bongo"
         android:textColor="@color/purple"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -58,7 +58,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:textSize="16sp"
         android:gravity="center"
-        android:text="4.7"
+        tools:text="4.7"
         android:drawableStart="@drawable/baseline_star_24"
         android:drawablePadding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView10"
@@ -85,7 +85,7 @@
         android:drawablePadding="5dp"
         android:drawableTint="@color/purple"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Maluku Utara, Maluku"
+        tools:text="Maluku Utara, Maluku"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_title_place_today"
         app:layout_constraintStart_toStartOf="@+id/iv_location_place"
@@ -99,7 +99,7 @@
         android:drawablePadding="5dp"
         android:drawableTint="@color/purple"
         android:fontFamily="@font/poppins_semibold"
-        android:text="IDR. 50.000"
+        tools:text="IDR. 50.000"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_location_place_today"
         app:layout_constraintStart_toStartOf="@+id/tv_location_place_today"
@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/source_sans_pro"
             android:justificationMode="inter_word"
-            android:text="@string/description_place_today" />
+            tools:text="@string/description_place_today" />
     </ScrollView>
     <ProgressBar
         android:id="@+id/progressBar"

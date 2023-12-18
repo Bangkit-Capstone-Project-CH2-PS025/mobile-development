@@ -11,6 +11,7 @@ import com.itinergo.R
 class SecondaryButton : AppCompatButton {
 
     private lateinit var enabledBackground: Drawable
+    private lateinit var disabledBackground: Drawable
 
     constructor(context: Context) : super(context) {
         init()
@@ -30,10 +31,11 @@ class SecondaryButton : AppCompatButton {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        background = enabledBackground
+        background = if (isEnabled) enabledBackground else disabledBackground
     }
 
     private fun init() {
-        enabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button_google) as Drawable
+        enabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button_secondary) as Drawable
+        disabledBackground = ContextCompat.getDrawable(context, R.drawable.bg_button_secondary_disabled) as Drawable
     }
 }
