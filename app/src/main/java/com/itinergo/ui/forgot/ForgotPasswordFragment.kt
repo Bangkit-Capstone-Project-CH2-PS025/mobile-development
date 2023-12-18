@@ -130,5 +130,5 @@ class ForgotPasswordFragment : DialogFragment() {
 
 }
 
-private fun Int.toPx(requireContext: Context): Int =
+fun Int.toPx(requireContext: Context): Int =
     (this * requireContext.resources.displayMetrics.density).toInt()

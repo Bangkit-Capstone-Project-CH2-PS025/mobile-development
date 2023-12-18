@@ -5,6 +5,7 @@ import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
 import com.itinergo.data.response.account.GetAccountResponse
+import com.itinergo.data.response.account.UpdateProfileResponse
 import com.itinergo.data.response.forgot.ForgotPasswordResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.login.LoginResponse
@@ -73,6 +74,14 @@ interface ApiService {
 
     @GET("account/getAccount")
     fun getAccount(): Call <GetAccountResponse>
+
+    @Multipart
+    @PUT("account/updateAccount")
+    fun updateAccount(
+        @Part("name") name: RequestBody?,
+        @Part("email") email: RequestBody?,
+        @Part images: MultipartBody.Part?
+    ) : Call<UpdateProfileResponse>
 
 
 }

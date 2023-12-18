@@ -32,10 +32,11 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_acc" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView"
+            android:id="@+id/iv_profile_account_detail"
             android:layout_width="111dp"
             android:layout_height="118dp"
             android:src="@drawable/zoro"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_detailacc"
             app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
             app:layout_constraintHorizontal_bias="0.90"
@@ -51,7 +52,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="Roronoa Zoro"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/circleImageView"
+            app:layout_constraintEnd_toStartOf="@+id/iv_profile_account_detail"
             app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
             app:layout_constraintTop_toTopOf="@+id/iv_default_bg_detailacc" />
 
@@ -86,7 +87,7 @@
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_exp_detail"
-            app:layout_constraintEnd_toStartOf="@+id/circleImageView"
+            app:layout_constraintEnd_toStartOf="@+id/iv_profile_account_detail"
             app:layout_constraintStart_toEndOf="@+id/tv_exp_detail"
             app:layout_constraintTop_toTopOf="@+id/tv_exp_detail" />
 
@@ -378,7 +379,6 @@
             android:id="@+id/tv_account_email2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/baseline_edit_24"
             android:fontFamily="@font/poppins"
             android:text="roronoazoro@gmail.com"
             app:layout_constraintEnd_toEndOf="@+id/iv_bg_detail"
@@ -407,15 +407,28 @@
             app:layout_constraintStart_toStartOf="@+id/tv_default8"
             app:layout_constraintTop_toBottomOf="@+id/tv_default8" />
 
-        <com.itinergo.utils.SecondaryButton
+        <com.itinergo.utils.PrimaryButton
+            android:id="@+id/btn_change_profile"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Change Profile"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default9" />
+
+        <com.itinergo.utils.SecondaryButton
+            android:id="@+id/btn_logout"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="@string/logout"
             android:textColor="@color/purple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_default9" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_change_profile" />
+
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
