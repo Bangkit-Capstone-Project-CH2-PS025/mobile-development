@@ -43,29 +43,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_place" />
 
     <com.itinergo.utils.SecondaryButton
-        android:id="@+id/btn_cancel_add"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/istok_web_bold"
-        android:text="Cancel Add"
-        android:textColor="@color/purple"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_place1" />
-
-    <com.itinergo.utils.SecondaryButton
         android:id="@+id/btn_to_home1"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/istok_web_bold"
         android:text="Back to Home"
         android:textColor="@color/purple"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_cancel_add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_cancel_add" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_place1"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_place1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_place1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
