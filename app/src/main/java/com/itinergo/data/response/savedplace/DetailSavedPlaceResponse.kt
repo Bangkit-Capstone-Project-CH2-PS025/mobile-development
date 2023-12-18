@@ -1,11 +1,11 @@
-package com.itinergo.data.response
+package com.itinergo.data.response.savedplace
 
 
 import com.google.gson.annotations.SerializedName
 
-data class RegisterResponse(
+data class DetailSavedPlaceResponse(
     @SerializedName("data")
-    val `data`: DataRegister,
+    val `data`: DataSavedPlace,
     @SerializedName("message")
     val message: String,
     @SerializedName("status")

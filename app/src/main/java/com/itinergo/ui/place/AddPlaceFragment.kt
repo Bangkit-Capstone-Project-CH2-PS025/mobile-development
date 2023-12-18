@@ -2,7 +2,6 @@ package com.itinergo.ui.place
 
 import android.Manifest
 import android.app.AlertDialog
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
@@ -18,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
-import com.itinergo.data.response.BaseResponse
+import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentAddPlaceBinding
 import com.itinergo.utils.reduceFileImage
 import com.itinergo.utils.uriToFile

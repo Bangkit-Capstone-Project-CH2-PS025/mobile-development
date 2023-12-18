@@ -1,11 +1,11 @@
-package com.itinergo.data.response
+package com.itinergo.data.response.visitedplace
 
 
 import com.google.gson.annotations.SerializedName
 
-data class PostAddPlaceResponse(
+data class VisitedPlaceResponse(
     @SerializedName("data")
-    val `data`: Data,
+    val `data`: List<DataPlace>,
     @SerializedName("message")
     val message: String,
     @SerializedName("status")

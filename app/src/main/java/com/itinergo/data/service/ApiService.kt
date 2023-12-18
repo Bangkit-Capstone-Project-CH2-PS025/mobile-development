@@ -4,14 +4,15 @@ import com.itinergo.data.request.ForgotPasswordRequest
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
-import com.itinergo.data.response.ForgotPasswordResponse
-import com.itinergo.data.response.GetItineraryResponse
-import com.itinergo.data.response.LoginResponse
-import com.itinergo.data.response.PostAddPlaceResponse
-import com.itinergo.data.response.PostItineraryResponse
-import com.itinergo.data.response.RegisterResponse
-import com.itinergo.data.response.SavedPlaceResponse
-import com.itinergo.data.response.VisitedPlaceResponse
+import com.itinergo.data.response.forgot.ForgotPasswordResponse
+import com.itinergo.data.response.getitinerary.GetItineraryResponse
+import com.itinergo.data.response.login.LoginResponse
+import com.itinergo.data.response.addplace.PostAddPlaceResponse
+import com.itinergo.data.response.postitinerary.PostItineraryResponse
+import com.itinergo.data.response.register.RegisterResponse
+import com.itinergo.data.response.savedplace.DetailSavedPlaceResponse
+import com.itinergo.data.response.savedplace.SavedPlaceResponse
+import com.itinergo.data.response.visitedplace.VisitedPlaceResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -20,6 +21,7 @@ import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -59,4 +61,7 @@ interface ApiService {
 
     @GET("detail-itinerary/get-all")
     fun getAllSavedPlace(): Call <SavedPlaceResponse>
+
+    @GET("detail-itinerary/get-one/{id}")
+    fun getDetailSavedPlace(@Path ("id") id: String): Call <DetailSavedPlaceResponse>
 }

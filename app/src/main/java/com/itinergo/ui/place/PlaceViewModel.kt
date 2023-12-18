@@ -3,12 +3,10 @@ package com.itinergo.ui.place
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
-import com.itinergo.data.request.LoginRequest
-import com.itinergo.data.response.BaseResponse
-import com.itinergo.data.response.ErrorResponse
-import com.itinergo.data.response.LoginResponse
-import com.itinergo.data.response.PostAddPlaceResponse
-import com.itinergo.data.response.VisitedPlaceResponse
+import com.itinergo.data.response.base.BaseResponse
+import com.itinergo.data.response.base.ErrorResponse
+import com.itinergo.data.response.addplace.PostAddPlaceResponse
+import com.itinergo.data.response.visitedplace.VisitedPlaceResponse
 import com.itinergo.data.service.ApiService
 import com.itinergo.utils.DatastoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel

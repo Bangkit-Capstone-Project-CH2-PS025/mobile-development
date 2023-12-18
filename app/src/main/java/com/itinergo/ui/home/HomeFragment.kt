@@ -14,9 +14,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
-import com.itinergo.data.response.BaseResponse
-import com.itinergo.data.response.DataDay
-import com.itinergo.data.response.DataX
+import com.itinergo.data.response.base.BaseResponse
+import com.itinergo.data.response.postitinerary.DataDay
+import com.itinergo.data.response.postitinerary.DataX
 import com.itinergo.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale

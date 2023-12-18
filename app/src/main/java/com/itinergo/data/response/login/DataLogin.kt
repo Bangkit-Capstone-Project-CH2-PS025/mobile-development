@@ -1,4 +1,4 @@
-package com.itinergo.data.response
+package com.itinergo.data.response.login
 
 
 import com.google.gson.annotations.SerializedName

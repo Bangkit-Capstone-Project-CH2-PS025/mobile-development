@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.itinergo.data.response.DataSavedPlace
+import com.itinergo.data.response.savedplace.DataSavedPlace
 import com.itinergo.databinding.SavedPlaceItemBinding
 
 class SavedPlaceAdapter(private var itemClick: ListPlaceInterface) :
@@ -39,12 +39,17 @@ class SavedPlaceAdapter(private var itemClick: ListPlaceInterface) :
             binding.tvTripNameSaved.text = "${item.city.uppercase()}, TRIP"
             binding.tvBudgetSaved.text = "Rp${item.budget}"
             binding.tvDurationNameSaved.text = "${item.duration} day"
-            }
 
+            binding.btnDetailsSavedPlace.setOnClickListener {
+                itemClick.place(item.id.toString())
+            }
         }
 
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = SavedPlaceItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            SavedPlaceItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 

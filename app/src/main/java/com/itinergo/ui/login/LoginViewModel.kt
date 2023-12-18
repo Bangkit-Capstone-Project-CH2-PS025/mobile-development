@@ -7,9 +7,9 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.itinergo.data.request.LoginRequest
-import com.itinergo.data.response.BaseResponse
-import com.itinergo.data.response.ErrorResponse
-import com.itinergo.data.response.LoginResponse
+import com.itinergo.data.response.base.BaseResponse
+import com.itinergo.data.response.base.ErrorResponse
+import com.itinergo.data.response.login.LoginResponse
 import com.itinergo.data.service.ApiService
 import com.itinergo.utils.DatastoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel

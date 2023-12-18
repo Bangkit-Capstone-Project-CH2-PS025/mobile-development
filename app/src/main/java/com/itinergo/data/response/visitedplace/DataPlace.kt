@@ -1,19 +1,19 @@
-package com.itinergo.data.response
+package com.itinergo.data.response.visitedplace
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Data(
+data class DataPlace(
     @SerializedName("city")
     val city: String,
+    @SerializedName("image")
+    val image: String,
     @SerializedName("country")
     val country: String,
     @SerializedName("createdAt")
     val createdAt: String,
     @SerializedName("id")
     val id: Int,
-    @SerializedName("image")
-    val image: String,
     @SerializedName("month")
     val month: String,
     @SerializedName("updatedAt")
@@ -21,5 +21,5 @@ data class Data(
     @SerializedName("user_id")
     val userId: Int,
     @SerializedName("year")
-    val year: String
+    val year: Int
 )

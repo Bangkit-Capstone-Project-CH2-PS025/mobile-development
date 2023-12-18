@@ -1,6 +1,5 @@
 package com.itinergo.ui.home
 
-import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -12,10 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
-import com.itinergo.data.response.BaseResponse
-import com.itinergo.data.response.DataDay
-import com.itinergo.data.response.DataX
-import com.itinergo.databinding.FragmentHomeBinding
+import com.itinergo.data.response.postitinerary.DataX
 import com.itinergo.databinding.FragmentItineraryPlanningBinding
 import dagger.hilt.android.AndroidEntryPoint
 

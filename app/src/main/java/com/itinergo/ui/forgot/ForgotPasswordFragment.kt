@@ -13,7 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
-import com.itinergo.data.response.BaseResponse
+import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentForgotPasswordBinding
 import com.itinergo.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint

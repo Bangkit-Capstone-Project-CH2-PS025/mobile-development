@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
 import com.itinergo.adapter.PlaceAdapter
-import com.itinergo.data.response.BaseResponse
+import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentPlaceBinding
 import dagger.hilt.android.AndroidEntryPoint
 

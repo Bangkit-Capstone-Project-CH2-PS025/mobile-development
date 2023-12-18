@@ -8,7 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import com.itinergo.data.response.BaseResponse
+import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.ActivityRegisterBinding
 import com.itinergo.ui.login.LoginActivity
 import com.itinergo.ui.verification.VerificationActivity

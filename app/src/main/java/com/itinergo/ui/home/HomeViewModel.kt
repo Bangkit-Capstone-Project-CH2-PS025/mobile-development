@@ -6,10 +6,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.google.gson.Gson
 import com.itinergo.data.request.ItineraryRequest
-import com.itinergo.data.response.BaseResponse
-import com.itinergo.data.response.ErrorResponse
-import com.itinergo.data.response.GetItineraryResponse
-import com.itinergo.data.response.PostItineraryResponse
+import com.itinergo.data.response.base.BaseResponse
+import com.itinergo.data.response.base.ErrorResponse
+import com.itinergo.data.response.getitinerary.GetItineraryResponse
+import com.itinergo.data.response.postitinerary.PostItineraryResponse
 import com.itinergo.data.service.ApiService
 import com.itinergo.utils.DatastoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -53,35 +53,6 @@ class HomeViewModel @Inject constructor(
 
                 override fun onFailure(call: Call<PostItineraryResponse>, t: Throwable) {
                     postItineraryResult.value = BaseResponse.Error("Network Error")
-                }
-            })
-    }
-    fun getAllItinerary() {
-        itineraryResult.value = BaseResponse.Loading()
-        client.getAllItinerary()
-            .enqueue(object : Callback<GetItineraryResponse> {
-                override fun onResponse(
-                    call: Call<GetItineraryResponse>,
-                    response: Response<GetItineraryResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        val responseBody = response.body()
-                        itineraryResult.value = BaseResponse.Success(responseBody)
-                    } else {
-                        val errorBody = response.errorBody()
-                        if (errorBody != null) {
-                            val errorResponse =
-                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
-                            val errorMessage = errorResponse.message
-                            itineraryResult.value = BaseResponse.Error(errorMessage)
-                        } else {
-                            itineraryResult.value = BaseResponse.Error("Unknown error occurred")
-                        }
-                    }
-                }
-
-                override fun onFailure(call: Call<GetItineraryResponse>, t: Throwable) {
-                    itineraryResult.value = BaseResponse.Error("Network Error")
                 }
             })
     }
