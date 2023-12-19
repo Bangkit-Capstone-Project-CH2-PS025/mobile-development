@@ -16,6 +16,7 @@ import com.itinergo.data.response.login.LoginResponse
 import com.itinergo.data.response.addplace.PostAddPlaceResponse
 import com.itinergo.data.response.finishsaved.FinishSavedResponse
 import com.itinergo.data.response.postitinerary.PostItineraryResponse
+import com.itinergo.data.response.preferences.CarbonResponse
 import com.itinergo.data.response.preferences.PostPreferencesResponse
 import com.itinergo.data.response.register.RegisterResponse
 import com.itinergo.data.response.savedplace.DetailSavedPlaceResponse
@@ -109,5 +110,8 @@ interface ApiService {
 
     @POST("itinerary/preferences")
     fun postPreferences(@Body request: PreferencesRequest): Call <PostPreferencesResponse>
+
+    @GET("itinerary/calc-carbon")
+    fun getCarbon(): Call <CarbonResponse>
 
 }

@@ -154,6 +154,4 @@ class DetailProfileFragment : Fragment() {
             }
         }
     }
-
-
 }

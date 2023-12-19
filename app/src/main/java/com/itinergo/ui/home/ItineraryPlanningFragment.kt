@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
+import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.postitinerary.DataX
 import com.itinergo.databinding.FragmentItineraryPlanningBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,6 +40,41 @@ class ItineraryPlanningFragment : Fragment() {
         setButton()
         setParcelable()
         setText()
+        setCarbon()
+    }
+
+    private fun setCarbon() {
+        viewModel.getCarbon()
+        viewModel.getCarbonResult.observe(viewLifecycleOwner) {
+            when (it) {
+                is BaseResponse.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+
+                is BaseResponse.Success -> {
+                    binding.progressBar.visibility = View.GONE
+
+                    binding.tvDistance.text = it.data?.data?.totalDistance.toString()
+                    binding.tvTransportCost.text = it.data?.data?.busPrice.toString()
+                    binding.tvTransportCost1.text = it.data?.data?.motorbikePrice.toString()
+                    binding.tvTransportCost2.text = it.data?.data?.carPrice.toString()
+                    binding.tvTransportCarbon.text = it.data?.data?.busCo2.toString()
+                    binding.tvTransportCarbon1.text = it.data?.data?.motorbikeCo2.toString()
+                    binding.tvTransportCarbon2.text = it.data?.data?.carCo2.toString()
+
+                }
+
+                is BaseResponse.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(requireContext(), "Error: ${it.msg}", Toast.LENGTH_SHORT).show()
+                }
+
+                else -> {
+
+                }
+            }
+        }
+
     }
 
     private fun setText() {
@@ -171,5 +208,6 @@ class ItineraryPlanningFragment : Fragment() {
             findNavController().navigate(R.id.action_itineraryPlanningFragment_to_voilaHomeFragment)
         }
     }
+
 
 }

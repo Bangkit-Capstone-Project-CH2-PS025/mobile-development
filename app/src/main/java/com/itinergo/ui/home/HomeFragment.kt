@@ -3,6 +3,7 @@ package com.itinergo.ui.home
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,6 +20,7 @@ import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.postitinerary.DataDay
 import com.itinergo.data.response.postitinerary.DataX
 import com.itinergo.databinding.FragmentHomeBinding
+import com.itinergo.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 
@@ -250,6 +252,16 @@ class HomeFragment : Fragment() {
         }
         binding.ivTravelTips.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_travelTipsFragment)
+        }
+    }
+    override fun onStart() {
+        super.onStart()
+        viewModel.getDataStoreIsLogin().observe(this) { isLogin ->
+            if (isLogin == false) {
+                val intent = Intent(requireContext(), LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+            }
         }
     }
 
