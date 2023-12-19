@@ -18,6 +18,7 @@ import com.itinergo.data.response.postitinerary.PostItineraryResponse
 import com.itinergo.data.response.register.RegisterResponse
 import com.itinergo.data.response.savedplace.DetailSavedPlaceResponse
 import com.itinergo.data.response.savedplace.SavedPlaceResponse
+import com.itinergo.data.response.traveltips.GetAllTravelTipsResponse
 import com.itinergo.data.response.visitedplace.VisitedPlaceResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -96,5 +97,8 @@ interface ApiService {
 
     @GET("visited-place/count-by-city")
     fun getCountByCity(): Call <CountByCityResponse>
+
+    @GET("travel-tips/get-all")
+    fun getAllTravelTips(): Call <GetAllTravelTipsResponse>
 
 }

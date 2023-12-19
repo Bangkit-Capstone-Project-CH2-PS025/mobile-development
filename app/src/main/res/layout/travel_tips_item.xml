@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+
+    <ImageView
+        android:id="@+id/iv_default"
+        android:layout_width="358dp"
+        android:layout_height="314dp"
+        android:background="@drawable/plan_background"
+        android:backgroundTint="#F2F2F2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_img_place"
+        android:layout_width="358dp"
+        android:layout_height="194dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="@+id/iv_default"
+        app:layout_constraintStart_toStartOf="@+id/iv_default"
+        app:layout_constraintTop_toTopOf="@+id/iv_default"
+        app:shapeAppearanceOverlay="@style/RoundedSquare"
+        app:srcCompat="@drawable/monas" />
+
+    <TextView
+        android:id="@+id/tv_title_travel_tips_item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/poppins_bold"
+        android:maxLines="4"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_default"
+        app:layout_constraintEnd_toEndOf="@+id/iv_img_place"
+        app:layout_constraintStart_toStartOf="@+id/iv_img_place"
+        app:layout_constraintTop_toBottomOf="@+id/iv_img_place"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/tv_author_travel_tips_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_title_travel_tips_item"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_travel_tips_item"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_travel_tips_item"
+        tools:text="Yoriko Angeline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
