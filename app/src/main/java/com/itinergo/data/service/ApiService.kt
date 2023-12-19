@@ -5,6 +5,8 @@ import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
 import com.itinergo.data.request.UpdateRequest
+import com.itinergo.data.response.account.CountByCityResponse
+import com.itinergo.data.response.account.CountByCountryResponse
 import com.itinergo.data.response.account.GetAccountResponse
 import com.itinergo.data.response.account.UpdateProfileResponse
 import com.itinergo.data.response.forgot.ForgotPasswordResponse
@@ -88,5 +90,11 @@ interface ApiService {
     fun updateAccountWithoutImage(
         @Body request: UpdateRequest
     ) : Call<UpdateProfileResponse>
+
+    @GET("visited-place/count-by-country")
+    fun getCountByCountry(): Call <CountByCountryResponse>
+
+    @GET("visited-place/count-by-city")
+    fun getCountByCity(): Call <CountByCityResponse>
 
 }
