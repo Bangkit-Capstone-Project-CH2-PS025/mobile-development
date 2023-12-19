@@ -11,6 +11,7 @@ import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.base.ErrorResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.postitinerary.PostItineraryResponse
+import com.itinergo.data.response.preferences.CarbonResponse
 import com.itinergo.data.response.preferences.PostPreferencesResponse
 import com.itinergo.data.service.ApiService
 import com.itinergo.utils.DatastoreManager
@@ -26,7 +27,6 @@ class HomeViewModel @Inject constructor(
     private val pref: DatastoreManager
 ) : ViewModel() {
 
-    val itineraryResult: MutableLiveData<BaseResponse<GetItineraryResponse>> = MutableLiveData()
     val postItineraryResult: MutableLiveData<BaseResponse<PostItineraryResponse>> = MutableLiveData()
 
     fun postItinerary(city: String, budget: Int, duration: Int, preferences1: String, preferences2: String) {
@@ -120,9 +120,43 @@ class HomeViewModel @Inject constructor(
                 }
             })
     }
+    val getCarbonResult: MutableLiveData<BaseResponse<CarbonResponse>> = MutableLiveData()
+    fun getCarbon() {
+        getCarbonResult.value = BaseResponse.Loading()
+        client.getCarbon()
+            .enqueue(object : Callback<CarbonResponse> {
+                override fun onResponse(
+                    call: Call<CarbonResponse>,
+                    response: Response<CarbonResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        getCarbonResult.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            getCarbonResult.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            getCarbonResult.value = BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<CarbonResponse>, t: Throwable) {
+                    getCarbonResult.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
 
     fun getDataStoreName(): LiveData<String> {
         return pref.getName.asLiveData()
+    }
+
+    fun getDataStoreIsLogin(): LiveData<Boolean> {
+        return pref.getIsLogin.asLiveData()
     }
 
 }
