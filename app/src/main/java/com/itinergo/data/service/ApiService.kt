@@ -3,6 +3,7 @@ package com.itinergo.data.service
 import com.itinergo.data.request.ForgotPasswordRequest
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
+import com.itinergo.data.request.PreferencesRequest
 import com.itinergo.data.request.RegisterRequest
 import com.itinergo.data.request.UpdateRequest
 import com.itinergo.data.response.account.CountByCityResponse
@@ -15,6 +16,7 @@ import com.itinergo.data.response.login.LoginResponse
 import com.itinergo.data.response.addplace.PostAddPlaceResponse
 import com.itinergo.data.response.finishsaved.FinishSavedResponse
 import com.itinergo.data.response.postitinerary.PostItineraryResponse
+import com.itinergo.data.response.preferences.PostPreferencesResponse
 import com.itinergo.data.response.register.RegisterResponse
 import com.itinergo.data.response.savedplace.DetailSavedPlaceResponse
 import com.itinergo.data.response.savedplace.SavedPlaceResponse
@@ -104,5 +106,8 @@ interface ApiService {
 
     @GET("travel-tips/get-one/{id}")
     fun getDetailTravelTips(@Path ("id") id: String): Call <GetDetailTravelTipsResponse>
+
+    @POST("itinerary/preferences")
+    fun postPreferences(@Body request: PreferencesRequest): Call <PostPreferencesResponse>
 
 }

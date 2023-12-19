@@ -6,10 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.google.gson.Gson
 import com.itinergo.data.request.ItineraryRequest
+import com.itinergo.data.request.PreferencesRequest
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.base.ErrorResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.postitinerary.PostItineraryResponse
+import com.itinergo.data.response.preferences.PostPreferencesResponse
 import com.itinergo.data.service.ApiService
 import com.itinergo.utils.DatastoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -87,6 +89,38 @@ class HomeViewModel @Inject constructor(
                 }
             })
     }
+
+    val postPreferencesResult: MutableLiveData<BaseResponse<PostPreferencesResponse>> = MutableLiveData()
+    fun postPreferences(city: String) {
+        postPreferencesResult.value = BaseResponse.Loading()
+        client.postPreferences(PreferencesRequest(city))
+            .enqueue(object : Callback<PostPreferencesResponse> {
+                override fun onResponse(
+                    call: Call<PostPreferencesResponse>,
+                    response: Response<PostPreferencesResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        postPreferencesResult.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            postPreferencesResult.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            postPreferencesResult.value = BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<PostPreferencesResponse>, t: Throwable) {
+                    postPreferencesResult.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
+
     fun getDataStoreName(): LiveData<String> {
         return pref.getName.asLiveData()
     }

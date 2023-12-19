@@ -8,15 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.itinergo.R
+import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentPlanBinding
 import com.itinergo.utils.RecomendedButton
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PlanFragment : BottomSheetDialogFragment() {
     private var _binding: FragmentPlanBinding? = null
     private val binding get() = _binding!!
+    private lateinit var viewModel: HomeViewModel
 
     // max selected button is 2
     private var clickedButtonIndex = arrayListOf<Int>()
@@ -33,6 +38,7 @@ class PlanFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?,
     ): View {
         // Inflate the layout for this fragment
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         _binding = FragmentPlanBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -109,13 +115,43 @@ class PlanFragment : BottomSheetDialogFragment() {
         buttons.add(binding.btn7)
         buttons.add(binding.btn8)
 
+
+        val cityButton = arguments?.getString("city")
+        if (cityButton != null) {
+            viewModel.postPreferences(cityButton)
+        }
+        viewModel.postPreferencesResult.observe(viewLifecycleOwner) {
+            when (it) {
+                is BaseResponse.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+
+                is BaseResponse.Success -> {
+                    binding.progressBar.visibility = View.GONE
+
+                    it.data?.data?.indices?.forEach { index ->
+                        buttons.getOrNull(index)?.text = it.data.data.getOrNull(index) ?: ""
+                    }
+                }
+
+                is BaseResponse.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(requireContext(), "Error: ${it.msg}", Toast.LENGTH_SHORT).show()
+                }
+
+                else -> {
+
+                }
+            }
+        }
+
         for (i in 0..<buttons.size) {
             val button = buttons[i]
             button.setOnClickListener {
                 // default behaviour
                 if (buttonChecked(i)) {
                     val initialDrawable =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+                        ContextCompat.getDrawable(requireContext(), R.drawable.ic_add)
                     button.setCompoundDrawablesWithIntrinsicBounds(
                         null,
                         null,
@@ -132,7 +168,7 @@ class PlanFragment : BottomSheetDialogFragment() {
                     val newDrawable =
                         ContextCompat.getDrawable(
                             requireContext(),
-                            R.drawable.baseline_check_24
+                            R.drawable.ic_check
                         )
                     button.setCompoundDrawablesWithIntrinsicBounds(
                         null,
@@ -181,7 +217,7 @@ class PlanFragment : BottomSheetDialogFragment() {
     }
     private fun setIcon() {
         val initialDrawable =
-            ContextCompat.getDrawable(requireContext(), R.drawable.baseline_add_24)
+            ContextCompat.getDrawable(requireContext(), R.drawable.ic_add)
         binding.btn.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
         binding.btn2.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
         binding.btn3.setCompoundDrawablesWithIntrinsicBounds(null, null, initialDrawable, null)
