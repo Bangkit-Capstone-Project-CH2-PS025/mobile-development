@@ -4,6 +4,11 @@ import com.itinergo.data.request.ForgotPasswordRequest
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
+import com.itinergo.data.request.UpdateRequest
+import com.itinergo.data.response.account.CountByCityResponse
+import com.itinergo.data.response.account.CountByCountryResponse
+import com.itinergo.data.response.account.GetAccountResponse
+import com.itinergo.data.response.account.UpdateProfileResponse
 import com.itinergo.data.response.forgot.ForgotPasswordResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.login.LoginResponse
@@ -69,5 +74,27 @@ interface ApiService {
 
     @PUT("detail-itinerary/update/{id}")
     fun updateFinishSaved(@Path ("id") id: String): Call <FinishSavedResponse>
+
+    @GET("account/getAccount")
+    fun getAccount(): Call <GetAccountResponse>
+
+    @Multipart
+    @PUT("account/updateAccount")
+    fun updateAccount(
+        @Part("name") name: RequestBody?,
+        @Part("email") email: RequestBody?,
+        @Part images: MultipartBody.Part?
+    ) : Call<UpdateProfileResponse>
+
+    @PUT("account/updateAccount")
+    fun updateAccountWithoutImage(
+        @Body request: UpdateRequest
+    ) : Call<UpdateProfileResponse>
+
+    @GET("visited-place/count-by-country")
+    fun getCountByCountry(): Call <CountByCountryResponse>
+
+    @GET("visited-place/count-by-city")
+    fun getCountByCity(): Call <CountByCityResponse>
 
 }

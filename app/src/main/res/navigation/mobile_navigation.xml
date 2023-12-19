@@ -130,6 +130,9 @@
         <action
             android:id="@+id/action_detailProfileFragment_to_navigation_account"
             app:destination="@id/navigation_account" />
+        <action
+            android:id="@+id/action_detailProfileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/travelTipsFragment"
@@ -180,5 +183,14 @@
         <action
             android:id="@+id/action_planFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+    </dialog>
+    <dialog
+        android:id="@+id/editProfileFragment"
+        android:name="com.itinergo.ui.account.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_detailProfileFragment"
+            app:destination="@id/detailProfileFragment" />
     </dialog>
 </navigation>

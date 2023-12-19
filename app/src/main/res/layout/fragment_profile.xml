@@ -21,20 +21,20 @@
         android:id="@+id/iv_account_profile"
         android:layout_width="70dp"
         android:layout_height="94dp"
-        android:src="@drawable/zoro"
+        tools:src="@drawable/zoro"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="@+id/iv_default_acc"
         app:layout_constraintStart_toStartOf="@+id/iv_default_acc"
         app:layout_constraintTop_toTopOf="@+id/iv_default_acc" />
 
     <TextView
         android:id="@+id/tv_account_name"
-        android:layout_width="208dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Roronoa Zoro"
         android:fontFamily="@font/poppins_semibold"
-        android:textSize="20sp"
         android:gravity="center"
-        android:drawableEnd="@drawable/baseline_edit_24"
+        tools:text="Roronoa Zoro"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_account_profile"
         app:layout_constraintStart_toStartOf="@+id/iv_account_profile"
         app:layout_constraintTop_toBottomOf="@+id/iv_account_profile" />
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="the Traveller"
+        tools:text="the Traveller"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_account_name"
@@ -175,12 +175,21 @@
         android:id="@+id/tv_account_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="roronoazoro@gmail.com"
+        tools:text="roronoazoro@gmail.com"
         android:fontFamily="@font/poppins"
-        android:drawableEnd="@drawable/baseline_edit_24"
         app:layout_constraintEnd_toEndOf="@+id/iv_default_acc"
         app:layout_constraintStart_toStartOf="@+id/tv_default_email"
         app:layout_constraintTop_toBottomOf="@+id/tv_default_email" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

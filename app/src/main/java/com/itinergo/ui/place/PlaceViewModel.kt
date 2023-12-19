@@ -19,8 +19,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PlaceViewModel @Inject constructor(
-    private val client: ApiService,
-    private val pref: DatastoreManager
+    private val client: ApiService
 ) : ViewModel() {
 
     val visitedPlaceResult: MutableLiveData<BaseResponse<VisitedPlaceResponse>> = MutableLiveData()
