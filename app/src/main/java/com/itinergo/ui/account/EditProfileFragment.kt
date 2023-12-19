@@ -2,11 +2,13 @@ package com.itinergo.ui.account
 
 import android.Manifest
 import android.app.AlertDialog
+import android.content.ContentValues.TAG
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +23,6 @@ import com.itinergo.R
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentEditProfileBinding
 import com.itinergo.ui.forgot.toPx
-import com.itinergo.ui.place.AddPlaceFragment
 import com.itinergo.utils.reduceFileImage
 import com.itinergo.utils.uriToFile
 import dagger.hilt.android.AndroidEntryPoint
@@ -60,7 +61,7 @@ class EditProfileFragment : DialogFragment() {
             ?.apply {
                 setLayout(
                     350.toPx(requireContext()),
-                    500.toPx(requireContext())
+                    400.toPx(requireContext())
                 )
                 setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             }
@@ -114,11 +115,23 @@ class EditProfileFragment : DialogFragment() {
                     imageFile.name,
                     requestImageFile
                 )
-                viewModel.updateAccount(
-                    name,email,imageMultipart
-                )
-                uploadResult()
+                if(binding.edImageEdit.text.toString().isNotEmpty()){
+                    viewModel.updateAccount(
+                        name,email,imageMultipart
+                    )
+                }
+
             }
+            if (binding.edImageEdit.text.toString().isEmpty()) {
+                val nameWithoutImage = binding.edNameEdit.text.toString()
+                val emailWithoutImage = binding.edEmailEdit.text.toString()
+                val images = arguments?.getString("images")
+                Log.d(TAG, "setButton: $images")
+                viewModel.updateAccountWithoutImage(emailWithoutImage,nameWithoutImage,
+                    images.toString()
+                )
+            }
+            uploadResult()
         }
     }
     private fun openGallery() {

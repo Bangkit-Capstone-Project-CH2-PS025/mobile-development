@@ -4,6 +4,7 @@ import com.itinergo.data.request.ForgotPasswordRequest
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.RegisterRequest
+import com.itinergo.data.request.UpdateRequest
 import com.itinergo.data.response.account.GetAccountResponse
 import com.itinergo.data.response.account.UpdateProfileResponse
 import com.itinergo.data.response.forgot.ForgotPasswordResponse
@@ -83,5 +84,9 @@ interface ApiService {
         @Part images: MultipartBody.Part?
     ) : Call<UpdateProfileResponse>
 
+    @PUT("account/updateAccount")
+    fun updateAccountWithoutImage(
+        @Body request: UpdateRequest
+    ) : Call<UpdateProfileResponse>
 
 }

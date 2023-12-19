@@ -67,9 +67,11 @@ class DetailProfileFragment : Fragment() {
                     binding.btnChangeProfile.setOnClickListener { _ ->
                         val name = it.data?.data?.name
                         val email = it.data?.data?.email
+                        val images = it.data?.data?.images
                         val bundle = Bundle()
                         bundle.putString("name", name)
                         bundle.putString("email", email)
+                        bundle.putString("images", images.toString())
                         findNavController().navigate(
                             R.id.action_detailProfileFragment_to_editProfileFragment,
                             bundle

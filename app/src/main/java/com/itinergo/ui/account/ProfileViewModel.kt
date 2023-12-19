@@ -3,6 +3,7 @@ package com.itinergo.ui.account
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
+import com.itinergo.data.request.UpdateRequest
 import com.itinergo.data.response.account.GetAccountResponse
 import com.itinergo.data.response.account.UpdateProfileResponse
 import com.itinergo.data.response.base.BaseResponse
@@ -52,11 +53,43 @@ class ProfileViewModel @Inject constructor(
                 }
             })
     }
-    val updateProfileResult: MutableLiveData<BaseResponse<UpdateProfileResponse>> = MutableLiveData()
 
-    fun updateAccount(name: RequestBody, email:RequestBody, images: MultipartBody.Part) {
+    val updateProfileResult: MutableLiveData<BaseResponse<UpdateProfileResponse>> =
+        MutableLiveData()
+
+    fun updateAccount(name: RequestBody, email: RequestBody, images: MultipartBody.Part) {
         updateProfileResult.value = BaseResponse.Loading()
         client.updateAccount(name, email, images)
+            .enqueue(object : Callback<UpdateProfileResponse> {
+                override fun onResponse(
+                    call: Call<UpdateProfileResponse>,
+                    response: Response<UpdateProfileResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        updateProfileResult.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            updateProfileResult.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            updateProfileResult.value = BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<UpdateProfileResponse>, t: Throwable) {
+                    updateProfileResult.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
+
+    fun updateAccountWithoutImage(email: String, name: String, images: String) {
+        updateProfileResult.value = BaseResponse.Loading()
+        client.updateAccountWithoutImage(UpdateRequest(name, email, images))
             .enqueue(object : Callback<UpdateProfileResponse> {
                 override fun onResponse(
                     call: Call<UpdateProfileResponse>,
