@@ -63,9 +63,20 @@ class TravelBudgetingViewModel @Inject constructor(
         food: String,
         stay: String,
         others: String
-        ) {
+    ) {
         createBudgetingResult.value = BaseResponse.Loading()
-        client.createBudgeting(BudgetingRequest(attractions, budgetName, flight, food, others, shopping, stay, target))
+        client.createBudgeting(
+            BudgetingRequest(
+                attractions,
+                budgetName,
+                flight,
+                food,
+                others,
+                shopping,
+                stay,
+                target
+            )
+        )
             .enqueue(object : Callback<CreateBudgeting> {
                 override fun onResponse(
                     call: Call<CreateBudgeting>,
@@ -82,13 +93,49 @@ class TravelBudgetingViewModel @Inject constructor(
                             val errorMessage = errorResponse.message
                             createBudgetingResult.value = BaseResponse.Error(errorMessage)
                         } else {
-                            createBudgetingResult.value = BaseResponse.Error("Unknown error occurred")
+                            createBudgetingResult.value =
+                                BaseResponse.Error("Unknown error occurred")
                         }
                     }
                 }
 
                 override fun onFailure(call: Call<CreateBudgeting>, t: Throwable) {
                     createBudgetingResult.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
+
+    val travelBudgetById: MutableLiveData<BaseResponse<CreateBudgeting>> = MutableLiveData()
+
+    fun getTravelBudgetById(
+        id: String
+    ) {
+        travelBudgetById.value = BaseResponse.Loading()
+        client.getTravelBudgetById(id)
+            .enqueue(object : Callback<CreateBudgeting> {
+                override fun onResponse(
+                    call: Call<CreateBudgeting>,
+                    response: Response<CreateBudgeting>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        travelBudgetById.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            travelBudgetById.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            travelBudgetById.value =
+                                BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<CreateBudgeting>, t: Throwable) {
+                    travelBudgetById.value = BaseResponse.Error("Network Error")
                 }
             })
     }

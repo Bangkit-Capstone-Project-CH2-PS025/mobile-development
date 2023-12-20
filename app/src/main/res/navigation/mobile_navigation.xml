@@ -206,6 +206,9 @@
         <action
             android:id="@+id/action_travelBudgetingFragment_to_addBudgetingFragment"
             app:destination="@id/addBudgetingFragment" />
+        <action
+            android:id="@+id/action_travelBudgetingFragment_to_detailBudgetingFragment"
+            app:destination="@id/detailBudgetingFragment" />
     </fragment>
     <fragment
         android:id="@+id/addBudgetingFragment"
@@ -223,4 +226,9 @@
             android:id="@+id/action_voilaBudgetFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
+    <fragment
+        android:id="@+id/detailBudgetingFragment"
+        android:name="com.itinergo.ui.travelbudgeting.DetailBudgetingFragment"
+        android:label="fragment_detail_budgeting"
+        tools:layout="@layout/fragment_detail_budgeting" />
 </navigation>

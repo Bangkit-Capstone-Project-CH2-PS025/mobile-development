@@ -143,4 +143,7 @@ interface ApiService {
 
     @POST("travel-budgets/create")
     fun createBudgeting(@Body request : BudgetingRequest): Call<CreateBudgeting>
+    @GET("travel-budgets/get-one/{id}")
+    fun getTravelBudgetById(@Path("id") id: String): Call<CreateBudgeting>
+
 }

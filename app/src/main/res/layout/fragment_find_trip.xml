@@ -112,12 +112,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_ftrip"
-        android:layout_width="356dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/iv_add_list_ftrip"
-        app:layout_constraintStart_toStartOf="@+id/tv_default11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_default11"
         tools:listitem="@layout/find_trip_list_item">
 
