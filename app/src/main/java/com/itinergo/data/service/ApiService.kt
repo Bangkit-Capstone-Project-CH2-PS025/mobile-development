@@ -14,6 +14,9 @@ import com.itinergo.data.response.forgot.ForgotPasswordResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.login.LoginResponse
 import com.itinergo.data.response.addplace.PostAddPlaceResponse
+import com.itinergo.data.response.findtrip.CreateTripResponse
+import com.itinergo.data.response.findtrip.GetAllTripByIdResponse
+import com.itinergo.data.response.findtrip.GetAllTripResponse
 import com.itinergo.data.response.finishsaved.FinishSavedResponse
 import com.itinergo.data.response.postitinerary.PostItineraryResponse
 import com.itinergo.data.response.preferences.CarbonResponse
@@ -113,5 +116,14 @@ interface ApiService {
 
     @GET("itinerary/calc-carbon")
     fun getCarbon(): Call <CarbonResponse>
+
+    @GET("find-trip/get-all")
+    fun getAllFindTrip(): Call <GetAllTripResponse>
+
+    @GET("find-trip/get-all-id")
+    fun getAllTripById(): Call <GetAllTripByIdResponse>
+
+    @POST("find-trip/create")
+    fun createTrip(): Call <CreateTripResponse>
 
 }
