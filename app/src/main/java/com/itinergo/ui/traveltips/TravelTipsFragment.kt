@@ -36,7 +36,7 @@ class TravelTipsFragment : Fragment(), TravelTipsAdapter.ListPlaceInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
-        navbar?.visibility = View.VISIBLE
+        navbar?.visibility = View.GONE
         allTipsResult()
     }
 
