@@ -1,5 +1,6 @@
 package com.itinergo.data.service
 
+import com.itinergo.data.request.BudgetingRequest
 import com.itinergo.data.request.ForgotPasswordRequest
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
@@ -14,6 +15,8 @@ import com.itinergo.data.response.forgot.ForgotPasswordResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.login.LoginResponse
 import com.itinergo.data.response.addplace.PostAddPlaceResponse
+import com.itinergo.data.response.budgeting.CreateBudgeting
+import com.itinergo.data.response.budgeting.GetAllBudgeting
 import com.itinergo.data.response.findtrip.CreateTripResponse
 import com.itinergo.data.response.findtrip.GetAllTripByIdResponse
 import com.itinergo.data.response.findtrip.GetAllTripResponse
@@ -135,4 +138,9 @@ interface ApiService {
         @Part image: MultipartBody.Part
     ): Call<CreateTripResponse>
 
+    @GET("travel-budgets/get-all")
+    fun getAllTravelBudget(): Call<GetAllBudgeting>
+
+    @POST("travel-budgets/create")
+    fun createBudgeting(@Body request : BudgetingRequest): Call<CreateBudgeting>
 }
