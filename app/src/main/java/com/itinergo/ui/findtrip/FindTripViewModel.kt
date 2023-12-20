@@ -5,11 +5,14 @@ import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.base.ErrorResponse
+import com.itinergo.data.response.findtrip.CreateTripResponse
 import com.itinergo.data.response.findtrip.GetAllTripByIdResponse
 import com.itinergo.data.response.findtrip.GetAllTripResponse
 import com.itinergo.data.service.ApiService
 import com.itinergo.utils.DatastoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,6 +53,7 @@ class FindTripViewModel @Inject constructor(
             }
         })
     }
+
     val allTripByIdResult: MutableLiveData<BaseResponse<GetAllTripByIdResponse>> = MutableLiveData()
 
     fun getAllTripById() {
@@ -80,38 +84,47 @@ class FindTripViewModel @Inject constructor(
             }
         })
     }
-//    val updateProfileResult: MutableLiveData<BaseResponse<UpdateProfileResponse>> =
-//        MutableLiveData()
-//
-//    fun updateAccount(name: RequestBody, email: RequestBody, images: MultipartBody.Part) {
-//        updateProfileResult.value = BaseResponse.Loading()
-//        client.updateAccount(name, email, images)
-//            .enqueue(object : Callback<UpdateProfileResponse> {
-//                override fun onResponse(
-//                    call: Call<UpdateProfileResponse>,
-//                    response: Response<UpdateProfileResponse>
-//                ) {
-//                    if (response.isSuccessful) {
-//                        val responseBody = response.body()
-//                        updateProfileResult.value = BaseResponse.Success(responseBody)
-//                    } else {
-//                        val errorBody = response.errorBody()
-//                        if (errorBody != null) {
-//                            val errorResponse =
-//                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
-//                            val errorMessage = errorResponse.message
-//                            updateProfileResult.value = BaseResponse.Error(errorMessage)
-//                        } else {
-//                            updateProfileResult.value = BaseResponse.Error("Unknown error occurred")
-//                        }
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<UpdateProfileResponse>, t: Throwable) {
-//                    updateProfileResult.value = BaseResponse.Error("Network Error")
-//                }
-//            })
-//    }
+
+    val createTripResult: MutableLiveData<BaseResponse<CreateTripResponse>> =
+        MutableLiveData()
+
+    fun createTrip(
+        city: RequestBody,
+        country: RequestBody,
+        departure: RequestBody,
+        until: RequestBody,
+        persons: RequestBody,
+        contact: RequestBody,
+        image: MultipartBody.Part
+    ) {
+        createTripResult.value = BaseResponse.Loading()
+        client.createTrip(city,country,departure,until,persons,contact,image)
+            .enqueue(object : Callback<CreateTripResponse> {
+                override fun onResponse(
+                    call: Call<CreateTripResponse>,
+                    response: Response<CreateTripResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        createTripResult.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            createTripResult.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            createTripResult.value = BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<CreateTripResponse>, t: Throwable) {
+                    createTripResult.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
 //
 //    fun updateAccountWithoutImage(email: String, name: String, images: String) {
 //        updateProfileResult.value = BaseResponse.Loading()

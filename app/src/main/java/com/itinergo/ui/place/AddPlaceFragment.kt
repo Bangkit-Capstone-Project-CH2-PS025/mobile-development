@@ -69,7 +69,6 @@ class AddPlaceFragment : Fragment() {
         navbar?.visibility = View.GONE
         setButton()
         setPermission()
-        uploadResult()
     }
 
     private fun uploadResult() {
@@ -143,6 +142,7 @@ class AddPlaceFragment : Fragment() {
                     city,country,month,year,imageMultipart
                 )
             }
+            uploadResult()
         }
     }
 

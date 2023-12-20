@@ -121,8 +121,10 @@
             android:layout_marginStart="8dp"
             android:backgroundTint="#f1f1f1"
             android:ellipsize="start"
+            android:focusable="false"
             android:gravity="center"
             android:hint="Input Departure"
+            android:inputType="none"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_departure_add"
             app:layout_constraintEnd_toEndOf="@+id/et_country_add"
@@ -148,14 +150,16 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_departure_add" />
 
         <com.itinergo.utils.EditTextPlan
-            android:id="@+id/et_year_add"
+            android:id="@+id/et_until_add"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:backgroundTint="#f1f1f1"
             android:ellipsize="start"
+            android:focusable="false"
             android:gravity="center"
             android:hint="Input Until"
+            android:inputType="none"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_until_add"
             app:layout_constraintEnd_toEndOf="@+id/et_departure_add"
@@ -190,7 +194,7 @@
             android:hint="Input Persons"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_persons_add"
-            app:layout_constraintEnd_toEndOf="@+id/et_year_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_until_add"
             app:layout_constraintStart_toEndOf="@+id/tv_persons_add"
             app:layout_constraintTop_toTopOf="@+id/tv_persons_add" />
 
@@ -222,7 +226,7 @@
             android:hint="Input Contact"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_contact_add"
-            app:layout_constraintEnd_toEndOf="@+id/et_year_add"
+            app:layout_constraintEnd_toEndOf="@+id/et_until_add"
             app:layout_constraintStart_toEndOf="@+id/tv_contact_add"
             app:layout_constraintTop_toTopOf="@+id/tv_contact_add" />
 
@@ -249,7 +253,9 @@
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:backgroundTint="#f1f1f1"
-            android:ellipsize="start"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:focusable="false"
             android:gravity="center"
             android:hint="@string/input_image"
             android:inputType="none"
@@ -269,6 +275,16 @@
             app:layout_constraintEnd_toEndOf="@+id/et_image_add"
             app:layout_constraintStart_toStartOf="@+id/tv_image_add"
             app:layout_constraintTop_toBottomOf="@+id/et_image_add" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -75,16 +75,16 @@ interface ApiService {
     ): Call<PostAddPlaceResponse>
 
     @GET("detail-itinerary/get-all")
-    fun getAllSavedPlace(): Call <SavedPlaceResponse>
+    fun getAllSavedPlace(): Call<SavedPlaceResponse>
 
     @GET("detail-itinerary/get-one/{id}")
-    fun getDetailSavedPlace(@Path ("id") id: String): Call <DetailSavedPlaceResponse>
+    fun getDetailSavedPlace(@Path("id") id: String): Call<DetailSavedPlaceResponse>
 
     @PUT("detail-itinerary/update/{id}")
-    fun updateFinishSaved(@Path ("id") id: String): Call <FinishSavedResponse>
+    fun updateFinishSaved(@Path("id") id: String): Call<FinishSavedResponse>
 
     @GET("account/getAccount")
-    fun getAccount(): Call <GetAccountResponse>
+    fun getAccount(): Call<GetAccountResponse>
 
     @Multipart
     @PUT("account/updateAccount")
@@ -92,38 +92,47 @@ interface ApiService {
         @Part("name") name: RequestBody?,
         @Part("email") email: RequestBody?,
         @Part images: MultipartBody.Part?
-    ) : Call<UpdateProfileResponse>
+    ): Call<UpdateProfileResponse>
 
     @PUT("account/updateAccount")
     fun updateAccountWithoutImage(
         @Body request: UpdateRequest
-    ) : Call<UpdateProfileResponse>
+    ): Call<UpdateProfileResponse>
 
     @GET("visited-place/count-by-country")
-    fun getCountByCountry(): Call <CountByCountryResponse>
+    fun getCountByCountry(): Call<CountByCountryResponse>
 
     @GET("visited-place/count-by-city")
-    fun getCountByCity(): Call <CountByCityResponse>
+    fun getCountByCity(): Call<CountByCityResponse>
 
     @GET("travel-tips/get-all")
-    fun getAllTravelTips(): Call <GetAllTravelTipsResponse>
+    fun getAllTravelTips(): Call<GetAllTravelTipsResponse>
 
     @GET("travel-tips/get-one/{id}")
-    fun getDetailTravelTips(@Path ("id") id: String): Call <GetDetailTravelTipsResponse>
+    fun getDetailTravelTips(@Path("id") id: String): Call<GetDetailTravelTipsResponse>
 
     @POST("itinerary/preferences")
-    fun postPreferences(@Body request: PreferencesRequest): Call <PostPreferencesResponse>
+    fun postPreferences(@Body request: PreferencesRequest): Call<PostPreferencesResponse>
 
     @GET("itinerary/calc-carbon")
-    fun getCarbon(): Call <CarbonResponse>
+    fun getCarbon(): Call<CarbonResponse>
 
     @GET("find-trip/get-all")
-    fun getAllFindTrip(): Call <GetAllTripResponse>
+    fun getAllFindTrip(): Call<GetAllTripResponse>
 
     @GET("find-trip/get-all-id")
-    fun getAllTripById(): Call <GetAllTripByIdResponse>
+    fun getAllTripById(): Call<GetAllTripByIdResponse>
 
+    @Multipart
     @POST("find-trip/create")
-    fun createTrip(): Call <CreateTripResponse>
+    fun createTrip(
+        @Part("city") city: RequestBody,
+        @Part("country") country: RequestBody,
+        @Part("departure") departure: RequestBody,
+        @Part("until") until: RequestBody,
+        @Part("persons") persons: RequestBody,
+        @Part("contact") contact: RequestBody,
+        @Part image: MultipartBody.Part
+    ): Call<CreateTripResponse>
 
 }
