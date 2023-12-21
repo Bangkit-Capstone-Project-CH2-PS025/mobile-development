@@ -1,40 +1,74 @@
-# Itinergo Mobile Application
+# Mobile Development Path
+This is the repository CH2-PS025 Bangkit 2023 Batch 2 Product-based Capstone by Mobile Development Path
 
-## How to run
-1. Open in android studio, then run :D
+##  Members
+| Bangkit ID | Name | University |
+|-----|-------|------|
+| A182BSY2333   | Zain Al Bani Budi Prabowo	 |  Universitas Amikom Purwokerto	 |
+| A002BSY1940	   |  Samuel Christopher Swandi  | Institut Teknologi Bandung | 
 
-## Git branching
-Untuk setiap task, buat branch baru dengan spesifikasi berikut
-List tipe:
-- Story, untuk fitur atau use case baru
-- Task, untuk bug fixing, performance improvement, refactor, dsb.
-Judul: gunakan kebab case
-Contoh:
-- story/api-attendance
-- story/page-attendance
-- task/improve-sql-performance-on-xxxx-method
-Setelah selesai, Pull Request ke master dan assign reviewer
+# App Description
+An Android application that enables users to personalize travel itineraries based on budget and activity preferences. This application build with Model–view–viewmodel (MVVM) architectural pattern.
+- The model represents the app’s domain model, which can include a data model as well as business and validation logic. It communicates with the ViewModel, and lacks awareness of the View.
+- The View represents the user interface of the application and holds limited, purely presentational logic that implements visual behavior. The View is completely agnostic to the business logic. In other words, the View is a “dumb” class that never contains data, nor manipulates it directly. It communicates with the ViewModel through data binding and is unaware of the Model.
+- The ViewModel is the link between the View and the Model. It implements and exposes public properties and commands that the View uses by way of data binding. If any state changes occur, the ViewModel notifies the View through notification events. 
 
-## Code Styling & Repository
-Sangat dimohon untuk memperhatikan hal-hal berikut:
-1. Penamaan variabel, fungsi, dan kelas yang bermakna
-2. Penyingkatan harus mudah ditebak dan masih terbaca
-    - Misalkan, codeStylingAndRepository, terlalu panjang, disingkat menjadi: codeStyleNRepo
-    - Yang Salah: csnr, cdStNrep
-      3.Membuat kelas dengan pascal case (ClassName)
-3. Membuat fungsi dan variable dengan camel case (fungsiDanVariabel)
-4. Membuat folder dan file dengan snake case (folder_styling)
-5. Membuat komponen React dan nama filenya dengan pascal case (NamaKomponen)
+# Features
+#### 1. Itinerary Planning (**Main Feature**)
+Itinerary Planning is a feature that allows users to personalize their travel based on city selection, budget constraints, duration of the trip, and preferences. This functionality empowers users to intricately plan each aspect of their journey according to their desires and specific needs. The result based on input is itinerary, carbon footprint, and available transportations. 
 
-## Semantic Commit Message
+#### 2. Find Trip
+Find Trip is a feature for users to see the available trip to join, or the users can uploaded trip and encourage another users to join the trip. User can add trip to search friends and user will get the contact information of the trip owner if they join the trip.
 
-- `feat`: (new feature for the user, not a new feature for build script)
-- `fix`: (bug fix for the user, not a fix to a build script)
-- `docs`: (changes to the documentation)
-- `style`: (formatting, missing semi colons, etc; no production code change)
-- `refactor`: (refactoring production code, eg. renaming a variable)
-- `test`: (adding missing tests, refactoring tests; no production code change)
-- `chore`: (updating grunt tasks etc; no production code change)
+#### 3. Budgeting
+Budgeting is a feature for users to track their savings relative to their target for a trip, and user can edit or add the budget details based on several categories.
 
-## Reference
-1. Please refer to [this](https://github.com/golang-standards/project-layout/tree/master/deployments) document for understanding project structure
+#### 4. Travel Tips
+Travel tips is a feature for users to see guidance on traveling to a destination. Example: when a user go to Bali, they can see the tips and trick in Bali during vacation.
+
+#### 5. Places
+Places is a feature for users to see the list of visited places including the photo, and can add list of new place include the photos. After users adding new places, users will get the XP.
+
+#### 6. Saved Places
+Saved Places is a feature for users to see the list of saved and history itinerary, and users can see the details of ongoing itinerary. When users marked the trip as finished, users will get XP.
+
+#### 7. Account
+Account is a feature to get details of user information, dashboard of visited places, and XP with gamification level.
+
+# Prototype
+The Mobile Development team create prototype in Figma with 3 different prototypes.
+
+[Link of Figma](https://www.figma.com/file/RYR42lEEKWaN2UAzXJPsmw/User-Interface---Bangkit-Capstone-Project?type=design&node-id=0%3A1&mode=design&t=tSsswh441EavG5gK-1)
+
+# Architecture
+
+![image](https://github.com/Bangkit-Capstone-Project-CH2-PS025/mobile-development/assets/105286013/58eeb215-ec78-4835-ab48-5116dc4357a6)
+
+
+# Getting Started Application
+  - ### Prerequisites
+      - ##### Tools Sofware
+        - [Android Studio](https://developer.android.com/studio)
+
+      - #### Installation
+        - Connect Android Studio
+        - Clone this repository and import into Android Studio
+          ```
+          https://github.com/Bangkit-Capstone-Project-CH2-PS025/mobile-development.git
+          ```
+
+### Acknowledgements
+* [Android Fundamental](https://developer.android.com/guide/components/fundamentals?hl=en)
+* [Android Style and Themes](https://developer.android.com/develop/ui/views/theming/themes?hl=en)
+* [Android Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=en)
+* [Android Fragment Lifecycle](https://developer.android.com/guide/fragments/lifecycle?hl=en)
+* [Android Navigation Component](https://developer.android.com/guide/navigation?hl=en)
+* [Android Dependency Injection](https://developer.android.com/training/dependency-injection?hl=en)
+* [Android DataStore](https://developer.android.com/topic/libraries/architecture/datastore?hl=en)
+
+### Permission
+The minimum Android version that can use this app is Android 5.0, with the following permission requests:
+- Internet Access
+- Gallery Access.
+
+Internet access permissions are made to communicate data from the cloud and process itinerary recommendations. Gallery permissions are made to upload some image to Visited Place, Chang Avatar Photo and Find Trip.
