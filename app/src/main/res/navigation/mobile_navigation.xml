@@ -230,5 +230,18 @@
         android:id="@+id/detailBudgetingFragment"
         android:name="com.itinergo.ui.travelbudgeting.DetailBudgetingFragment"
         android:label="fragment_detail_budgeting"
-        tools:layout="@layout/fragment_detail_budgeting" />
+        tools:layout="@layout/fragment_detail_budgeting" >
+        <action
+            android:id="@+id/action_detailBudgetingFragment_to_editTravelBudgetingFragment"
+            app:destination="@id/editTravelBudgetingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTravelBudgetingFragment"
+        android:name="com.itinergo.ui.travelbudgeting.EditTravelBudgetingFragment"
+        android:label="fragment_edit_travel_budgeting"
+        tools:layout="@layout/fragment_edit_travel_budgeting" >
+        <action
+            android:id="@+id/action_editTravelBudgetingFragment_to_detailBudgetingFragment"
+            app:destination="@id/detailBudgetingFragment" />
+    </fragment>
 </navigation>

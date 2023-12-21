@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentAddBudgetingBinding
@@ -34,8 +36,20 @@ class DetailBudgetingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        navbar?.visibility = View.GONE
 
         setResult()
+        setButton()
+    }
+
+    private fun setButton() {
+        binding.ivEditBudget.setOnClickListener { _ ->
+            val id = arguments?.getString("id")
+            val bundle = Bundle()
+            bundle.putString("id", id)
+            findNavController().navigate(R.id.action_detailBudgetingFragment_to_editTravelBudgetingFragment, bundle)
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -60,6 +74,7 @@ class DetailBudgetingFragment : Fragment() {
                     binding.tvShopping.text = "Rp${it.data?.data?.shopping.toString()}"
                     binding.tvStay.text = "Rp${it.data?.data?.stay.toString()}"
                     binding.tvOthers.text = "Rp${it.data?.data?.others.toString()}"
+
                 }
 
                 is BaseResponse.Error -> {

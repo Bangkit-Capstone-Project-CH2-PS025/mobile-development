@@ -6,6 +6,7 @@ import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.LoginRequest
 import com.itinergo.data.request.PreferencesRequest
 import com.itinergo.data.request.RegisterRequest
+import com.itinergo.data.request.UpdateBudgetingRequest
 import com.itinergo.data.request.UpdateRequest
 import com.itinergo.data.response.account.CountByCityResponse
 import com.itinergo.data.response.account.CountByCountryResponse
@@ -17,6 +18,7 @@ import com.itinergo.data.response.login.LoginResponse
 import com.itinergo.data.response.addplace.PostAddPlaceResponse
 import com.itinergo.data.response.budgeting.CreateBudgeting
 import com.itinergo.data.response.budgeting.GetAllBudgeting
+import com.itinergo.data.response.budgeting.UpdateBudgetinResponse
 import com.itinergo.data.response.findtrip.CreateTripResponse
 import com.itinergo.data.response.findtrip.GetAllTripByIdResponse
 import com.itinergo.data.response.findtrip.GetAllTripResponse
@@ -145,5 +147,8 @@ interface ApiService {
     fun createBudgeting(@Body request : BudgetingRequest): Call<CreateBudgeting>
     @GET("travel-budgets/get-one/{id}")
     fun getTravelBudgetById(@Path("id") id: String): Call<CreateBudgeting>
+
+    @PUT("travel-budgets/update/{id}")
+    fun updateBudgeting(@Body request: UpdateBudgetingRequest, @Path("id") id:String): Call<UpdateBudgetinResponse>
 
 }

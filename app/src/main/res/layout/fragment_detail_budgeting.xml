@@ -1,233 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.travelbudgeting.DetailBudgetingFragment">
 
-
-    <ImageView
-        android:id="@+id/iv_default_bg_acc"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/account_detail_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_default_bg_detailacc"
-        android:layout_width="356dp"
-        android:layout_height="400dp"
-        android:background="@drawable/account_background_exp"
-        android:backgroundTint="#F1F0FA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_acc"
-        app:layout_constraintVertical_bias="0.12" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_profile_account_detail"
-        android:layout_width="159dp"
-        android:layout_height="159dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/baseline_monetization_on_150"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintHorizontal_bias="0.50"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintTop_toTopOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintVertical_bias="0.25" />
-
-    <TextView
-        android:id="@+id/tv_budget_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        tools:text="Yogyakarta Trip"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profile_account_detail" />
-
-    <TextView
-        android:id="@+id/tv_target_budget"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        tools:text="Rp2.000.000"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintTop_toBottomOf="@+id/tv_budget_name" />
-
-    <TextView
-        android:id="@+id/tv_default_budget_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Budget Details"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_detailacc" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_budget_detail" />
+        android:layout_height="wrap_content">
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/view">
+        <ImageView
+            android:id="@+id/iv_default_bg_acc"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/account_detail_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_default_bg_detailacc"
+            android:layout_width="356dp"
+            android:layout_height="400dp"
+            android:background="@drawable/account_background_exp"
+            android:backgroundTint="#F1F0FA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_acc"
+            app:layout_constraintVertical_bias="0.12" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile_account_detail"
+            android:layout_width="159dp"
+            android:layout_height="159dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_monetization_on_150"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintTop_toTopOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintVertical_bias="0.25" />
 
         <TextView
-            android:id="@+id/tv_default_flight"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_budget_name"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="Flight" />
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile_account_detail"
+            tools:text="Yogyakarta Trip" />
 
         <TextView
-            android:id="@+id/tv_default_attraction"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_target_budget"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="Attractions" />
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintTop_toBottomOf="@+id/tv_budget_name"
+            tools:text="Rp2.000.000" />
 
         <TextView
-            android:id="@+id/tv_default_stay"
+            android:id="@+id/tv_default_budget_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="Stay" />
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Budget Details"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintTop_toBottomOf="@+id/iv_default_bg_detailacc" />
 
-        <TextView
-            android:id="@+id/tv_default_food"
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintStart_toStartOf="@+id/iv_default_bg_detailacc"
+            app:layout_constraintTop_toBottomOf="@+id/tv_default_budget_detail" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="150dp"
+            android:layout_height="325dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <TextView
+                android:id="@+id/tv_default_flight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Flight" />
+
+            <TextView
+                android:id="@+id/tv_default_attraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Attractions" />
+
+            <TextView
+                android:id="@+id/tv_default_stay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Stay" />
+
+            <TextView
+                android:id="@+id/tv_default_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Food" />
+
+            <TextView
+                android:id="@+id/tv_default_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Shopping" />
+
+            <TextView
+                android:id="@+id/tv_default_others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Others" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <TextView
+                android:id="@+id/tv_flight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                tools:text="Rp1000000" />
+
+            <TextView
+                android:id="@+id/tv_attraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                tools:text="Rp2000000" />
+
+            <TextView
+                android:id="@+id/tv_stay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                tools:text="Rp300000" />
+
+            <TextView
+                android:id="@+id/tv_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                tools:text="Rp450000" />
+
+            <TextView
+                android:id="@+id/tv_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                tools:text="Rp1000000" />
+
+            <TextView
+                android:id="@+id/tv_others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                tools:text="Rp200000" />
+
+            <ImageView
+                android:id="@+id/iv_edit_budget"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/baseline_edit_64" />
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="Food" />
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/tv_default_shopping"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="Shopping" />
-
-        <TextView
-            android:id="@+id/tv_default_others"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="Others" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/view">
-
-        <TextView
-            android:id="@+id/tv_flight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:layout_gravity="end"
-            tools:text="Rp1000000" />
-
-        <TextView
-            android:id="@+id/tv_attraction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:layout_gravity="end"
-            tools:text="Rp2000000" />
-
-        <TextView
-            android:id="@+id/tv_stay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="end"
-            android:fontFamily="@font/poppins"
-            tools:text="Rp300000" />
-
-        <TextView
-            android:id="@+id/tv_food"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="end"
-            android:fontFamily="@font/poppins"
-            tools:text="Rp450000" />
-
-        <TextView
-            android:id="@+id/tv_shopping"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="end"
-            android:fontFamily="@font/poppins"
-            tools:text="Rp1000000" />
-
-        <TextView
-            android:id="@+id/tv_others"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="end"
-            android:fontFamily="@font/poppins"
-            tools:text="Rp200000" />
-
-    </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 

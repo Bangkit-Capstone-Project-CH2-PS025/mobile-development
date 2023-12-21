@@ -4,10 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.itinergo.data.request.BudgetingRequest
+import com.itinergo.data.request.UpdateBudgetingRequest
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.base.ErrorResponse
 import com.itinergo.data.response.budgeting.CreateBudgeting
 import com.itinergo.data.response.budgeting.GetAllBudgeting
+import com.itinergo.data.response.budgeting.UpdateBudgetinResponse
 import com.itinergo.data.service.ApiService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
@@ -136,6 +138,57 @@ class TravelBudgetingViewModel @Inject constructor(
 
                 override fun onFailure(call: Call<CreateBudgeting>, t: Throwable) {
                     travelBudgetById.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
+
+    val updateBudgetingResult: MutableLiveData<BaseResponse<UpdateBudgetinResponse>> =
+        MutableLiveData()
+
+    fun updateBudgeting(
+        flight: String,
+        attractions: String,
+        shopping: String,
+        food: String,
+        stay: String,
+        others: String,
+        id: String
+    ) {
+        updateBudgetingResult.value = BaseResponse.Loading()
+        client.updateBudgeting(
+            UpdateBudgetingRequest(
+                attractions,
+                flight,
+                food,
+                others,
+                shopping,
+                stay
+            ), id
+        )
+            .enqueue(object : Callback<UpdateBudgetinResponse> {
+                override fun onResponse(
+                    call: Call<UpdateBudgetinResponse>,
+                    response: Response<UpdateBudgetinResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        updateBudgetingResult.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            updateBudgetingResult.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            updateBudgetingResult.value =
+                                BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<UpdateBudgetinResponse>, t: Throwable) {
+                    updateBudgetingResult.value = BaseResponse.Error("Network Error")
                 }
             })
     }
