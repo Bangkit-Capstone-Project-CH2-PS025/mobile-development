@@ -51,9 +51,3 @@ The Mobile Development team create prototype in Figma with 3 different prototype
       - #### Installation
         - Clone this repository
         - 
-        
-- `test`: (adding missing tests, refactoring tests; no production code change)
-- `chore`: (updating grunt tasks etc; no production code change)
-
-## Reference
-1. Please refer to [this](https://github.com/golang-standards/project-layout/tree/master/deployments) document for understanding project structure
