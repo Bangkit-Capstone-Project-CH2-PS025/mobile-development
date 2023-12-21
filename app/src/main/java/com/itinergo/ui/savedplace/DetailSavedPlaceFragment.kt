@@ -129,6 +129,7 @@ class DetailSavedPlaceFragment : Fragment() {
                             binding.tvDay21.text = placeName
                         }
                     }
+                    binding.btnFinishDetail.isEnabled = it.data?.data?.isFinished != true
                 }
 
                 is BaseResponse.Error -> {

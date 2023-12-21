@@ -55,6 +55,18 @@
         app:layout_constraintStart_toEndOf="@+id/tv_default_budget"
         app:layout_constraintTop_toTopOf="@+id/tv_default_budget" />
 
+    <TextView
+        android:id="@+id/tv_not_found3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="There is no Budgeting...."
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/tv_add_budget"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_budget"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_budget" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_visited_place"
         android:layout_width="match_parent"

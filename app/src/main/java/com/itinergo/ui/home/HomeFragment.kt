@@ -73,14 +73,13 @@ class HomeFragment : Fragment() {
                     } else {
                         Glide.with(requireContext())
                             .asDrawable()
-                            .load(ContextCompat.getDrawable(requireContext(), R.drawable.baseline_account_circle_24))
+                            .load(ContextCompat.getDrawable(requireContext(), R.drawable.baseline_account_circle_home))
                             .into(binding.ivUsernamePic)
                     }
                 }
 
                 is BaseResponse.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(requireContext(), "Error: ${it.msg}", Toast.LENGTH_SHORT).show()
                 }
 
                 else -> {

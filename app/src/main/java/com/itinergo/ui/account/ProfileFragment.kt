@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -52,10 +53,15 @@ class ProfileFragment : Fragment() {
                     binding.tvAccountEmail.text = it.data?.data?.email
                     binding.tvAccountName.text = it.data?.data?.name
                     binding.btnProfile.text = "The ${it.data?.data?.levelTraveler?.name}"
-                    it.data?.data?.images.let { image ->
-                        if (image != null) {
-                            Glide.with(requireContext()).load(image).into(binding.ivAccountProfile)
-                        }
+                    if(it.data?.data?.images != null) {
+                        Glide.with(requireContext())
+                            .load(it.data.data.images)
+                            .into(binding.ivAccountProfile)
+                    } else {
+                        Glide.with(requireContext())
+                            .asDrawable()
+                            .load(ContextCompat.getDrawable(requireContext(), R.drawable.baseline_account_circle_24))
+                            .into(binding.ivAccountProfile)
                     }
                 }
 

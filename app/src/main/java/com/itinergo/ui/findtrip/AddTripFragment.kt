@@ -181,7 +181,10 @@ private fun createResult() {
                 builder.setMessage(it.data?.message)
 
                 builder.setPositiveButton("OK") { _, _ ->
-                    findNavController().navigate(R.id.action_addTripFragment_to_voilaFtripFragment)
+                    val contact = binding.etContactAdd.text.toString()
+                    val bundle = Bundle()
+                    bundle.putString("contact", contact)
+                    findNavController().navigate(R.id.action_addTripFragment_to_voilaFtripFragment, bundle)
                 }
                 val dialog = builder.create()
                 dialog.show()

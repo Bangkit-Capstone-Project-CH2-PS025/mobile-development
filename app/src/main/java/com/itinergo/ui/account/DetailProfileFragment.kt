@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -60,7 +61,6 @@ class DetailProfileFragment : Fragment() {
 
                 is BaseResponse.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(requireContext(), "Error: ${it.msg}", Toast.LENGTH_SHORT).show()
                 }
 
                 else -> {
@@ -84,7 +84,6 @@ class DetailProfileFragment : Fragment() {
 
                 is BaseResponse.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(requireContext(), "Error: ${it.msg}", Toast.LENGTH_SHORT).show()
                 }
 
                 else -> {
@@ -120,11 +119,15 @@ class DetailProfileFragment : Fragment() {
                     binding.tvNameDetailAcc.text = it.data?.data?.name
                     binding.tvExpKind.text = "The ${it.data?.data?.levelTraveler?.name}"
                     binding.tvExpDetail.text = it.data?.data?.xp.toString()
-                    it.data?.data?.images.let { image ->
-                        if (image != null) {
-                            Glide.with(requireContext()).load(image)
-                                .into(binding.ivProfileAccountDetail)
-                        }
+                    if(it.data?.data?.images != null) {
+                        Glide.with(requireContext())
+                            .load(it.data.data.images)
+                            .into(binding.ivProfileAccountDetail)
+                    } else {
+                        Glide.with(requireContext())
+                            .asDrawable()
+                            .load(ContextCompat.getDrawable(requireContext(), R.drawable.baseline_account_circle_24))
+                            .into(binding.ivProfileAccountDetail)
                     }
 
                     binding.btnChangeProfile.setOnClickListener { _ ->

@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        android:text="Voila!\n+50XP"
+        android:text="Voila!"
         android:textColor="@color/purple"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_default_bg"
@@ -57,58 +57,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
-        android:text="You joined a new trip"
+        android:text="You add your budgeting"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_ftrip"
         app:layout_constraintStart_toStartOf="@+id/tv_default_voila_ftrip"
         app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_ftrip" />
 
-    <TextView
-        android:id="@+id/tv_default_voila_ftrip2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="Please contact the owner through"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_ftrip1"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_ftrip1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_ftrip1" />
-
-    <TextView
-        android:id="@+id/tv_contact_ftrip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="+628123456789"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_ftrip1"
-        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_ftrip1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_ftrip2" />
-
-    <com.itinergo.utils.SecondaryButton
-        android:id="@+id/btn_cancel_join"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/istok_web_bold"
-        android:text="Cancel Join"
-        android:textColor="@color/purple"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg"
-        app:layout_constraintTop_toBottomOf="@+id/tv_contact_ftrip" />
 
     <com.itinergo.utils.PrimaryButton
         android:id="@+id/btn_to_home"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="Back to Home"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_cancel_join"
-        app:layout_constraintStart_toStartOf="@+id/btn_cancel_join"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cancel_join" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_default_voila_ftrip1"
+        app:layout_constraintStart_toStartOf="@+id/tv_default_voila_ftrip1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default_voila_ftrip1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

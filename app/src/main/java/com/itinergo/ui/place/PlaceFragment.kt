@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
 import com.itinergo.adapter.PlaceAdapter
+import com.itinergo.adapter.SavedPlaceAdapter
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.databinding.FragmentPlaceBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -51,10 +52,22 @@ class PlaceFragment : Fragment(), PlaceAdapter.ListPlaceInterface {
 
                 is BaseResponse.Success -> {
                     binding.progressBar.visibility = View.GONE
-                    val adapter = PlaceAdapter(this)
-                    binding.rvVisitedPlace.layoutManager = LinearLayoutManager(requireContext())
-                    binding.rvVisitedPlace.adapter = adapter
-                    adapter.setData(it.data!!.data)
+//                    val adapter = PlaceAdapter(this)
+//                    binding.rvVisitedPlace.layoutManager = LinearLayoutManager(requireContext())
+//                    binding.rvVisitedPlace.adapter = adapter
+//                    adapter.setData(it.data!!.data)
+
+                    if(it.data?.data?.size != 0) {
+                        binding.rvVisitedPlace.visibility = View.VISIBLE
+                        binding.tvNotFound2.visibility = View.GONE
+                        val adapter = PlaceAdapter(this)
+                        binding.rvVisitedPlace.layoutManager = LinearLayoutManager(requireContext())
+                        binding.rvVisitedPlace.adapter = adapter
+                        adapter.setData(it.data!!.data)
+                    } else {
+                        binding.rvVisitedPlace.visibility = View.GONE
+                        binding.tvNotFound2.visibility = View.VISIBLE
+                    }
 
                 }
 

@@ -20,6 +20,7 @@ import com.itinergo.data.response.budgeting.CreateBudgeting
 import com.itinergo.data.response.budgeting.GetAllBudgeting
 import com.itinergo.data.response.budgeting.UpdateBudgetinResponse
 import com.itinergo.data.response.findtrip.CreateTripResponse
+import com.itinergo.data.response.findtrip.DeleteFindTripResponse
 import com.itinergo.data.response.findtrip.GetAllTripByIdResponse
 import com.itinergo.data.response.findtrip.GetAllTripResponse
 import com.itinergo.data.response.finishsaved.FinishSavedResponse
@@ -36,6 +37,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
@@ -144,11 +146,18 @@ interface ApiService {
     fun getAllTravelBudget(): Call<GetAllBudgeting>
 
     @POST("travel-budgets/create")
-    fun createBudgeting(@Body request : BudgetingRequest): Call<CreateBudgeting>
+    fun createBudgeting(@Body request: BudgetingRequest): Call<CreateBudgeting>
+
     @GET("travel-budgets/get-one/{id}")
     fun getTravelBudgetById(@Path("id") id: String): Call<CreateBudgeting>
 
     @PUT("travel-budgets/update/{id}")
-    fun updateBudgeting(@Body request: UpdateBudgetingRequest, @Path("id") id:String): Call<UpdateBudgetinResponse>
+    fun updateBudgeting(
+        @Body request: UpdateBudgetingRequest,
+        @Path("id") id: String
+    ): Call<UpdateBudgetinResponse>
+
+    @DELETE("find-trip/delete/{id}")
+    fun deleteTrip(@Path ("id") id: String): Call <DeleteFindTripResponse>
 
 }

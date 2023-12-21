@@ -100,29 +100,16 @@
         app:layout_constraintStart_toStartOf="@+id/tv_default_verif2"
         app:layout_constraintTop_toBottomOf="@+id/tv_default_verif2" />
 
-    <com.itinergo.utils.SecondaryButton
-        android:id="@+id/btn_change_verif"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/istok_web_bold"
-        android:text="Change Email"
-        android:textColor="@color/purple"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_default_bg"
-        app:layout_constraintStart_toStartOf="@+id/iv_default_bg"
-        app:layout_constraintTop_toBottomOf="@+id/tv_defult_verif3" />
-
     <com.itinergo.utils.PrimaryButton
         android:id="@+id/btn_login"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="@string/login"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_change_verif"
-        app:layout_constraintStart_toStartOf="@+id/btn_change_verif"
-        app:layout_constraintTop_toBottomOf="@+id/btn_change_verif" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_defult_verif3"
+        app:layout_constraintStart_toStartOf="@+id/tv_defult_verif3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_defult_verif3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

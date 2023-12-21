@@ -51,10 +51,18 @@ class SavedPlaceFragment : Fragment(),
 
                 is BaseResponse.Success -> {
                     binding.progressBar.visibility = View.GONE
-                    val adapter = SavedPlaceAdapter(this)
-                    binding.rvSaved.layoutManager = LinearLayoutManager(requireContext())
-                    binding.rvSaved.adapter = adapter
-                    adapter.setData(it.data!!.data)
+
+                    if(it.data?.data?.size != 0) {
+                        binding.rvSaved.visibility = View.VISIBLE
+                        binding.tvNotFound.visibility = View.GONE
+                        val adapter = SavedPlaceAdapter(this)
+                        binding.rvSaved.layoutManager = LinearLayoutManager(requireContext())
+                        binding.rvSaved.adapter = adapter
+                        adapter.setData(it.data!!.data)
+                    } else {
+                        binding.rvSaved.visibility = View.GONE
+                        binding.tvNotFound.visibility = View.VISIBLE
+                    }
 
                 }
 

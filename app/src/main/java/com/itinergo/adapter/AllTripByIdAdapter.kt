@@ -78,6 +78,9 @@ class AllTripByIdAdapter(private var itemClick: ListPlaceInterface) :
                     .load(ContextCompat.getDrawable(itemView.context, R.drawable.baseline_account_circle_24))
                     .into(binding.ivAvatarFtrip)
             }
+            binding.btnTrip.setOnClickListener {
+                itemClick.yourTrip(item?.id.toString())
+            }
 
         }
 
@@ -106,6 +109,6 @@ class AllTripByIdAdapter(private var itemClick: ListPlaceInterface) :
     }
 
     interface ListPlaceInterface {
-        fun trip(id: String)
+        fun yourTrip(id: String)
     }
 }

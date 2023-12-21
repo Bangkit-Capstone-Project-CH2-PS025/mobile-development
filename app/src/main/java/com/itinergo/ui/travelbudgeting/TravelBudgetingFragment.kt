@@ -21,9 +21,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class TravelBudgetingFragment : Fragment(), TravelBudgetingAdapter.ListPlaceInterface {
 
-    private var _binding : FragmentTravelBudgetingBinding? = null
+    private var _binding: FragmentTravelBudgetingBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel : TravelBudgetingViewModel
+    private lateinit var viewModel: TravelBudgetingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +31,7 @@ class TravelBudgetingFragment : Fragment(), TravelBudgetingAdapter.ListPlaceInte
     ): View? {
         // Inflate the layout for this fragment
         viewModel = ViewModelProvider(this)[TravelBudgetingViewModel::class.java]
-        _binding = FragmentTravelBudgetingBinding.inflate(layoutInflater,container,false)
+        _binding = FragmentTravelBudgetingBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -59,10 +59,17 @@ class TravelBudgetingFragment : Fragment(), TravelBudgetingAdapter.ListPlaceInte
 
                 is BaseResponse.Success -> {
                     binding.progressBar.visibility = View.GONE
-                    val adapter = TravelBudgetingAdapter(this)
-                    binding.rvVisitedPlace.layoutManager = LinearLayoutManager(requireContext())
-                    binding.rvVisitedPlace.adapter = adapter
-                    adapter.setData(it.data!!.data)
+                    if (it.data?.data?.size != 0) {
+                        binding.rvVisitedPlace.visibility = View.VISIBLE
+                        binding.tvNotFound3.visibility = View.GONE
+                        val adapter = TravelBudgetingAdapter(this)
+                        binding.rvVisitedPlace.layoutManager = LinearLayoutManager(requireContext())
+                        binding.rvVisitedPlace.adapter = adapter
+                        adapter.setData(it.data!!.data)
+                    } else {
+                        binding.rvVisitedPlace.visibility = View.GONE
+                        binding.tvNotFound3.visibility = View.VISIBLE
+                    }
 
                 }
 
@@ -81,7 +88,12 @@ class TravelBudgetingFragment : Fragment(), TravelBudgetingAdapter.ListPlaceInte
     override fun budget(id: String) {
         val bundle = Bundle()
         bundle.putString("id", id)
-        findNavController().navigate(R.id.action_travelBudgetingFragment_to_detailBudgetingFragment, bundle)
+        findNavController().navigate(
+            R.id.action_travelBudgetingFragment_to_detailBudgetingFragment,
+            bundle
+        )
     }
+
+
 
 }

@@ -159,6 +159,9 @@
         <action
             android:id="@+id/action_findTripFragment_to_addTripFragment"
             app:destination="@id/addTripFragment" />
+        <action
+            android:id="@+id/action_findTripFragment_to_voilaFtripFragment"
+            app:destination="@id/voilaFtripFragment" />
     </fragment>
     <fragment
         android:id="@+id/addTripFragment"

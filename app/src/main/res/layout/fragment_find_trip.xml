@@ -30,31 +30,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/find_trip" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/tv_not_found3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:boxBackgroundColor="#F2F2F2"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/find_trip">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_search_trip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/baseline_search_24"
-            android:drawablePadding="5dp"
-            android:hint="Search" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        android:fontFamily="@font/poppins_semibold"
+        android:text="There is no Trip...."
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_add_list_ftrip"
+        app:layout_constraintStart_toStartOf="@+id/tv_default"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default" />
 
     <TextView
         android:id="@+id/tv_default"
@@ -64,8 +52,8 @@
         android:fontFamily="@font/poppins_bold"
         android:text="Your Trip..."
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintStart_toStartOf="@+id/back"
+        app:layout_constraintTop_toBottomOf="@+id/find_trip" />
 
     <ImageView
         android:id="@+id/iv_add_list_ftrip"
@@ -73,19 +61,11 @@
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_add_circle_outline_24"
         app:layout_constraintBottom_toBottomOf="@+id/tv_default"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@id/tv_default"
         app:layout_constraintTop_toTopOf="@+id/tv_default" />
 
-    <TextView
-        android:id="@+id/tv_default10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Your Trip..."
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_ytrip"
@@ -103,12 +83,24 @@
         android:id="@+id/tv_default11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/find_trip"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tv_default"
         app:layout_constraintTop_toBottomOf="@+id/rv_ytrip" />
+
+    <TextView
+        android:id="@+id/tv_not_found4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="There is no Trip...."
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_add_list_ftrip"
+        app:layout_constraintStart_toStartOf="@+id/tv_default"
+        app:layout_constraintTop_toBottomOf="@+id/tv_default11" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_ftrip"

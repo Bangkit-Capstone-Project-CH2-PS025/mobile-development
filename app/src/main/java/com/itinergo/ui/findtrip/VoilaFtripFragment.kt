@@ -28,6 +28,12 @@ class VoilaFtripFragment : Fragment() {
         val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         navbar?.visibility = View.GONE
         setButton()
+        setText()
+    }
+
+    private fun setText() {
+        val contact = arguments?.getString("contact")
+        binding.tvContactFtrip.text = contact
     }
 
     private fun setButton() {

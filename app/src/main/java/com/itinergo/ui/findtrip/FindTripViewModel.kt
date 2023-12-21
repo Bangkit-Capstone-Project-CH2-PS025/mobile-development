@@ -6,6 +6,7 @@ import com.google.gson.Gson
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.base.ErrorResponse
 import com.itinergo.data.response.findtrip.CreateTripResponse
+import com.itinergo.data.response.findtrip.DeleteFindTripResponse
 import com.itinergo.data.response.findtrip.GetAllTripByIdResponse
 import com.itinergo.data.response.findtrip.GetAllTripResponse
 import com.itinergo.data.service.ApiService
@@ -81,6 +82,37 @@ class FindTripViewModel @Inject constructor(
 
             override fun onFailure(call: Call<GetAllTripByIdResponse>, t: Throwable) {
                 allTripByIdResult.value = BaseResponse.Error("Network Error")
+            }
+        })
+    }
+
+    val deleteTripResult: MutableLiveData<BaseResponse<DeleteFindTripResponse>> = MutableLiveData()
+
+    fun deleteTrip(id: String) {
+        deleteTripResult.value = BaseResponse.Loading()
+        client.deleteTrip(id).enqueue(object : Callback<DeleteFindTripResponse> {
+            override fun onResponse(
+                call: Call<DeleteFindTripResponse>,
+                response: Response<DeleteFindTripResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    deleteTripResult.value = BaseResponse.Success(responseBody)
+                } else {
+                    val errorBody = response.errorBody()
+                    if (errorBody != null) {
+                        val errorResponse =
+                            Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                        val errorMessage = errorResponse.message
+                        deleteTripResult.value = BaseResponse.Error(errorMessage)
+                    } else {
+                        deleteTripResult.value = BaseResponse.Error("Unknown error occurred")
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<DeleteFindTripResponse>, t: Throwable) {
+                deleteTripResult.value = BaseResponse.Error("Network Error")
             }
         })
     }
