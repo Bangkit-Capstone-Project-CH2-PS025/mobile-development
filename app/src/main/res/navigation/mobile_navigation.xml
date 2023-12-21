@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_navigation_home_to_planFragment"
             app:destination="@id/planFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_travelBudgetingFragment"
+            app:destination="@id/travelBudgetingFragment" />
     </fragment>
 
     <fragment
@@ -196,4 +199,49 @@
             android:id="@+id/action_editProfileFragment_to_detailProfileFragment"
             app:destination="@id/detailProfileFragment" />
     </dialog>
+    <fragment
+        android:id="@+id/travelBudgetingFragment"
+        android:name="com.itinergo.ui.travelbudgeting.TravelBudgetingFragment"
+        android:label="TravelBudgetingFragment" >
+        <action
+            android:id="@+id/action_travelBudgetingFragment_to_addBudgetingFragment"
+            app:destination="@id/addBudgetingFragment" />
+        <action
+            android:id="@+id/action_travelBudgetingFragment_to_detailBudgetingFragment"
+            app:destination="@id/detailBudgetingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBudgetingFragment"
+        android:name="com.itinergo.ui.travelbudgeting.AddBudgetingFragment"
+        android:label="AddBudgetingFragment" >
+        <action
+            android:id="@+id/action_addBudgetingFragment_to_voilaBudgetFragment"
+            app:destination="@id/voilaBudgetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/voilaBudgetFragment"
+        android:name="com.itinergo.ui.travelbudgeting.VoilaBudgetFragment"
+        android:label="VoilaBudgetFragment" >
+        <action
+            android:id="@+id/action_voilaBudgetFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBudgetingFragment"
+        android:name="com.itinergo.ui.travelbudgeting.DetailBudgetingFragment"
+        android:label="fragment_detail_budgeting"
+        tools:layout="@layout/fragment_detail_budgeting" >
+        <action
+            android:id="@+id/action_detailBudgetingFragment_to_editTravelBudgetingFragment"
+            app:destination="@id/editTravelBudgetingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTravelBudgetingFragment"
+        android:name="com.itinergo.ui.travelbudgeting.EditTravelBudgetingFragment"
+        android:label="fragment_edit_travel_budgeting"
+        tools:layout="@layout/fragment_edit_travel_budgeting" >
+        <action
+            android:id="@+id/action_editTravelBudgetingFragment_to_detailBudgetingFragment"
+            app:destination="@id/detailBudgetingFragment" />
+    </fragment>
 </navigation>

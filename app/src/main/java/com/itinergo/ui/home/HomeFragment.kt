@@ -214,37 +214,42 @@ class HomeFragment : Fragment() {
             bundle.putString("city", city)
             bundle.putString("budget", budget)
             bundle.putString("duration", duration)
-            if(city.isNotEmpty() && duration.isNotEmpty() && budget.isNotEmpty()) {
+            if (city.isNotEmpty() && duration.isNotEmpty() && budget.isNotEmpty()) {
                 findNavController().navigate(R.id.action_navigation_home_to_planFragment, bundle)
             } else {
-                Toast.makeText(requireContext(),"Fill other input first!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Fill other input first!", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
         binding.ivViewHome.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_placeTodayFragment)
         }
+        binding.ivTravelBudgeting.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_travelBudgetingFragment)
+        }
         binding.btnSearch.setOnClickListener {
 //            if (arguments != null) {
 
-                if (binding.etCity.text.toString()
-                        .isNotEmpty() && binding.etDuration.text.toString()
-                        .isNotEmpty() && binding.etBudget.text.toString()
-                        .isNotEmpty() && binding.etPreference.text.toString().isNotEmpty()
-                ) {
-                    val firstPreferences = arguments?.getString("first_preferences")
-                    val secondPreferences = arguments?.getString("second_preferences")
-                    val city = binding.etCity.text.toString().lowercase(Locale.getDefault())
-                    val duration = binding.etDuration.text.toString().toInt()
-                    val budget = binding.etBudget.text.toString().toInt()
-                    val preferences1 = firstPreferences.toString().lowercase(Locale.getDefault())
-                    val preferences2 = secondPreferences.toString().lowercase(Locale.getDefault())
+            if (binding.etCity.text.toString()
+                    .isNotEmpty() && binding.etDuration.text.toString()
+                    .isNotEmpty() && binding.etBudget.text.toString()
+                    .isNotEmpty() && binding.etPreference.text.toString().isNotEmpty()
+            ) {
+                val firstPreferences = arguments?.getString("first_preferences")
+                val secondPreferences = arguments?.getString("second_preferences")
+                val city = binding.etCity.text.toString().lowercase(Locale.getDefault())
+                val duration = binding.etDuration.text.toString().toInt()
+                val budget = binding.etBudget.text.toString().toInt()
+                val preferences1 = firstPreferences.toString().lowercase(Locale.getDefault())
+                val preferences2 = secondPreferences.toString().lowercase(Locale.getDefault())
 
-                    viewModel.postItinerary(city, budget, duration, preferences1, preferences2)
-                    postItineraryResult()
-                } else {
-                    Toast.makeText(requireContext(),"Fill all the input first!", Toast.LENGTH_SHORT).show()
-                }
+                viewModel.postItinerary(city, budget, duration, preferences1, preferences2)
+                postItineraryResult()
+            } else {
+                Toast.makeText(requireContext(), "Fill all the input first!", Toast.LENGTH_SHORT)
+                    .show()
+            }
 //            }
         }
         binding.ivFindTrip.setOnClickListener {
@@ -254,6 +259,7 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_navigation_home_to_travelTipsFragment)
         }
     }
+
     override fun onStart() {
         super.onStart()
         viewModel.getDataStoreIsLogin().observe(this) { isLogin ->
