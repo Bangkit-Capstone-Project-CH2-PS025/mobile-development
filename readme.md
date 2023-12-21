@@ -62,3 +62,10 @@ The Mobile Development team create prototype in Figma with 3 different prototype
 * [Android Navigation Component](https://developer.android.com/guide/navigation?hl=en)
 * [Android Dependency Injection](https://developer.android.com/training/dependency-injection?hl=en)
 * [Android DataStore](https://developer.android.com/topic/libraries/architecture/datastore?hl=en)
+
+### Permission
+The minimum Android version that can use this app is Android 5.0, with the following permission requests:
+- Internet Access
+- Gallery Access.
+
+Internet access permissions are made to communicate data from the cloud and process itinerary recommendations. Gallery permissions are made to upload some image to Visited Place, Chang Avatar Photo and Find Trip.
