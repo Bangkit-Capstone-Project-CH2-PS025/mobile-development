@@ -19,6 +19,7 @@ import com.itinergo.data.response.addplace.PostAddPlaceResponse
 import com.itinergo.data.response.budgeting.CreateBudgeting
 import com.itinergo.data.response.budgeting.GetAllBudgeting
 import com.itinergo.data.response.budgeting.UpdateBudgetinResponse
+import com.itinergo.data.response.discover.DiscoverPlaceResponse
 import com.itinergo.data.response.findtrip.CreateTripResponse
 import com.itinergo.data.response.findtrip.DeleteFindTripResponse
 import com.itinergo.data.response.findtrip.GetAllTripByIdResponse
@@ -159,5 +160,8 @@ interface ApiService {
 
     @DELETE("find-trip/delete/{id}")
     fun deleteTrip(@Path ("id") id: String): Call <DeleteFindTripResponse>
+
+    @GET("itinerary/discover")
+    fun getDiscover(): Call <DiscoverPlaceResponse>
 
 }

@@ -115,7 +115,7 @@
                         android:ellipsize="start"
                         android:inputType="none"
                         android:textSize="12sp"
-                        app:boxStrokeWidth="0dp"/>
+                        app:boxStrokeWidth="0dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
@@ -197,7 +197,7 @@
                         android:ellipsize="start"
                         android:inputType="none"
                         android:textSize="12sp"
-                        app:boxStrokeWidth="0dp"/>
+                        app:boxStrokeWidth="0dp" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -356,14 +356,31 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_view_home"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:contentDescription="@string/place_of_today"
-                android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/RoundedSquare"
-                app:srcCompat="@drawable/view_home" />
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_view_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:contentDescription="@string/place_of_today"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/RoundedSquare"
+                    app:srcCompat="@drawable/view_home" />
+
+                <TextView
+                    android:id="@+id/tv_place_discover"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="20dp"
+                    android:text="Jakarta"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"/>
+            </FrameLayout>
         </LinearLayout>
     </LinearLayout>
 

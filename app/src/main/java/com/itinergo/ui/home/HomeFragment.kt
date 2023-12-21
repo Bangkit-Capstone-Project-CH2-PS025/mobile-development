@@ -63,6 +63,37 @@ class HomeFragment : Fragment() {
         setDropdown()
         setText()
         setImage()
+        setResult()
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun setResult() {
+        viewModel.getDiscoverPlace()
+        viewModel.discoverResult.observe(viewLifecycleOwner) {
+            when (it) {
+                is BaseResponse.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+
+                is BaseResponse.Success -> {
+                    binding.progressBar.visibility = View.GONE
+
+                    Glide.with(requireContext())
+                        .load(it.data?.data?.dir)
+                        .into(binding.ivViewHome)
+
+                    binding.tvPlaceDiscover.text = "${it.data?.data?.placeName}, ${it.data?.data?.city}"
+                }
+
+                is BaseResponse.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                }
+
+                else -> {
+
+                }
+            }
+        }
     }
 
     private fun setImage() {
@@ -269,9 +300,6 @@ class HomeFragment : Fragment() {
             }
         }
 
-        binding.ivViewHome.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_home_to_placeTodayFragment)
-        }
         binding.ivTravelBudgeting.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_travelBudgetingFragment)
         }

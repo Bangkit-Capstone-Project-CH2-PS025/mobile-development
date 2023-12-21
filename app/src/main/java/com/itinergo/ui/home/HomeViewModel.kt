@@ -10,6 +10,7 @@ import com.itinergo.data.request.PreferencesRequest
 import com.itinergo.data.response.account.GetAccountResponse
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.base.ErrorResponse
+import com.itinergo.data.response.discover.DiscoverPlaceResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
 import com.itinergo.data.response.postitinerary.PostItineraryResponse
 import com.itinergo.data.response.preferences.CarbonResponse
@@ -179,6 +180,37 @@ class HomeViewModel @Inject constructor(
 
                 override fun onFailure(call: Call<GetAccountResponse>, t: Throwable) {
                     profileResult.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
+    val discoverResult: MutableLiveData<BaseResponse<DiscoverPlaceResponse>> = MutableLiveData()
+
+    fun getDiscoverPlace() {
+        discoverResult.value = BaseResponse.Loading()
+        client.getDiscover()
+            .enqueue(object : Callback<DiscoverPlaceResponse> {
+                override fun onResponse(
+                    call: Call<DiscoverPlaceResponse>,
+                    response: Response<DiscoverPlaceResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        discoverResult.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            discoverResult.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            discoverResult.value = BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<DiscoverPlaceResponse>, t: Throwable) {
+                    discoverResult.value = BaseResponse.Error("Network Error")
                 }
             })
     }
