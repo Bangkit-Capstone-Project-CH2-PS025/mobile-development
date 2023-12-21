@@ -41,7 +41,7 @@ The Mobile Development team create prototype in Figma with 3 different prototype
 [Link of Figma](https://www.figma.com/file/RYR42lEEKWaN2UAzXJPsmw/User-Interface---Bangkit-Capstone-Project?type=design&node-id=0%3A1&mode=design&t=tSsswh441EavG5gK-1)
 
 # Architecture
-
+https://github.com/Bangkit-Capstone-Project-CH2-PS025/mobile-development/blob/bashirhanafi-patch-2/Bangkit%20Capstone%20Project%20-%20Page%201%20(5).png
 
 # Getting Started Application
   - ### Prerequisites
