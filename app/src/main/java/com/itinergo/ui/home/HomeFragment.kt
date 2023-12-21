@@ -11,9 +11,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itinergo.R
 import com.itinergo.data.response.base.BaseResponse
@@ -50,6 +52,42 @@ class HomeFragment : Fragment() {
         setButton()
         setDropdown()
         setText()
+        setImage()
+    }
+
+    private fun setImage() {
+        viewModel.getAccount()
+        viewModel.profileResult.observe(viewLifecycleOwner) {
+            when (it) {
+                is BaseResponse.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+
+                is BaseResponse.Success -> {
+                    binding.progressBar.visibility = View.GONE
+
+                    if(it.data?.data?.images != null) {
+                        Glide.with(requireContext())
+                            .load(it.data.data.images)
+                            .into(binding.ivUsernamePic)
+                    } else {
+                        Glide.with(requireContext())
+                            .asDrawable()
+                            .load(ContextCompat.getDrawable(requireContext(), R.drawable.baseline_account_circle_24))
+                            .into(binding.ivUsernamePic)
+                    }
+                }
+
+                is BaseResponse.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(requireContext(), "Error: ${it.msg}", Toast.LENGTH_SHORT).show()
+                }
+
+                else -> {
+
+                }
+            }
+        }
     }
 
     private fun setDropdown() {

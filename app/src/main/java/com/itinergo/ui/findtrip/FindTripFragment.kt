@@ -106,6 +106,9 @@ class FindTripFragment : Fragment(),
         binding.ivAddListFtrip.setOnClickListener {
             findNavController().navigate(R.id.action_findTripFragment_to_addTripFragment)
         }
+        binding.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     override fun trip(id: String) {

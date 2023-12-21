@@ -7,6 +7,7 @@ import androidx.lifecycle.asLiveData
 import com.google.gson.Gson
 import com.itinergo.data.request.ItineraryRequest
 import com.itinergo.data.request.PreferencesRequest
+import com.itinergo.data.response.account.GetAccountResponse
 import com.itinergo.data.response.base.BaseResponse
 import com.itinergo.data.response.base.ErrorResponse
 import com.itinergo.data.response.getitinerary.GetItineraryResponse
@@ -150,9 +151,43 @@ class HomeViewModel @Inject constructor(
                 }
             })
     }
+    val profileResult: MutableLiveData<BaseResponse<GetAccountResponse>> = MutableLiveData()
+
+    fun getAccount() {
+        profileResult.value = BaseResponse.Loading()
+        client.getAccount()
+            .enqueue(object : Callback<GetAccountResponse> {
+                override fun onResponse(
+                    call: Call<GetAccountResponse>,
+                    response: Response<GetAccountResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        profileResult.value = BaseResponse.Success(responseBody)
+                    } else {
+                        val errorBody = response.errorBody()
+                        if (errorBody != null) {
+                            val errorResponse =
+                                Gson().fromJson(errorBody.charStream(), ErrorResponse::class.java)
+                            val errorMessage = errorResponse.message
+                            profileResult.value = BaseResponse.Error(errorMessage)
+                        } else {
+                            profileResult.value = BaseResponse.Error("Unknown error occurred")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<GetAccountResponse>, t: Throwable) {
+                    profileResult.value = BaseResponse.Error("Network Error")
+                }
+            })
+    }
 
     fun getDataStoreName(): LiveData<String> {
         return pref.getName.asLiveData()
+    }
+    fun getDataStoreId(): LiveData<Int> {
+        return pref.getId.asLiveData()
     }
 
     fun getDataStoreIsLogin(): LiveData<Boolean> {

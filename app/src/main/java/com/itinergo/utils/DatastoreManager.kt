@@ -3,6 +3,7 @@ package com.itinergo.utils
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -13,6 +14,9 @@ class DatastoreManager(@ApplicationContext val context: Context) {
 
     val getName: Flow<String> = context.dataStore.data.map {
         it[NAME_KEY] ?: ""
+    }
+    val getId: Flow<Int> = context.dataStore.data.map {
+        it[ID_KEY] ?: 0
     }
     val getToken: Flow<String> = context.dataStore.data.map {
         it[TOKEN_KEY] ?: ""
@@ -26,6 +30,12 @@ class DatastoreManager(@ApplicationContext val context: Context) {
     suspend fun saveName(name: String) {
         context.dataStore.edit {
             it[NAME_KEY] = name
+        }
+    }
+
+    suspend fun saveId(id: Int) {
+        context.dataStore.edit {
+            it[ID_KEY] = id
         }
     }
 
@@ -59,10 +69,16 @@ class DatastoreManager(@ApplicationContext val context: Context) {
             it.remove(NAME_KEY)
         }
     }
+    suspend fun removeId() {
+        context.dataStore.edit {
+            it.remove(ID_KEY)
+        }
+    }
 
 
     companion object {
         private const val DATASTORE_NAME = "preferences"
+        private val ID_KEY = intPreferencesKey("id_key")
         private val NAME_KEY = stringPreferencesKey("name_key")
         private val TOKEN_KEY = stringPreferencesKey("token_key")
         private val IS_LOGIN_KEY = booleanPreferencesKey("is_login_key")

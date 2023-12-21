@@ -86,116 +86,47 @@ class DetailSavedPlaceFragment : Fragment() {
                     val city = it.data?.data?.city?.uppercase()
                     binding.tvBudgetDetailSaved.text = "Rp$budget"
                     binding.tvTripNameSavedDetail.text = "$city TRIP"
+                    binding.back.setOnClickListener {
+                        findNavController().popBackStack()
+                    }
                     it.data?.data?.detailPlans?.get(0)?.dest1.let { placeName ->
                         binding.tvDay11.text = placeName
-                        binding.tvDay11.setOnClickListener {
-                            val bundle = Bundle()
-                            bundle.putString("place_name", placeName)
-                            findNavController().navigate(
-                                R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                bundle
-                            )
-                        }
                     }
                     it.data?.data?.detailPlans?.get(0)?.dest2.let { placeName ->
                         binding.tvDay12.text = placeName
-                        binding.tvDay12.setOnClickListener {
-                            val bundle = Bundle()
-                            bundle.putString("place_name", placeName)
-                            findNavController().navigate(
-                                R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                bundle
-                            )
-                        }
                     }
 
                     it.data?.data?.detailPlans?.get(0)?.dest3.let { placeName ->
                         binding.tvDay13.text = placeName
-                        binding.tvDay13.setOnClickListener {
-                            val bundle = Bundle()
-                            bundle.putString("place_name", placeName)
-                            findNavController().navigate(
-                                R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                bundle
-                            )
-                        }
                     }
                     it.data?.data?.detailPlans?.get(0)?.dest4.let { placeName ->
                         if (placeName != null) {
                             binding.tvDay21.text = placeName
-                            binding.tvDay21.setOnClickListener {
-                                val bundle = Bundle()
-                                bundle.putString("place_name", placeName)
-                                findNavController().navigate(
-                                    R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                    bundle
-                                )
-                            }
                         }
                     }
                     it.data?.data?.detailPlans?.get(0)?.dest5.let { placeName ->
                         if (placeName != null) {
                             binding.tvDay22.text = placeName
-                            binding.tvDay22.setOnClickListener {
-                                val bundle = Bundle()
-                                bundle.putString("place_name", placeName)
-                                findNavController().navigate(
-                                    R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                    bundle
-                                )
-                            }
                         }
                     }
                     it.data?.data?.detailPlans?.get(0)?.dest6.let { placeName ->
                         if (placeName != null) {
                             binding.tvDay23.text = placeName
-                            binding.tvDay23.setOnClickListener {
-                                val bundle = Bundle()
-                                bundle.putString("place_name", placeName)
-                                findNavController().navigate(
-                                    R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                    bundle
-                                )
-                            }
                         }
                     }
                     it.data?.data?.detailPlans?.get(0)?.dest7.let { placeName ->
                         if (placeName != null) {
                             binding.tvDay21.text = placeName
-                            binding.tvDay21.setOnClickListener {
-                                val bundle = Bundle()
-                                bundle.putString("place_name", placeName)
-                                findNavController().navigate(
-                                    R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                    bundle
-                                )
-                            }
                         }
                     }
                     it.data?.data?.detailPlans?.get(0)?.dest8.let { placeName ->
                         if (placeName != null) {
                             binding.tvDay21.text = placeName
-                            binding.tvDay21.setOnClickListener {
-                                val bundle = Bundle()
-                                bundle.putString("place_name", placeName)
-                                findNavController().navigate(
-                                    R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                    bundle
-                                )
-                            }
                         }
                     }
                     it.data?.data?.detailPlans?.get(0)?.dest9.let { placeName ->
                         if (placeName != null) {
                             binding.tvDay21.text = placeName
-                            binding.tvDay21.setOnClickListener {
-                                val bundle = Bundle()
-                                bundle.putString("place_name", placeName)
-                                findNavController().navigate(
-                                    R.id.action_detailSavedPlaceFragment_to_placeTodayFragment,
-                                    bundle
-                                )
-                            }
                         }
                     }
                 }

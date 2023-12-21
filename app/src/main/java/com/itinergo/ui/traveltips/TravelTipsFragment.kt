@@ -38,6 +38,13 @@ class TravelTipsFragment : Fragment(), TravelTipsAdapter.ListPlaceInterface {
         val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         navbar?.visibility = View.GONE
         allTipsResult()
+        setButton()
+    }
+
+    private fun setButton() {
+        binding.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun allTipsResult() {

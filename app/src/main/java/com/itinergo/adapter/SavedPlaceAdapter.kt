@@ -36,9 +36,9 @@ class SavedPlaceAdapter(private var itemClick: ListPlaceInterface) :
         @SuppressLint("SetTextI18n")
         fun bind(item: DataSavedPlace) {
 
-            binding.tvTripNameSaved.text = "${item.city.uppercase()}, TRIP"
-            binding.tvBudgetSaved.text = "Rp${item.budget}"
-            binding.tvDurationNameSaved.text = "${item.duration} day"
+            binding.tvTripNameSaved.text = "${item.city.uppercase()} TRIP"
+            binding.tvBudgetSaved.text = "Budget: Rp${item.budget}"
+            binding.tvDurationNameSaved.text = "Duration: ${item.duration} day"
 
             binding.btnDetailsSavedPlace.setOnClickListener {
                 itemClick.place(item.id.toString())
