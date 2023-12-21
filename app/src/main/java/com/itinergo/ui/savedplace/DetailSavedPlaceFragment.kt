@@ -35,7 +35,6 @@ class DetailSavedPlaceFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setButton()
         setDetailResult()
-        setFinishResult()
         val navbar = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         navbar?.visibility = View.GONE
     }
@@ -157,6 +156,7 @@ class DetailSavedPlaceFragment : Fragment() {
             if (id != null) {
                 viewModel.updateFinishSaved(id)
             }
+            setFinishResult()
         }
     }
 
