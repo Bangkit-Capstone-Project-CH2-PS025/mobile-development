@@ -367,7 +367,7 @@
                     android:contentDescription="@string/place_of_today"
                     android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/RoundedSquare"
-                    app:srcCompat="@drawable/view_home" />
+                    tools:src="@drawable/view_home" />
 
                 <TextView
                     android:id="@+id/tv_place_discover"
@@ -376,7 +376,7 @@
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="15dp"
                     android:layout_marginStart="20dp"
-                    android:text="Jakarta"
+                    tools:text="Jakarta"
                     android:textSize="18sp"
                     android:fontFamily="@font/poppins_bold"
                     android:textColor="@color/white"/>
