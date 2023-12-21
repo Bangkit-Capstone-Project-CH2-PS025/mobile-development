@@ -48,5 +48,17 @@ The Mobile Development team create prototype in Figma with 3 different prototype
         - [Android Studio](https://developer.android.com/studio)
 
       - #### Installation
-        - Clone this repository
-        - 
+        - Connect Android Studio
+        - Clone this repository and import into Android Studio
+          ```
+          https://github.com/Bangkit-Capstone-Project-CH2-PS025/mobile-development.git
+          ```
+
+### Acknowledgements
+* [Android Fundamental](https://developer.android.com/guide/components/fundamentals?hl=en)
+* [Android Style and Themes](https://developer.android.com/develop/ui/views/theming/themes?hl=en)
+* [Android Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=en)
+* [Android Fragment Lifecycle](https://developer.android.com/guide/fragments/lifecycle?hl=en)
+* [Android Navigation Component](https://developer.android.com/guide/navigation?hl=en)
+* [Android Dependency Injection](https://developer.android.com/training/dependency-injection?hl=en)
+* [Android DataStore](https://developer.android.com/topic/libraries/architecture/datastore?hl=en)
